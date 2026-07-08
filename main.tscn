@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b7jo1g8juh14v"]
+
+[ext_resource type="MeshLibrary" uid="uid://cqsvp01dvpvkq" path="res://tiles.tres" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://jmi5mu7dprje" path="res://src/IslandGenerator.cs" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://dom0p7hp8h4c0" path="res://src/SpectatorCamera.cs" id="3_h2yge"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dldy8"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2bch7"]
+noise = SubResource("FastNoiseLite_dldy8")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eesxw"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0.047058824, 0.3137255, 0.5254902, 0.5411765)
+roughness = 0.05
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_2bch7")
+refraction_enabled = true
+refraction_texture = SubResource("NoiseTexture2D_2bch7")
+uv1_scale = Vector3(0.01, 0.01, 0.01)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_8241u"]
+material = SubResource("StandardMaterial3D_eesxw")
+size = Vector3(100, 1, 100)
+
+[node name="Main" type="Node3D" unique_id=477638316]
+
+[node name="environment" type="Node3D" parent="." unique_id=1705273885]
+
+[node name="water" type="MeshInstance3D" parent="environment" unique_id=2004283312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8641747, 1.5814261, 0.4931569)
+visible = false
+mesh = SubResource("BoxMesh_8241u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="environment" unique_id=801440622]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="environment" unique_id=703085252]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=261570742]
+mesh_library = ExtResource("1_ig7tw")
+cell_size = Vector3(1, 1, 1)
+script = ExtResource("2_0xm2m")
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1445934589]
+transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 30, 35, 65)
+script = ExtResource("3_h2yge")
