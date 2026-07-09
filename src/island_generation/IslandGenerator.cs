@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 [Tool]
 public partial class IslandGenerator : GridMap
@@ -95,7 +96,7 @@ public partial class IslandGenerator : GridMap
                 totalTilesPlaced += BuildTileColumn(x, z, calculatedHeight);
             }
         }
-
+        LinkTileNeighborhood();
         GD.Print($"Generation Complete! Placed {totalTilesPlaced} tiles across the grid.");
 
         ExecuteRiverGenerators();
@@ -298,15 +299,61 @@ public partial class IslandGenerator : GridMap
         return null;
     }
 
-    public IslandTile GetTileAt(Vector3I gridPos) => _tileData.TryGetValue(gridPos, out var tile) ? tile : null;
-
-    public IslandTile GetTileAtWorld(Vector3 worldPos) => GetTileAt(LocalToMap(ToLocal(worldPos)));
-
-    public IslandTile GetTileAtCoordinate(Vector3I gridPos)
+    public void LinkTileNeighborhood()
     {
-        return _tileData.TryGetValue(gridPos, out var tile) ? tile : null;
+        // A quick lookup helper for relative 2D directions
+        Vector2I[] cardinalDirections = new Vector2I[]
+        {
+            new Vector2I(1, 0),  // East
+            new Vector2I(-1, 0), // West
+            new Vector2I(0, 1),  // South
+            new Vector2I(0, -1)  // North
+        };
+
+        foreach (KeyValuePair<Vector3I, IslandTile> entry in _tileData)
+        {
+            IslandTile tile = entry.Value;
+            List<IslandTile> validNeighbors = new();
+
+            foreach (Vector2I dir in cardinalDirections)
+            {
+                // Calculate the target coordinate for the neighbor column
+                int neighborX = tile.GridPosition.X + dir.X;
+                int neighborZ = tile.GridPosition.Z + dir.Y;
+
+                // Grab the top surface height profile for that column coordinate
+                int neighborTopY = GetSurfaceYAt(neighborX, neighborZ);
+
+                if (neighborTopY != -1)
+                {
+                    Vector3I neighborTargetKey = new Vector3I(neighborX, neighborTopY, neighborZ);
+                    IslandTile neighborTile = GetTileAt(neighborTargetKey);
+
+                    if (neighborTile != null)
+                    {
+                        validNeighbors.Add(neighborTile);
+                    }
+                }
+            }
+
+            // Cache the list cleanly as an array onto your class object
+            tile.NeighbouringTiles = validNeighbors.ToArray();
+        }
     }
 
+    // Returns the tile at a given grid position
+    public IslandTile GetTileAt(Vector3I gridPos) => _tileData.TryGetValue(gridPos, out var tile) ? tile : null;
+
+    public IslandTile GetTallestUnoccupiedTile()
+    {
+        if (_tileData.Count == 0) return null;
+        
+        // Filter out occupied tiles first, then find the one with the maximum Y
+        return _tileData.Values
+            .Where(tile => !tile.IsOccupied)
+            .MaxBy(tile => tile.GridPosition.Y);
+    }
+    
     public System.Collections.Generic.IEnumerable<Vector3I> GetTileCacheKeys()
     {
         return _tileData.Keys;
@@ -321,4 +368,6 @@ public partial class IslandGenerator : GridMap
         Vector2I key = new Vector2I(x, z);
         return _columnTopY.TryGetValue(key, out int y) ? y : -1;
     }
+
+    
 }

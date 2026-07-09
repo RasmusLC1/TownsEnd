@@ -10,9 +10,7 @@ public enum TileType
 
 
 /// <summary>
-/// Per-tile cached data. This is a plain C# class (not a Node/Resource) because
-/// you'll likely have thousands of these -- keeping them lightweight matters.
-/// Add whatever fields your game actually needs (resource yield, owner, etc.).
+/// Per-tile cached data for quick lookups, pure C# instead of Nodes for performance
 /// </summary>
 public class IslandTile
 {
@@ -27,4 +25,10 @@ public class IslandTile
     public Node3D OccupyingObject = null; 
 
     public Dictionary<string, Variant> Metadata = new();
+
+    public IslandTile[] NeighbouringTiles = new IslandTile[]{};
+
 }
+
+
+
