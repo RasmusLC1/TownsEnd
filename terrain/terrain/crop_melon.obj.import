@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bkg480ahgnxri"
+path="res://.godot/imported/crop_melon.obj-8bb1028e9e6c23e80013430ad82a794d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crop_melon.obj-8bb1028e9e6c23e80013430ad82a794d.mesh"]
+
+source_file="res://terrain/terrain/crop_melon.obj"
+dest_files=["res://.godot/imported/crop_melon.obj-8bb1028e9e6c23e80013430ad82a794d.mesh", "res://.godot/imported/crop_melon.obj-8bb1028e9e6c23e80013430ad82a794d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

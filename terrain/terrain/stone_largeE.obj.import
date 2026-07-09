@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bef2lni8bbidf"
+path="res://.godot/imported/stone_largeE.obj-d90db9a81923c0f9b2f55d29112ecbac.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stone_largeE.obj-d90db9a81923c0f9b2f55d29112ecbac.mesh"]
+
+source_file="res://terrain/terrain/stone_largeE.obj"
+dest_files=["res://.godot/imported/stone_largeE.obj-d90db9a81923c0f9b2f55d29112ecbac.mesh", "res://.godot/imported/stone_largeE.obj-d90db9a81923c0f9b2f55d29112ecbac.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://daoj7p48cvvhy"
+path="res://.godot/imported/cactus_short.obj-420fb2d808a739f98030772d1bd29e9c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cactus_short.obj-420fb2d808a739f98030772d1bd29e9c.mesh"]
+
+source_file="res://terrain/terrain/cactus_short.obj"
+dest_files=["res://.godot/imported/cactus_short.obj-420fb2d808a739f98030772d1bd29e9c.mesh", "res://.godot/imported/cactus_short.obj-420fb2d808a739f98030772d1bd29e9c.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
