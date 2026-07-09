@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://npwy5wvwbdy7"]
+
+[ext_resource type="ArrayMesh" uid="uid://v0qc4pljoqwk" path="res://terrain/terrain/plant_flatShort.obj" id="1_mme5p"]
+
+[node name="plant_7" type="MeshInstance3D" unique_id=1477391787]
+mesh = ExtResource("1_mme5p")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://csjbtfgitedym"]
+
+[ext_resource type="ArrayMesh" uid="uid://bg0boyrpqi67" path="res://terrain/terrain/mushroom_redGroup.obj" id="1_yage1"]
+
+[node name="plant_10" type="MeshInstance3D" unique_id=543806583]
+mesh = ExtResource("1_yage1")

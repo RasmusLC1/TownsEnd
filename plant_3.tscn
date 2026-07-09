@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cl54mhxnyr67v"]
+
+[ext_resource type="ArrayMesh" uid="uid://b4necnypb5dk2" path="res://terrain/terrain/plant_bushLarge.obj" id="1_0dyuc"]
+
+[node name="plant_3" type="MeshInstance3D" unique_id=164832214]
+mesh = ExtResource("1_0dyuc")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dg30bex15mrby"]
+
+[ext_resource type="ArrayMesh" uid="uid://b6dxc6o2onuh1" path="res://terrain/terrain/grass_leafs.obj" id="1_ink6w"]
+
+[node name="plant_16" type="MeshInstance3D" unique_id=1723907945]
+mesh = ExtResource("1_ink6w")
