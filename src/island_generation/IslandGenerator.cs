@@ -98,8 +98,20 @@ public partial class IslandGenerator : GridMap
 
         GD.Print($"Generation Complete! Placed {totalTilesPlaced} tiles across the grid.");
 
+        ExecuteRiverGenerators();
         // Dynamically execute all attached feature spawner decorators (Trees, Boxes, etc.)
         ExecuteFeatureSpawners();
+    }
+
+    private void ExecuteRiverGenerators()
+    {
+        foreach (Node child in GetChildren())
+        {
+            if (child is RiverGenerator riverGen)
+            {
+                riverGen.GenerateRiver(this, _rng);
+            }
+        }
     }
 
     private void ResetGeneratorState()
@@ -298,5 +310,15 @@ public partial class IslandGenerator : GridMap
     public System.Collections.Generic.IEnumerable<Vector3I> GetTileCacheKeys()
     {
         return _tileData.Keys;
+    }
+
+    /// <summary>
+    /// Fast O(1) lookup to get the highest surface Y position for a given (x, z) coordinate.
+    /// Returns -1 if the column is empty/ocean.
+    /// </summary>
+    public int GetSurfaceYAt(int x, int z)
+    {
+        Vector2I key = new Vector2I(x, z);
+        return _columnTopY.TryGetValue(key, out int y) ? y : -1;
     }
 }
