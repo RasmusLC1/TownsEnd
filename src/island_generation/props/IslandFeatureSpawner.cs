@@ -8,7 +8,6 @@ public abstract partial class IslandFeatureSpawner : Node
     
     protected IslandGenerator Generator;
     
-    // Kept protected so children can read if needed, managed cleanly by base class
     protected readonly List<Node3D> SpawnedFeatures = new();
 
     public virtual void Initialize(IslandGenerator generator)
@@ -27,17 +26,15 @@ public abstract partial class IslandFeatureSpawner : Node
             return;
         }
 
-        // 1. Gather filtered candidates
-        List<Vector3I> candidates = new();
-        foreach (var coordinate in Generator.GetTileCacheKeys())
+        // 1. Gather filtered candidates -- iterating surface tiles directly
+        // means every candidate here is already guaranteed to be a real,
+        // walkable, topmost tile. No more separate IsTopmostTile re-check.
+        List<IslandTile> candidates = new();
+        foreach (IslandTile tile in Generator.GetAllSurfaceTiles())
         {
-            IslandTile tile = Generator.GetTileAt(coordinate);
-            if (tile != null && tile.IsWalkable && !tile.IsOccupied && Generator.IsTopmostTile(coordinate))
+            if (!tile.IsOccupied && IsValidSpawnTile(tile))
             {
-                if (IsValidSpawnTile(tile))
-                {
-                    candidates.Add(coordinate);
-                }
+                candidates.Add(tile);
             }
         }
 
@@ -54,27 +51,23 @@ public abstract partial class IslandFeatureSpawner : Node
         int actualCount = Mathf.Min(SpawnCount, candidates.Count);
         for (int i = 0; i < actualCount; i++)
         {
-            Vector3I targetGridPos = candidates[i];
-            IslandTile tile = Generator.GetTileAt(targetGridPos);
+            IslandTile tile = candidates[i];
+            Vector3I targetGridPos = tile.GridPosition;
 
             PackedScene chosenScene = GetRandomTemplate(rng);
             if (chosenScene == null) continue;
 
             Node3D featureInstance = chosenScene.Instantiate<Node3D>();
             
-            // Allow child customization hooks before position calculations
             OnFeatureInstantiated(featureInstance, targetGridPos, rng);
 
-            // Dynamically query calculated placement matrix position
             featureInstance.Position = CalculateSpawnPosition(targetGridPos, featureInstance);
 
-            // Let children execute modifications after positioning (like rotations)
             PostPositionFeature(featureInstance, rng);
 
             Generator.AddChild(featureInstance);
             SpawnedFeatures.Add(featureInstance);
 
-            // Safely lock down the structural cells
             tile.IsOccupied = true;
             tile.IsWalkable = false;
             tile.OccupyingObject = featureInstance;
