@@ -12,6 +12,7 @@ public partial class IslandGenerator : GridMap
     private int _noiseSeed = 0;
     private float _islandRadius = 60.0f;
 
+
     [Export] 
     public int MaxHeight 
     { 
@@ -82,7 +83,7 @@ public partial class IslandGenerator : GridMap
         BuildColumns();
         LinkTileNeighborhood();
 
-        ExecuteRiverGenerators();
+        ExecuteRiverCarving();
         // Dynamically execute all attached feature spawner decorators (Trees, Boxes, etc.)
         ExecuteFeatureSpawners();
     }
@@ -107,16 +108,7 @@ public partial class IslandGenerator : GridMap
         GD.Print($"Generation Complete! Placed {totalTilesPlaced} tiles across the grid ({_surfaceTiles.Count} surface tiles).");
     }
 
-    private void ExecuteRiverGenerators()
-    {
-        foreach (Node child in GetChildren())
-        {
-            if (child is RiverGenerator riverGen)
-            {
-                riverGen.GenerateRiver(this, _rng);
-            }
-        }
-    }
+    
 
     private void ResetGeneratorState()
     {
@@ -358,6 +350,55 @@ public partial class IslandGenerator : GridMap
 
             tile.NeighbouringTiles = validNeighbors.ToArray();
         }
+    }
+
+    private void ExecuteRiverCarving()
+    {
+        RiverGenerator riverGen = null;
+
+        foreach (Node child in GetChildren())
+        {
+            if (child is RiverGenerator foundGen)
+            {
+                riverGen = foundGen;
+                break;
+            }
+        }
+
+        if (riverGen == null)
+        {
+            riverGen = new RiverGenerator(); 
+        }
+
+            // 1. Calculate the full path sequence while the neighborhood mapping is completely intact
+            List<Vector3I> carveTargets = riverGen.GetRiverCarvePath(this, _rng);
+            
+            GD.Print($"[IslandGenerator] Total river positions calculated to clear: {carveTargets.Count}");
+
+            // 2. Batch execute the destruction now that the path sequence is locked in
+            foreach (Vector3I pos in carveTargets)
+            {
+                RemoveColumn(pos);
+            }
+    }
+    public void RemoveColumn(Vector3I gridPos)
+    {
+        Vector2I xzCoord = new Vector2I(gridPos.X, gridPos.Z);
+        _surfaceTiles.Remove(xzCoord);
+
+        for (int y = 0; y <= MaxHeight + 5; y++)
+        {
+            // Create the specific position for this Y layer
+            Vector3I currentPos = new Vector3I(gridPos.X, y, gridPos.Z);
+
+            // FIX: Make sure we pass currentPos here, not gridPos!
+            SetCellItem(currentPos, -1); 
+
+            _tileData.Remove(currentPos);
+        }
+        
+        // Force the editor to redraw this grid section
+        NotifyPropertyListChanged();
     }
 
     /// <summary> Full-column lookup -- includes buried/stone layers. Use for cliffs/caves. </summary>

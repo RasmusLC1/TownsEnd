@@ -1,71 +1,71 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 [Tool]
 public partial class RiverGenerator : Node
 {
-    [Export] public int RiverMeshStartId = 294;
+    [Export(PropertyHint.Range, "0,1")] public float MomentumBias { get; set; } = 0.4f;
+    [Export(PropertyHint.Range, "0,3")] public float OutwardBias { get; set; } = 1.8f;
+    [Export(PropertyHint.Range, "1,5")] public int BaseRiverWidth { get; set; } = 2;
+    [Export] public int SpawnCount { get; set; } = 4; // 3-4 distinct rivers usually look best!
 
-    public int TileRiverCorner      => RiverMeshStartId + 0;
-    public int TileRiverCornerSmall => RiverMeshStartId + 1;
-    public int TileRiverCross       => RiverMeshStartId + 2;
-    public int TileRiverEnd         => RiverMeshStartId + 3;
-    public int TileRiverEndClosed   => RiverMeshStartId + 4;
-    public int TileRiverOpen        => RiverMeshStartId + 5;
-    public int TileRiverRocks       => RiverMeshStartId + 6;
-    public int TileRiverSide        => RiverMeshStartId + 7;
-    public int TileRiverSideOpen    => RiverMeshStartId + 8;
-    public int TileRiverSplit       => RiverMeshStartId + 9;
-    public int TileRiverStraight    => RiverMeshStartId + 10;
-    public int TileRiverTile        => RiverMeshStartId + 11;
-
-    // How strongly the river favors the single steepest downhill neighbor.
-    // 1.0 = always steepest (rigid, jagged). Lower values let it wander more,
-    // producing natural-looking curves. Try 0.5-0.7 as a starting point.
-    [Export(PropertyHint.Range, "0,1")] public float SteepnessBias = 0.65f;
-
-    // Cardinal directions on the XZ plane. Order matters -- everything below
-    // (yaw angles, corner selection) is built around this fixed indexing.
-    private static readonly Vector2I[] Directions =
+    public List<Vector3I> GetRiverCarvePath(IslandGenerator generator, RandomNumberGenerator rng)
     {
-        new Vector2I(0, -1), // 0: North
-        new Vector2I(1, 0),  // 1: East
-        new Vector2I(0, 1),  // 2: South
-        new Vector2I(-1, 0), // 3: West
-    };
+        GD.Print("[RiverGenerator] Running multi-river pathway distribution...");
 
-    public void GenerateRiver(IslandGenerator generator, RandomNumberGenerator rng)
-    {
-        GD.Print("[RiverGenerator] Carving river pathway...");
+        var surfaceTiles = generator.GetAllSurfaceTiles().Where(t => !t.IsOccupied).ToList();
+        if (!surfaceTiles.Any()) return new List<Vector3I>();
 
-        IslandTile source = generator.GetTallestUnoccupiedTile();
-        if (source == null)
+        HashSet<Vector3I> uniqueCarvePositions = new();
+
+        // Find high-altitude tiles near the center to act as a source mountain range
+        var candidateSources = surfaceTiles
+            .OrderBy(tile => new Vector2(tile.GridPosition.X, tile.GridPosition.Z).LengthSquared())
+            .Take(50) // Grab the top 50 closest to center
+            .OrderByDescending(tile => tile.GridPosition.Y) // Sort by highest elevation
+            .ToList();
+
+        int activeStreams = Mathf.Min(SpawnCount, candidateSources.Count);
+
+        for (int i = 0; i < activeStreams; i++)
         {
-            GD.PrintErr("[RiverGenerator] No valid source tile found.");
-            return;
+            // Pick distinct starting spots so they don't choke the center point
+            int sourceIndex = (i * 7) % candidateSources.Count;
+            IslandTile source = candidateSources[sourceIndex];
+
+            List<IslandTile> tilePath = TraceRiverPath(source, generator, rng);
+            
+            // Expand each distinct path organically
+            foreach (var tile in tilePath)
+            {   
+                int radius = BaseRiverWidth - 1; 
+                Vector3I centerPos = tile.GridPosition;
+
+                for (int xOffset = -radius; xOffset <= radius; xOffset++)
+                {
+                    for (int zOffset = -radius; zOffset <= radius; zOffset++)
+                    {
+                        // Direct circular brush validation
+                        if ((xOffset * xOffset) + (zOffset * zOffset) <= radius * radius)
+                        {
+                            Vector3I neighborPos = new Vector3I(
+                                centerPos.X + xOffset,
+                                centerPos.Y,
+                                centerPos.Z + zOffset
+                            );
+                            uniqueCarvePositions.Add(neighborPos);
+                        }
+                    }
+                }
+            }
         }
 
-        List<IslandTile> path = TraceDownhillPath(source, generator, rng);
-
-        if (path.Count < 2)
-        {
-            GD.PrintErr("[RiverGenerator] River path too short to place -- source may be landlocked or sitting in a local pit.");
-            return;
-        }
-
-        PlaceRiverTiles(path, generator);
-
-        GD.Print($"[RiverGenerator] River generated across {path.Count} tiles.");
+        return uniqueCarvePositions.ToList();
     }
 
-    /// <summary>
-    /// Walks downhill from the source, always moving to strictly lower or
-    /// equal ground (never uphill), biased toward the steepest drop but with
-    /// enough randomness and directional momentum to curve naturally instead
-    /// of being a rigid straight line or a jittery zig-zag.
-    /// </summary>
-    private List<IslandTile> TraceDownhillPath(IslandTile source, IslandGenerator generator, RandomNumberGenerator rng)
+    private List<IslandTile> TraceRiverPath(IslandTile source, IslandGenerator generator, RandomNumberGenerator rng)
     {
         var path = new List<IslandTile> { source };
         var visited = new HashSet<Vector3I> { source.GridPosition };
@@ -73,13 +73,24 @@ public partial class RiverGenerator : Node
         IslandTile current = source;
         Vector2I lastDirection = Vector2I.Zero;
 
-        int maxSteps = (int)generator.IslandRadius + 40;
+        int maxSteps = (int)generator.IslandRadius * 3;
 
         for (int step = 0; step < maxSteps; step++)
         {
+            // Coastline detection rule: less than 4 neighbors means we hit the map ocean boundary
+            if (current.NeighbouringTiles == null || current.NeighbouringTiles.Length < 4)
+            {
+                GD.Print($"[RiverGenerator] Coastline reached at {current.GridPosition} after {step} steps.");
+                break;
+            }
+
             IslandTile next = PickNextTile(current, visited, lastDirection, rng);
             if (next == null)
-                break; // Dead end: coastline, a local pit, or no unvisited downhill tiles left.
+            {
+                // Force a lenient fallback step to prevent early locking
+                next = current.NeighbouringTiles.FirstOrDefault(n => !visited.Contains(n.GridPosition));
+                if (next == null) break; 
+            }
 
             lastDirection = new Vector2I(
                 Mathf.Sign(next.GridPosition.X - current.GridPosition.X),
@@ -95,47 +106,51 @@ public partial class RiverGenerator : Node
 
     private IslandTile PickNextTile(IslandTile current, HashSet<Vector3I> visited, Vector2I lastDirection, RandomNumberGenerator rng)
     {
-        // Only ever flow downhill or across flat ground -- this is the fix
-        // for the "flows uphill" bug: compare against the CURRENT tile,
-        // not just against other candidates.
         var candidates = new List<IslandTile>();
+        var weights = new List<float>();
+        float totalWeight = 0f;
+
+        float currentDistSq = new Vector2(current.GridPosition.X, current.GridPosition.Z).LengthSquared();
+
         foreach (IslandTile neighbor in current.NeighbouringTiles)
-        {
-            if (visited.Contains(neighbor.GridPosition))
+        {   
+            if (visited.Contains(neighbor.GridPosition)) 
                 continue;
-            if (neighbor.GridPosition.Y <= current.GridPosition.Y)
-                candidates.Add(neighbor);
+
+            Vector2I dir = new Vector2I(
+                neighbor.GridPosition.X - current.GridPosition.X,
+                neighbor.GridPosition.Z - current.GridPosition.Z
+            );
+
+            if (lastDirection != Vector2I.Zero && (dir.X == -lastDirection.X && dir.Y == -lastDirection.Y))
+                continue;
+
+            float weight = 0.1f; // Base random wiggle weight
+
+            // 1. Momentum Check
+            if (lastDirection != Vector2I.Zero && dir == lastDirection)
+            {
+                weight += MomentumBias; 
+            }
+
+            // 2. Outward Push Logic (Forces tiles moving away from center to win out)
+            float neighborDistSq = new Vector2(neighbor.GridPosition.X, neighbor.GridPosition.Z).LengthSquared();
+            if (neighborDistSq > currentDistSq)
+            {
+                weight += OutwardBias;
+            }
+
+            candidates.Add(neighbor);
+            weights.Add(weight);
+            totalWeight += weight;
         }
 
         if (candidates.Count == 0)
             return null;
 
-        // Weighted pick: steeper drop = more weight (flows downhill),
-        // continuing the same direction as the last step = more weight
-        // (reduces jaggedness), small random jitter so it isn't perfectly
-        // deterministic. This combination is what produces natural curves.
-        float totalWeight = 0f;
-        var weights = new float[candidates.Count];
-
-        for (int i = 0; i < candidates.Count; i++)
-        {
-            IslandTile candidate = candidates[i];
-            int drop = current.GridPosition.Y - candidate.GridPosition.Y;
-
-            Vector2I dir = new Vector2I(
-                Mathf.Sign(candidate.GridPosition.X - current.GridPosition.X),
-                Mathf.Sign(candidate.GridPosition.Z - current.GridPosition.Z));
-
-            float directionBonus = (lastDirection != Vector2I.Zero && dir == lastDirection) ? 1.0f : 0.0f;
-
-            float weight = (drop * SteepnessBias) + (directionBonus * (1.0f - SteepnessBias)) + 0.05f;
-            weights[i] = Mathf.Max(weight, 0.01f); // keep every candidate reachable, never fully zero
-
-            totalWeight += weights[i];
-        }
-
         float roll = rng.RandfRange(0f, totalWeight);
         float cumulative = 0f;
+
         for (int i = 0; i < candidates.Count; i++)
         {
             cumulative += weights[i];
@@ -143,94 +158,6 @@ public partial class RiverGenerator : Node
                 return candidates[i];
         }
 
-        return candidates[candidates.Count - 1];
-    }
-
-    /// <summary>
-    /// Second pass over the finished path: for each tile, works out which
-    /// directions it connects to (previous/next tile) and places the
-    /// matching river piece -- end, straight, or corner -- at the right
-    /// rotation, instead of stamping the same "open" tile everywhere.
-    /// Replaces the existing ground tile in-place, so the river sits AT
-    /// terrain height rather than floating above it on an offset.
-    /// </summary>
-    private void PlaceRiverTiles(List<IslandTile> path, IslandGenerator generator)
-    {
-        for (int i = 0; i < path.Count; i++)
-        {
-            IslandTile tile = path[i];
-
-            var connections = new List<int>();
-            if (i > 0) connections.Add(DirectionIndexTo(path[i - 1].GridPosition, tile.GridPosition));
-            if (i < path.Count - 1) connections.Add(DirectionIndexTo(path[i + 1].GridPosition, tile.GridPosition));
-
-            (int meshId, float yawDegrees) = ResolveRiverPiece(connections);
-
-            generator.SetCellItem(tile.GridPosition, meshId, YawToOrientation(yawDegrees, generator));
-
-            tile.IsWalkable = false;
-            tile.IsOccupied = true;
-        }
-    }
-
-    /// <summary> Direction index (matching Directions[]) pointing FROM `to`'s position TOWARD `from`'s position. </summary>
-    private int DirectionIndexTo(Vector3I from, Vector3I to)
-    {
-        Vector2I delta = new Vector2I(from.X - to.X, from.Z - to.Z);
-        for (int i = 0; i < Directions.Length; i++)
-        {
-            if (Directions[i] == delta)
-                return i;
-        }
-        return 0; // Shouldn't happen for orthogonally-adjacent path tiles.
-    }
-
-    /// <summary>
-    /// Given 1 or 2 connection directions, picks the matching mesh (end,
-    /// straight, or corner) and the yaw needed to orient it.
-    /// IMPORTANT: the yaw values below assume a specific default facing for
-    /// each source mesh (e.g. the corner piece modeled as connecting
-    /// North+East at 0 degrees). I can't verify that against your actual
-    /// assets -- if pieces come out rotated wrong in the editor, it's a
-    /// fixed offset issue: add/subtract a constant (usually a multiple of
-    /// 90) to the returned yaw until they line up.
-    /// </summary>
-    private (int meshId, float yawDegrees) ResolveRiverPiece(List<int> connections)
-    {
-        if (connections.Count == 1)
-        {
-            // A single connection = the source spring or the river's mouth.
-            return (TileRiverEnd, DirectionIndexToYaw(connections[0]));
-        }
-
-        int a = Mathf.Min(connections[0], connections[1]);
-        int b = Mathf.Max(connections[0], connections[1]);
-
-        // Opposite directions = straight segment.
-        if (a == 0 && b == 2) return (TileRiverStraight, 0f);   // North-South
-        if (a == 1 && b == 3) return (TileRiverStraight, 90f);  // East-West
-
-        // Adjacent directions = corner. Each remaining pair is exactly one
-        // of the 4 possible corners.
-        if (a == 0 && b == 1) return (TileRiverCorner, 0f);    // North-East
-        if (a == 1 && b == 2) return (TileRiverCorner, 90f);   // East-South
-        if (a == 2 && b == 3) return (TileRiverCorner, 180f);  // South-West
-        if (a == 0 && b == 3) return (TileRiverCorner, 270f);  // North-West
-
-        // Shouldn't be reachable, but fail soft instead of crashing.
-        return (TileRiverOpen, 0f);
-    }
-
-    private float DirectionIndexToYaw(int directionIndex) => directionIndex * 90f;
-
-    /// <summary>
-    /// Converts a yaw in degrees to one of GridMap's 24 valid orthogonal
-    /// cell orientations, so the mesh's pre-baked rotation is used correctly
-    /// instead of every piece defaulting to identity rotation.
-    /// </summary>
-    private int YawToOrientation(float yawDegrees, GridMap gridMap)
-    {
-        Basis basis = new Basis(Vector3.Up, Mathf.DegToRad(yawDegrees));
-        return gridMap.GetOrthogonalIndexFromBasis(basis);
+        return candidates[^1];
     }
 }
