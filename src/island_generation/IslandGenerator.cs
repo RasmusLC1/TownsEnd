@@ -52,8 +52,8 @@ public partial class IslandGenerator : GridMap
     }
 
     // Mesh library IDs
-    private const int TileGrass = 83;
-    private const int TileSand = 41;
+    private const int TileGrass = 41;
+    private const int TileSand = 83;
     private const int TileStone = 85;
 
     private FastNoiseLite _noise;
@@ -391,13 +391,39 @@ public partial class IslandGenerator : GridMap
             // Create the specific position for this Y layer
             Vector3I currentPos = new Vector3I(gridPos.X, y, gridPos.Z);
 
-            // FIX: Make sure we pass currentPos here, not gridPos!
             SetCellItem(currentPos, -1); 
 
             _tileData.Remove(currentPos);
         }
         
         // Force the editor to redraw this grid section
+        NotifyPropertyListChanged();
+    }
+
+    public void RemoveTile(Vector3I gridPos)
+    {
+        // 1. Visually erase the 3D block from the GridMap scene
+        SetCellItem(gridPos, -1);
+
+        // 2. Clear the internal backend tracking data record
+        if (!_tileData.Remove(gridPos))
+        {
+            return; // The tile didn't exist in our backend data structure anyway
+        }
+
+        // 3. Handle surface validation exactly like a precise column step
+        Vector2I xzCoord = new Vector2I(gridPos.X, gridPos.Z);
+        
+        if (_surfaceTiles.TryGetValue(xzCoord, out IslandTile surfaceTile))
+        {
+            // Only drop the surface tracking entry if this specific vertical block was the surface layer
+            if (surfaceTile.GridPosition == gridPos)
+            {
+                _surfaceTiles.Remove(xzCoord);
+            }
+        }
+
+        // 4. Force the editor to update and redraw this grid section
         NotifyPropertyListChanged();
     }
 
