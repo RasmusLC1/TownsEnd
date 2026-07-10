@@ -10,7 +10,7 @@ public partial class BoxSpawner : IslandFeatureSpawner
     protected override bool ValidateTemplates() => BoxTemplate != null;
 
     // Boxes run everywhere except pure cliff tiles (Sand or Grass)
-    protected override bool IsValidSpawnTile(IslandTile tile) => true; 
+    protected override bool IsValidSpawnTile(IslandTile tile) => tile.Type == TileType.Grass; 
 
     protected override PackedScene GetRandomTemplate(RandomNumberGenerator rng) => BoxTemplate;
 
@@ -25,8 +25,5 @@ public partial class BoxSpawner : IslandFeatureSpawner
         }
     }
 
-    protected override Vector3 CalculateSpawnPosition(Vector3I gridPos, Node3D instance)
-    {
-        return Generator.CalculateLocalPos(gridPos, instance);
-    }
+    
 }

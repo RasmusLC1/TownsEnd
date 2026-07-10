@@ -266,15 +266,15 @@ public partial class IslandGenerator : GridMap
     /// OPTIONAL adjustment on top of the correct base placement (e.g. -0.05
     /// to sink a trunk slightly into the ground), not a replacement for it.
     /// </summary>
-    public Vector3 CalculateLocalPos(Vector3I gridPos, Node3D entity, float? extraNudgeY = null)
+    public Vector3 CalculateLocalPos(Vector3I gridPos, Node3D entity)
     {
         Vector3 localPos = MapToLocal(gridPos);
         float tileTopY = localPos.Y + (CellSize.Y / 2.0f);
 
         Aabb? entityBounds = GetVisualAabb(entity);
-        float baseLift = entityBounds.HasValue ? -entityBounds.Value.Position.Y * entity.Scale.Y : 0.0f;
+        float baseLift = entityBounds.HasValue ? -entityBounds.Value.Position.Y: 0.0f;
 
-        localPos.Y = tileTopY + baseLift + (extraNudgeY ?? 0.0f);
+        localPos.Y = tileTopY + baseLift + 1; // Offset by 1 for tile size
         return localPos;
     }
 

@@ -19,12 +19,6 @@ public partial class TreeSpawner : IslandFeatureSpawner
         instance.Name = $"Tree_{gridPos.X}_{gridPos.Z}";
     }
 
-    protected override Vector3 CalculateSpawnPosition(Vector3I gridPos, Node3D instance)
-    {
-        // Maintains your custom scale factor alignment logic
-        return Generator.CalculateLocalPos(gridPos, instance, instance.Scale.Y / 2);
-    }
-
     protected override void PostPositionFeature(Node3D instance, RandomNumberGenerator rng)
     {
         instance.RotateY(rng.Randf() * Mathf.Pi * 2.0f);

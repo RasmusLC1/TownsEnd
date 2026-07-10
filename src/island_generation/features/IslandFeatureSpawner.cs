@@ -76,6 +76,11 @@ public abstract partial class IslandFeatureSpawner : Node
         GD.Print($"[{GetType().Name}] Successfully generated {SpawnedFeatures.Count} features.");
     }
 
+    public virtual Vector3 CalculateSpawnPosition(Vector3I gridPos, Node3D instance)
+    {
+        return Generator.CalculateLocalPos(gridPos, instance);
+    }
+
     public virtual void ClearFeatures()
     {
         foreach (var feature in SpawnedFeatures)
@@ -92,5 +97,4 @@ public abstract partial class IslandFeatureSpawner : Node
     protected abstract PackedScene GetRandomTemplate(RandomNumberGenerator rng);
     protected virtual void OnFeatureInstantiated(Node3D instance, Vector3I gridPos, RandomNumberGenerator rng) {}
     protected virtual void PostPositionFeature(Node3D instance, RandomNumberGenerator rng) {}
-    protected abstract Vector3 CalculateSpawnPosition(Vector3I gridPos, Node3D instance);
 }
