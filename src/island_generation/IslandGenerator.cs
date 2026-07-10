@@ -50,7 +50,7 @@ public partial class IslandGenerator : GridMap
         set { if (value) { Clear(); GenerateIsland(); } }
     }
 
-    // Mesh library IDs (Verify these in your MeshLibrary tab)
+    // Mesh library IDs
     private const int TileGrass = 83;
     private const int TileSand = 41;
     private const int TileStone = 85;
@@ -59,11 +59,10 @@ public partial class IslandGenerator : GridMap
     private RandomNumberGenerator _rng = new RandomNumberGenerator();
 
     // The cache: every placed cell gets an entry here, keyed by the same
-    // Vector3I grid coordinate you pass to SetCellItem.
+    // Vector3I grid coordinate passed to SetCellItem.
     private Dictionary<Vector3I, IslandTile> _tileData = new();
 
-    // Top Y of each (x, z) column, used to avoid spawning features in spots
-    // pinned right against a much taller neighboring column.
+    // Top Y of each (x, z) column, converts the map to 2D
     private Dictionary<Vector2I, int> _columnTopY = new();
 
     public override void _Ready()
@@ -78,8 +77,17 @@ public partial class IslandGenerator : GridMap
         ResetGeneratorState();
         ConfigureNoiseAndRandomness();
 
+        BuildColumns();
+        LinkTileNeighborhood();
+
+        ExecuteRiverGenerators();
+        // Dynamically execute all attached feature spawner decorators (Trees, Boxes, etc.)
+        ExecuteFeatureSpawners();
+    }
+
+    private void BuildColumns()
+    {
         int totalTilesPlaced = 0;
-        
         // Calculate boundaries dynamically based on your desired radius 
         // adding a small padding buffer so edges transition cleanly
         int halfWidth = (int)IslandRadius + 10;
@@ -96,12 +104,7 @@ public partial class IslandGenerator : GridMap
                 totalTilesPlaced += BuildTileColumn(x, z, calculatedHeight);
             }
         }
-        LinkTileNeighborhood();
         GD.Print($"Generation Complete! Placed {totalTilesPlaced} tiles across the grid.");
-
-        ExecuteRiverGenerators();
-        // Dynamically execute all attached feature spawner decorators (Trees, Boxes, etc.)
-        ExecuteFeatureSpawners();
     }
 
     private void ExecuteRiverGenerators()
@@ -200,6 +203,7 @@ public partial class IslandGenerator : GridMap
         return tilesPlacedInColumn;
     }
 
+    // Executes all the island prop spawning
     private void ExecuteFeatureSpawners()
     {
         foreach (Node child in GetChildren())
