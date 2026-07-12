@@ -199,7 +199,7 @@ public partial class IslandGenerator : GridMap
             if (child is IslandFeatureSpawner spawner)
             {
                 spawner.Initialize(this);
-                spawner.ExecutionPlacement(_rng);
+                spawner.GenerateFeatures(_rng);
             }
         }
     }

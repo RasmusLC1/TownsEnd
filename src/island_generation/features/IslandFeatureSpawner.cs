@@ -16,7 +16,7 @@ public abstract partial class IslandFeatureSpawner : Node
     }
 
     /// <summary> Template method handling the core layout orchestrations. </summary>
-    public virtual void ExecutionPlacement(RandomNumberGenerator rng)
+    public virtual void GenerateFeatures(RandomNumberGenerator rng)
     {
         ClearFeatures();
 
@@ -25,10 +25,16 @@ public abstract partial class IslandFeatureSpawner : Node
             GD.PrintErr($"[{GetType().Name}] Template configuration validation failed!");
             return;
         }
+        List<IslandTile> candidates = GenerateCandidates(rng);
+        if (candidates.Count == 0) return;
+        
+        PlaceFeatures(rng, candidates);
 
-        // 1. Gather filtered candidates -- iterating surface tiles directly
-        // means every candidate here is already guaranteed to be a real,
-        // walkable, topmost tile. No more separate IsTopmostTile re-check.
+        GD.Print($"[{GetType().Name}] Successfully generated {SpawnedFeatures.Count} features.");
+    }
+
+    private List<IslandTile> GenerateCandidates(RandomNumberGenerator rng)
+    {
         List<IslandTile> candidates = new();
         foreach (IslandTile tile in Generator.GetAllSurfaceTiles())
         {
@@ -38,7 +44,7 @@ public abstract partial class IslandFeatureSpawner : Node
             }
         }
 
-        if (candidates.Count == 0) return;
+        if (candidates.Count == 0) return candidates;
 
         // 2. Fisher-Yates shuffle
         for (int i = candidates.Count - 1; i > 0; i--)
@@ -46,8 +52,12 @@ public abstract partial class IslandFeatureSpawner : Node
             int j = rng.RandiRange(0, i);
             (candidates[i], candidates[j]) = (candidates[j], candidates[i]);
         }
+        return candidates;
+    }
 
-        // 3. Spawning & placement execution
+    private void PlaceFeatures(RandomNumberGenerator rng, List<IslandTile> candidates)
+    {
+         // 3. Spawning & placement execution
         int actualCount = Mathf.Min(SpawnCount, candidates.Count);
         for (int i = 0; i < actualCount; i++)
         {
@@ -72,11 +82,9 @@ public abstract partial class IslandFeatureSpawner : Node
             tile.IsWalkable = false;
             tile.OccupyingObject = featureInstance;
         }
-
-        GD.Print($"[{GetType().Name}] Successfully generated {SpawnedFeatures.Count} features.");
     }
 
-    public virtual Vector3 CalculateSpawnPosition(Vector3I gridPos, Node3D instance)
+    protected virtual Vector3 CalculateSpawnPosition(Vector3I gridPos, Node3D instance)
     {
         return Generator.CalculateLocalPos(gridPos, instance);
     }

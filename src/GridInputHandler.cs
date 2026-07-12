@@ -1,52 +1,68 @@
 using Godot;
 using System;
 
+/// <summary>
+/// Resolves mouse drags/clicks into grid selections and renders the
+/// selection outline. Deliberately knows NOTHING about what a selection
+/// does -- that's entirely delegated to whichever IGridTool is assigned to
+/// each mouse button in the Inspector. Adding a new mouse-driven action
+/// means writing a new IGridTool, not touching this file.
+/// </summary>
 public partial class GridInputHandler : Node
 {
-    // Assign these in the Godot Inspector
     [Export] private Camera3D _camera;
     [Export] private IslandGenerator _islandGenerator;
 
+    // Assign any Node that implements IGridTool (e.g. TileRemovalTool,
+    // FeaturePlacementTool). Leave empty to disable that action entirely.
+    [Export] private Node _leftClickToolNode;    // Plain left click
+    [Export] private Node _leftShiftClickToolNode;  // Shift + left click
+
     [Export] private float _fallbackPlaneHeight = 0.0f;
-    [Export] private Color _outlineColor = new Color(0.4f, 0.8f, 1.0f, 0.9f);
     [Export] private float _outlineHeightMargin = 0.05f;
+
+    private IGridTool _primaryTool;
+    private IGridTool _secondaryTool;
 
     private Vector2I? _dragStartColumn;
     private bool _isDragging = false;
+    private IGridTool _activeDragTool;
 
     private MeshInstance3D _outlineInstance;
     private ImmediateMesh _outlineMesh;
+    private StandardMaterial3D _outlineMaterial;
 
     public override void _Ready()
     {
+        _primaryTool = ResolveTool(_leftClickToolNode);
+        _secondaryTool = ResolveTool(_leftShiftClickToolNode);
+
         CreateDragMesh();
-        // Parented directly under the GridMap so MapToLocal's output can be
-        // used as-is for the outline's own local-space positions.
         _islandGenerator.AddChild(_outlineInstance);
     }
 
+    private IGridTool ResolveTool(Node node)
+    {
+        if (node == null) return null;
 
-    /// <summary>
-    /// Creates a ImmediateMesh -> MeshInstance3D drag box with a
-    /// blue outline that can be used for drag functionality
-    /// Depth disabled
-    /// </summary>
-    public void CreateDragMesh()
+        if (node is IGridTool tool) return tool;
+
+        GD.PrintErr($"[GridInputHandler] '{node.Name}' is assigned as a tool but doesn't implement IGridTool.");
+        return null;
+    }
+
+    private void CreateDragMesh()
     {
         _outlineMesh = new ImmediateMesh();
         _outlineInstance = new MeshInstance3D { Mesh = _outlineMesh, Visible = false };
 
-        var material = new StandardMaterial3D
+        _outlineMaterial = new StandardMaterial3D
         {
             ShadingMode = BaseMaterial3D.ShadingModeEnum.Unshaded,
-            AlbedoColor = _outlineColor,
             Transparency = BaseMaterial3D.TransparencyEnum.Alpha,
-            // Keeps the outline visible even when it's nearly flush with the
-            // terrain surface, instead of z-fighting/disappearing into it.
             NoDepthTest = true
         };
-        _outlineInstance.MaterialOverride = material;
-
+        _outlineInstance.MaterialOverride = _outlineMaterial;
     }
 
     public override void _UnhandledInput(InputEvent @event)
@@ -55,40 +71,50 @@ public partial class GridInputHandler : Node
 
         if (@event is InputEventMouseButton mouseBtn && mouseBtn.ButtonIndex == MouseButton.Left)
         {
-            Left_Mouse_Click(mouseBtn);
+            if (mouseBtn.Pressed)
+            {
+                // Decided ONCE, here, at press time. We deliberately don't
+                // re-check ShiftPressed on release -- if the player releases
+                // Shift mid-drag before releasing the mouse button, the drag
+                // should still complete with whichever tool it started with,
+                // not silently get stuck because the modifier changed.
+                IGridTool tool = mouseBtn.ShiftPressed ? _secondaryTool : _primaryTool;
+                StartDrag(mouseBtn, tool);
+            }
+            else
+            {
+                EndDrag(mouseBtn);
+            }
         }
     }
 
-    private void Left_Mouse_Click(InputEventMouseButton mouseBtn)
+    private void StartDrag(InputEventMouseButton mouseBtn, IGridTool tool)
     {
-            if (mouseBtn.Pressed)
-            {
-                Handle_Left_Click(mouseBtn);
-                
-            }
-            else if (_isDragging && _dragStartColumn.HasValue)
-            {
-                Handle_Left_Drag(mouseBtn);
-            }
-    }
+        if (tool == null) return;
 
-    private void Handle_Left_Click(InputEventMouseButton mouseBtn)
-    {
         _dragStartColumn = GetGridColumnUnderMouse(mouseBtn.Position);
         _isDragging = _dragStartColumn.HasValue;
+        _activeDragTool = tool;
+
+        _outlineMaterial.AlbedoColor = tool.OutlineColor;
         _outlineInstance.Visible = _isDragging;
     }
 
-    private void Handle_Left_Drag(InputEventMouseButton mouseBtn)
+    private void EndDrag(InputEventMouseButton mouseBtn)
     {
+        if (!_isDragging || _activeDragTool == null || !_dragStartColumn.HasValue) return;
+
         Vector2I? dragEndColumn = GetGridColumnUnderMouse(mouseBtn.Position);
         if (dragEndColumn.HasValue)
         {
-            RemoveTilesInRectangle(_dragStartColumn.Value, dragEndColumn.Value);
+            // GridInputHandler still has no idea what this does -- could be
+            // deleting tiles, placing a tree, painting terrain, etc.
+            _activeDragTool.OnAreaSelected(_dragStartColumn.Value, dragEndColumn.Value);
         }
 
         _isDragging = false;
         _dragStartColumn = null;
+        _activeDragTool = null;
         _outlineInstance.Visible = false;
     }
 
@@ -110,8 +136,6 @@ public partial class GridInputHandler : Node
         int minZ = Math.Min(a.Y, b.Y);
         int maxZ = Math.Max(a.Y, b.Y);
 
-        // Sit slightly above the tallest tile currently in range so the
-        // outline doesn't clip into hills as the selection grows/shrinks.
         int maxSurfaceY = 0;
         bool foundAny = false;
         for (int x = minX; x <= maxX; x++)
@@ -130,8 +154,6 @@ public partial class GridInputHandler : Node
             ? _islandGenerator.MapToLocal(new Vector3I(0, maxSurfaceY, 0)).Y + (cellSize.Y / 2.0f) + _outlineHeightMargin
             : _islandGenerator.MapToLocal(Vector3I.Zero).Y + _outlineHeightMargin;
 
-        // MapToLocal gives cell CENTERS -- push outward by half a cell on
-        // each side so the outline traces the selection's true outer edge.
         Vector3 innerMin = _islandGenerator.MapToLocal(new Vector3I(minX, 0, minZ));
         Vector3 innerMax = _islandGenerator.MapToLocal(new Vector3I(maxX, 0, maxZ));
 
@@ -151,46 +173,10 @@ public partial class GridInputHandler : Node
         _outlineMesh.SurfaceAddVertex(c1);
         _outlineMesh.SurfaceAddVertex(c2);
         _outlineMesh.SurfaceAddVertex(c3);
-        _outlineMesh.SurfaceAddVertex(c0); // close the loop
+        _outlineMesh.SurfaceAddVertex(c0);
         _outlineMesh.SurfaceEnd();
     }
 
-    /// <summary>
-    /// Removes every surface tile whose column falls within the rectangle
-    /// spanning `a` and `b` (inclusive). When a == b, this removes exactly
-    /// one tile -- the same behavior as a plain click.
-    /// </summary>
-    private void RemoveTilesInRectangle(Vector2I a, Vector2I b)
-    {
-        int minX = Math.Min(a.X, b.X);
-        int maxX = Math.Max(a.X, b.X);
-        int minZ = Math.Min(a.Y, b.Y);
-        int maxZ = Math.Max(a.Y, b.Y);
-
-        int removed = 0;
-        for (int x = minX; x <= maxX; x++)
-        {
-            for (int z = minZ; z <= maxZ; z++)
-            {
-                IslandTile tile = _islandGenerator.GetSurfaceTileAt(x, z);
-                if (tile != null)
-                {
-                    _islandGenerator.RemoveTile(tile.GridPosition);
-                    removed++;
-                }
-            }
-        }
-
-        GD.Print($"[GridInputHandler] Removed {removed} tile(s) in selection ({minX},{minZ}) to ({maxX},{maxZ}).");
-    }
-
-    /// <summary>
-    /// Resolves the grid column under the mouse. Prefers an actual raycast
-    /// hit against terrain collision (matches the true topmost tile via
-    /// GetSurfaceTileAt, same as a normal click). Falls back to a flat
-    /// plane intersection if nothing was hit, so dragging across water or
-    /// gaps still produces a usable column for the selection rectangle.
-    /// </summary>
     private Vector2I? GetGridColumnUnderMouse(Vector2 mousePosition)
     {
         Vector3 rayOrigin = _camera.ProjectRayOrigin(mousePosition);
