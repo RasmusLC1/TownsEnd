@@ -16,7 +16,7 @@ public abstract partial class IslandFeatureSpawner : Node
     }
 
     /// <summary> Template method handling the core layout orchestrations. </summary>
-    public virtual void GenerateFeatures(RandomNumberGenerator rng)
+    public virtual void ExecutionPlacement(RandomNumberGenerator rng)
     {
         ClearFeatures();
 

@@ -83,9 +83,65 @@ public partial class IslandGenerator : GridMap
         BuildColumns();
         LinkTileNeighborhood();
 
+        PaintSandCoastline();
+
         ExecuteRiverCarving();
         // Dynamically execute all attached feature spawner decorators (Trees, Boxes, etc.)
         ExecuteFeatureSpawners();
+    }
+
+    private void PaintSandCoastline()
+    {
+
+        var (sandQueue, visitedCoords) = FindCoastTiles();
+
+        // 2. Flood fill inward to paint the sand ring
+        while (sandQueue.Count > 0)
+        {
+            var (currentTile, remainingDepth) = sandQueue.Dequeue();
+
+            // Convert the tile to sand
+            currentTile.Type = TileType.Sand;
+            currentTile.MeshId = TileSand;
+            SetCellItem(currentTile.GridPosition, TileSand);
+
+            // If we can still push deeper inland, check neighbors
+            if (remainingDepth > 1)
+            {
+                foreach (IslandTile neighbor in currentTile.NeighbouringTiles)
+                {
+                    Vector2I neighborCoord = new Vector2I(neighbor.GridPosition.X, neighbor.GridPosition.Z);
+                    
+                    if (!visitedCoords.Contains(neighborCoord))
+                    {
+                        visitedCoords.Add(neighborCoord);
+                        sandQueue.Enqueue((neighbor, remainingDepth - 1));
+                    }
+                }
+            }
+        }
+    }
+
+    // 1. Identify initial coastline tiles (any surface tile with fewer than 4 neighbors)
+    private (Queue<(IslandTile Tile, int Distance)> Queue, HashSet<Vector2I> Visited) FindCoastTiles()
+    {
+        var queue = new Queue<(IslandTile Tile, int Distance)>();
+        var visited = new HashSet<Vector2I>();
+
+        foreach (IslandTile tile in _surfaceTiles.Values)
+        {
+            if (tile.NeighbouringTiles.Length < 4)
+            {
+                int maxSandDepth = _rng.RandiRange(2, 4);
+                
+                queue.Enqueue((tile, maxSandDepth));
+                Vector2I coord = new Vector2I(tile.GridPosition.X, tile.GridPosition.Z);
+                visited.Add(coord);
+            }
+        }
+        
+        // Return them together as a tuple
+        return (queue, visited);
     }
 
     private void BuildColumns()
@@ -160,9 +216,9 @@ public partial class IslandGenerator : GridMap
 
             if (isSurface)
             {
-                bool isSand = y <= 1;
-                tileToPlace = isSand ? TileSand : TileGrass;
-                tileType = isSand ? TileType.Sand : TileType.Grass;
+                // Default everything to grass initially; we will overwrite the coastline with sand next
+                tileToPlace = TileGrass;
+                tileType = TileType.Grass;
             }
 
             var gridPos = new Vector3I(centeredX, y, centeredZ);
@@ -199,7 +255,7 @@ public partial class IslandGenerator : GridMap
             if (child is IslandFeatureSpawner spawner)
             {
                 spawner.Initialize(this);
-                spawner.GenerateFeatures(_rng);
+                spawner.ExecutionPlacement(_rng);
             }
         }
     }
@@ -258,7 +314,7 @@ public partial class IslandGenerator : GridMap
     /// OPTIONAL adjustment on top of the correct base placement (e.g. -0.05
     /// to sink a trunk slightly into the ground), not a replacement for it.
     /// </summary>
-    public Vector3 CalculateLocalPos(Vector3I gridPos, Node3D entity)
+    public Vector3 CalculateLocalPos(Vector3I gridPos, Node3D entity, float extraNodge=0f)
     {
         Vector3 localPos = MapToLocal(gridPos);
         float tileTopY = localPos.Y + (CellSize.Y / 2.0f);
@@ -266,7 +322,7 @@ public partial class IslandGenerator : GridMap
         Aabb? entityBounds = GetVisualAabb(entity);
         float baseLift = entityBounds.HasValue ? -entityBounds.Value.Position.Y: 0.0f;
 
-        localPos.Y = tileTopY + baseLift + 1; // Offset by 1 for tile size
+        localPos.Y = tileTopY + baseLift + 0.75f + extraNodge; // Offset by 1-tileHeight for tile size
         return localPos;
     }
 
