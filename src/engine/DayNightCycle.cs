@@ -3,8 +3,7 @@ using Godot;
 /// <summary>
 /// Drives the day/night cycle's timing and exposes the current time of day
 /// to gameplay systems. Controls TWO AnimationPlayers -- sky color and sun
-/// rotation -- applying the same SpeedScale to both so they stay in sync,
-/// instead of drifting apart if only one were sped up.
+/// rotation -- applying the same SpeedScale to both so they stay in sync
 /// </summary>
 public partial class DayNightCycle : Node
 {
@@ -76,14 +75,6 @@ public partial class DayNightCycle : Node
         return true;
     }
 
-    /// <summary>
-    /// Computes SpeedScale from whichever player is available and applies it
-    /// to both. NOTE: this assumes both animations share the same base
-    /// length (12s in your case) -- if they ever differ, applying one
-    /// shared speed scale would desync them again, since it only compensates
-    /// for DayLengthSeconds, not for the two animations having different
-    /// starting lengths from each other.
-    /// </summary>
     private void ApplySpeedScale()
     {
         float? scale = ComputeSpeedScale(SkyAnimationPlayer, SkyAnimationName)
@@ -99,10 +90,12 @@ public partial class DayNightCycle : Node
     {
         if (player == null || !player.HasAnimation(animName)) return null;
 
-        Animation anim = player.GetAnimation(animName);
-        if (anim == null || anim.Length <= 0 || DayLengthSeconds <= 0) return null;
+        Animation animation = player.GetAnimation(animName);
 
-        return (float)(anim.Length / DayLengthSeconds);
+        // Small check to veryify animation
+        if (animation == null || animation.Length <= 0 || DayLengthSeconds <= 0) return null;
+
+        return (float)(animation.Length / DayLengthSeconds);
     }
 
     public override void _Process(double delta)
@@ -135,7 +128,10 @@ public partial class DayNightCycle : Node
 
     public bool IsDay() => !IsNight();
 
-    /// <summary> Jumps both animations to a specific point in the cycle (0-1), e.g. for a "sleep until morning" mechanic. </summary>
+    /// <summary>
+    /// Jumps both animations to a specific point in the cycle (0-1),
+    /// e.g. for a "sleep until morning" mechanic or work day done.
+    /// </summary>
     public void SetNormalizedTime(float t)
     {
         SeekPlayer(SkyAnimationPlayer, SkyAnimationName, t);
