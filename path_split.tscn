@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c7xs461c0srk6"]
+
+[ext_resource type="ArrayMesh" uid="uid://ue844p76nbna" path="res://terrain/terrain/ground_pathSplit.obj" id="1_a2e4t"]
+
+[node name="PathSplit" type="MeshInstance3D" unique_id=981132481]
+mesh = ExtResource("1_a2e4t")

@@ -4,11 +4,11 @@ using System;
 public partial class Settler : Node3D
 {
 	// The type of content inside the box (e.g., "grain", "stone", "wood")
-    [Export] public Home Home { get; set; } = null;
-    [Export] public string Profession { get; set; } = null;
+    public Home Home { get; set; } = null;
+    public Profession Job { get; set; } = null;
     
     // The amount of resources held inside the box
-    [Export] public Settler Partner { get; set; } = null;
+    public Settler Partner { get; set; } = null;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

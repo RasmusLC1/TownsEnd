@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://0gkk5v5rxujg"]
+
+[ext_resource type="ArrayMesh" uid="uid://b0ryovx6pt1hx" path="res://terrain/terrain/ground_pathRocks.obj" id="1_pfkty"]
+
+[node name="PathConstruction" type="MeshInstance3D" unique_id=750338323]
+mesh = ExtResource("1_pfkty")

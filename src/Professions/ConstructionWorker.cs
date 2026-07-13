@@ -16,16 +16,4 @@ public partial class ConstructionWorker : Profession
             MaxHealth = 100
         };
     }
-
-    public override void _Ready()
-    {
-        base._Ready(); 
-        
-        GD.Print($"Construction worker ready with a {tool.ToolName}!");
-    }
-
-    public override void _Process(double delta)
-    {
-        base._Process(delta);
-    }
 }

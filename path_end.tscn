@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cto4pnxug2uq6"]
+
+[ext_resource type="ArrayMesh" uid="uid://batql3t6e4gq8" path="res://terrain/terrain/ground_pathEndClosed.obj" id="1_jg48t"]
+
+[node name="PathEnd" type="MeshInstance3D" unique_id=541725487]
+mesh = ExtResource("1_jg48t")

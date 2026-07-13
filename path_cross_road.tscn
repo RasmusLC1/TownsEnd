@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ck8ha885gvsyv"]
+
+[ext_resource type="ArrayMesh" uid="uid://b21shr5veps5f" path="res://terrain/terrain/ground_pathCross.obj" id="1_to726"]
+
+[node name="PathCrossRoad" type="MeshInstance3D" unique_id=138219053]
+mesh = ExtResource("1_to726")

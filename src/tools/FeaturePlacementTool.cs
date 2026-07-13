@@ -31,4 +31,9 @@ public partial class FeaturePlacementTool : Node, IGridTool
         tile.IsWalkable = false;
         tile.OccupyingObject = instance;
     }
+
+    public void SetFeatureScene(PackedScene newScene)
+    {
+        _featureScene = newScene;
+    }
 }

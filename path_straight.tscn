@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://qyob3cyxwktd"]
+
+[ext_resource type="ArrayMesh" uid="uid://ccqgbqsc547se" path="res://terrain/terrain/ground_pathStraight.obj" id="1_8kc2p"]
+
+[node name="PathStraight" type="MeshInstance3D" unique_id=349551104]
+mesh = ExtResource("1_8kc2p")
