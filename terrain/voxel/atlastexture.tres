@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bfmxqpxrac2yx"]
+
+[ext_resource type="Texture2D" uid="uid://xjaq7vq5sniv" path="res://terrain/voxel/atlastexture.dds" id="1_rdt3t"]
+
+[resource]
+atlas = ExtResource("1_rdt3t")

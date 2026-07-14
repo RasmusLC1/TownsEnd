@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b4ndatdp6xn0o"]
+
+[ext_resource type="Texture2D" uid="uid://bfmxqpxrac2yx" path="res://terrain/voxel/atlastexture.tres" id="1_4wumh"]
+
+[resource]
+albedo_texture = ExtResource("1_4wumh")
