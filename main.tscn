@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://qyob3cyxwktd" path="res://path_straight.tscn" id="44_wnkbs"]
 [ext_resource type="Texture2D" uid="uid://do14ojhdajqip" path="res://terrain/Previews/rocks.png" id="45_wnkbs"]
 [ext_resource type="Texture2D" uid="uid://dyqgwwfo5piyx" path="res://terrain/Previews/platform-ramp.png" id="47_wnkbs"]
+[ext_resource type="Script" uid="uid://cmcovua01styg" path="res://src/terrainGeneration/Chunk.cs" id="48_f6a44"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_dldy8"]
 
@@ -355,6 +356,10 @@ icon = ExtResource("45_wnkbs")
 [node name="RoadButton" type="Button" parent="UI/PlacementMenu/Buttons" unique_id=1933533194]
 layout_mode = 2
 icon = ExtResource("47_wnkbs")
+
+[node name="Chunk" type="StaticBody3D" parent="." unique_id=46776383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.236615, 0)
+script = ExtResource("48_f6a44")
 
 [connection signal="pressed" from="UI/PlacementMenu/Buttons/TreeButton" to="UI/PlacementMenu" method="OnTreeplaceButtonClicked"]
 [connection signal="pressed" from="UI/PlacementMenu/Buttons/RockButton" to="UI/PlacementMenu" method="OnRockButtonClicked"]
