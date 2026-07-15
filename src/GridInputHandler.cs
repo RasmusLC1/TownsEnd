@@ -73,11 +73,6 @@ public partial class GridInputHandler : Node
         {
             if (mouseBtn.Pressed)
             {
-                // Decided ONCE, here, at press time. We deliberately don't
-                // re-check ShiftPressed on release -- if the player releases
-                // Shift mid-drag before releasing the mouse button, the drag
-                // should still complete with whichever tool it started with,
-                // not silently get stuck because the modifier changed.
                 IGridTool tool = mouseBtn.ShiftPressed ? _secondaryTool : _primaryTool;
                 StartDrag(mouseBtn, tool);
             }
@@ -107,8 +102,6 @@ public partial class GridInputHandler : Node
         Vector2I? dragEndColumn = GetGridColumnUnderMouse(mouseBtn.Position);
         if (dragEndColumn.HasValue)
         {
-            // GridInputHandler still has no idea what this does -- could be
-            // deleting tiles, placing a tree, painting terrain, etc.
             _activeDragTool.OnAreaSelected(_dragStartColumn.Value, dragEndColumn.Value);
         }
 
@@ -149,18 +142,20 @@ public partial class GridInputHandler : Node
             }
         }
 
-        Vector3 cellSize = _islandGenerator.CellSize;
+        // Corner convention: a tile at gridPos.Y occupies [gridPos.Y, gridPos.Y + TileSize),
+        // so its top face is gridPos.Y + TileSize, not gridPos.Y + TileSize/2 like the old
+        // GridMap-centered math computed.
         float outlineY = foundAny
-            ? _islandGenerator.MapToLocal(new Vector3I(0, maxSurfaceY, 0)).Y + (cellSize.Y / 2.0f) + _outlineHeightMargin
-            : _islandGenerator.MapToLocal(Vector3I.Zero).Y + _outlineHeightMargin;
+            ? IslandGenerator.GridToLocal(new Vector3I(0, maxSurfaceY, 0)).Y + IslandGenerator.TileSize + _outlineHeightMargin
+            : IslandGenerator.GridToLocal(Vector3I.Zero).Y + _outlineHeightMargin;
 
-        Vector3 innerMin = _islandGenerator.MapToLocal(new Vector3I(minX, 0, minZ));
-        Vector3 innerMax = _islandGenerator.MapToLocal(new Vector3I(maxX, 0, maxZ));
-
-        float x0 = innerMin.X - cellSize.X / 2.0f;
-        float x1 = innerMax.X + cellSize.X / 2.0f;
-        float z0 = innerMin.Z - cellSize.Z / 2.0f;
-        float z1 = innerMax.Z + cellSize.Z / 2.0f;
+        // gridPos IS the near corner already under this convention, and the
+        // far corner is exactly one more tile out -- no half-cellSize
+        // offsetting needed like the old centered-cell GridMap math required.
+        float x0 = minX * IslandGenerator.TileSize;
+        float x1 = (maxX + 1) * IslandGenerator.TileSize;
+        float z0 = minZ * IslandGenerator.TileSize;
+        float z1 = (maxZ + 1) * IslandGenerator.TileSize;
 
         Vector3 c0 = new Vector3(x0, outlineY, z0);
         Vector3 c1 = new Vector3(x1, outlineY, z0);
@@ -207,7 +202,7 @@ public partial class GridInputHandler : Node
         }
 
         Vector3 localPoint = _islandGenerator.ToLocal(globalPoint);
-        Vector3I cell = _islandGenerator.LocalToMap(localPoint);
+        Vector3I cell = IslandGenerator.LocalToGrid(localPoint);
         return new Vector2I(cell.X, cell.Z);
     }
 }

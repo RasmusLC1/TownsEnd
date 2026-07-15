@@ -57,7 +57,6 @@ public abstract partial class IslandFeatureSpawner : Node
 
     private void PlaceFeatures(RandomNumberGenerator rng, List<IslandTile> candidates)
     {
-         // 3. Spawning & placement execution
         int actualCount = Mathf.Min(SpawnCount, candidates.Count);
         for (int i = 0; i < actualCount; i++)
         {
@@ -76,6 +75,14 @@ public abstract partial class IslandFeatureSpawner : Node
             PostPositionFeature(featureInstance, rng);
 
             Generator.AddChild(featureInstance);
+            
+            // ADD THIS LINE FOR TOOL-MODE:
+            // This tells the Godot Editor to display and track this node inside the active viewport scene tab
+            if (Engine.IsEditorHint())
+            {
+                featureInstance.Owner = Generator.GetTree().EditedSceneRoot;
+            }
+
             SpawnedFeatures.Add(featureInstance);
 
             tile.IsOccupied = true;
@@ -83,7 +90,6 @@ public abstract partial class IslandFeatureSpawner : Node
             tile.OccupyingObject = featureInstance;
         }
     }
-
     protected virtual Vector3 CalculateSpawnPosition(Vector3I gridPos, Node3D instance)
     {
         return Generator.CalculateLocalPos(gridPos, instance);
@@ -94,11 +100,20 @@ public abstract partial class IslandFeatureSpawner : Node
         foreach (var feature in SpawnedFeatures)
         {
             if (GodotObject.IsInstanceValid(feature))
-                feature.QueueFree();
+            {
+                // If running in the editor, free immediately to clean the scene tree right now
+                if (Engine.IsEditorHint())
+                {
+                    feature.Free(); 
+                }
+                else
+                {
+                    feature.QueueFree();
+                }
+            }
         }
         SpawnedFeatures.Clear();
     }
-
     // --- Template Hooks to be implemented by child classes ---
     protected abstract bool ValidateTemplates();
     protected abstract bool IsValidSpawnTile(IslandTile tile);

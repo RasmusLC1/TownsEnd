@@ -18,7 +18,7 @@ public partial class TownCamera : Camera3D
     [ExportGroup("Zoom")]
     [Export] public float ZoomStep { get; set; } = 3.0f;
     [Export] public float ZoomSmoothing { get; set; } = 10.0f;
-    [Export] public float MinZoomDistance { get; set; } = 8.0f;
+    [Export] public float MinZoomDistance { get; set; } = 0.1f;
     [Export] public float MaxZoomDistance { get; set; } = 60.0f;
 
     [ExportGroup("Rotation")]
