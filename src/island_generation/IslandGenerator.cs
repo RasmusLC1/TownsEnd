@@ -459,14 +459,9 @@ public partial class IslandGenerator : Node3D
 
         foreach (Vector3I pos in carveTargets)
         {
-            RemoveColumn(pos);
+            RemoveTopBlocks(pos, _rng.RandiRange(2, 3));
         }
 
-        // Redundant with the full BuildAll() at the end of GenerateIsland()
-        // during initial generation, but keeps ExecuteRiverCarving safe to
-        // call standalone later (e.g. a "reroll river" editor action)
-        // without needing to know about that detail.
-        _chunkSpawner?.RebuildDirty(_tileData);
     }
 
     public void RemoveColumn(Vector3I gridPos)
@@ -484,6 +479,51 @@ public partial class IslandGenerator : Node3D
 
         NotifyPropertyListChanged();
     }
+
+    public void RemoveTopBlocks(Vector3I gridPos, int depth)
+    {
+        
+        Vector2I xzCoord = new Vector2I(gridPos.X, gridPos.Z);
+
+        if (!_surfaceTiles.TryGetValue(xzCoord, out IslandTile topTile))
+            return;
+            
+        int startY = topTile.GridPosition.Y;
+
+        int actualDepth = 0;
+        while (actualDepth < depth &&
+            _tileData.ContainsKey(new Vector3I(gridPos.X, startY - actualDepth, gridPos.Z)))
+        {
+            actualDepth++;
+        }
+        depth = actualDepth - 1;
+
+        _surfaceTiles.Remove(xzCoord);
+
+        for (int i = 0; i < depth; i++)
+        {
+            Vector3I pos = new Vector3I(gridPos.X, startY - i, gridPos.Z);
+            if (_tileData.Remove(pos))
+            {
+                _chunkSpawner?.MarkDirty(pos);
+            }
+        }
+
+        // // Re-establish the new surface tile at whatever's now exposed
+        // int newSurfaceY = startY - depth;
+        // while (newSurfaceY >= 0)
+        // {
+        //     var pos = new Vector3I(gridPos.X, newSurfaceY, gridPos.Z);
+        //     if (_tileData.TryGetValue(pos, out IslandTile newSurface))
+        //     {
+        //         _surfaceTiles[xzCoord] = newSurface;
+        //         newSurface.IsWalkable = true;
+        //         break;
+        //     }
+        //     newSurfaceY--;
+        // }
+    }
+
 
     public void RemoveTile(Vector3I gridPos)
     {

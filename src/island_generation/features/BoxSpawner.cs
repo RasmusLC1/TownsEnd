@@ -25,10 +25,7 @@ public partial class BoxSpawner : IslandFeatureSpawner
         }
     }
 
-    protected override Vector3 CalculateSpawnPosition(Vector3I gridPos, Node3D instance)
-    {
-        return Generator.CalculateLocalPos(gridPos, instance, 0.25f); // Box height
-    }
+  
 
 
     

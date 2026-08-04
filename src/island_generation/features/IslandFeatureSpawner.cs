@@ -70,7 +70,7 @@ public abstract partial class IslandFeatureSpawner : Node
             
             OnFeatureInstantiated(featureInstance, targetGridPos, rng);
 
-            featureInstance.Position = CalculateSpawnPosition(targetGridPos, featureInstance);
+            featureInstance.Position = CalculateSpawnPosition(targetGridPos, featureInstance, rng);
 
             PostPositionFeature(featureInstance, rng);
 
@@ -90,9 +90,16 @@ public abstract partial class IslandFeatureSpawner : Node
             tile.OccupyingObject = featureInstance;
         }
     }
-    protected virtual Vector3 CalculateSpawnPosition(Vector3I gridPos, Node3D instance)
+    protected virtual Vector3 CalculateSpawnPosition(Vector3I gridPos, Node3D instance, RandomNumberGenerator rng)
     {
-        return Generator.CalculateLocalPos(gridPos, instance);
+        Vector3 position = Generator.CalculateLocalPos(gridPos, instance);
+        
+        GD.Print(position);
+        position.X += rng.Randf();
+        position.Z += rng.Randf();
+        GD.Print("UDPATED POS", position);
+
+        return position;
     }
 
     public virtual void ClearFeatures()

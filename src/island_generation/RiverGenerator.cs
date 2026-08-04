@@ -114,7 +114,6 @@ public partial class RiverGenerator : Node
                 break; 
             }
 
-            // FIX: Pass both localVisited and globalSharedVisited into the tile selector
             IslandTile next = PickNextTile(current, localVisited, globalSharedVisited, lastDirection, rng);
             
             if (next == null)
@@ -144,7 +143,6 @@ public partial class RiverGenerator : Node
 
         foreach (IslandTile neighbor in current.NeighbouringTiles)
         {   
-            // Fix: Use the correct parameter names to check both self-intersection and other rivers
             if (localVisited.Contains(neighbor.GridPosition) || globalSharedVisited.Contains(neighbor.GridPosition)) 
                 continue;
 
