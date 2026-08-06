@@ -17,8 +17,12 @@ public partial class TreeSpawner : IslandFeatureSpawner
     protected override void OnFeatureInstantiated(Node3D instance, Vector3I gridPos, RandomNumberGenerator rng)
     {
         instance.Name = $"Tree_{gridPos.X}_{gridPos.Z}";
-    }
 
+        if (instance is Tree tree)
+        {
+            tree.Size = rng.RandiRange(10, 50);
+        }
+    }
     protected override void PostPositionFeature(Node3D instance, RandomNumberGenerator rng)
     {
         instance.RotateY(rng.Randf() * Mathf.Pi * 2.0f);

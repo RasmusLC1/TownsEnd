@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b2ss2q46b8l6s"]
 
 [ext_resource type="ArrayMesh" uid="uid://qs3qoysgmts4" path="res://terrain/terrain/tree_pineSmallC.obj" id="1_xp3cq"]
+[ext_resource type="Script" uid="uid://bpquwcyveohpx" path="res://src/island_generation/features/tree/Tree.cs" id="2_iixkv"]
 
 [node name="Tree5" type="MeshInstance3D" unique_id=1440512213]
 mesh = ExtResource("1_xp3cq")
+script = ExtResource("2_iixkv")

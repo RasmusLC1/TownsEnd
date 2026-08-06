@@ -8,9 +8,14 @@
 
 config_version=5
 
+[animation]
+
+compatibility/autoload_on_startup=false
+
 [application]
 
 config/name="TownsEnd"
+run/main_scene="uid://b7jo1g8juh14v"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,6 +31,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="TownsEnd"
+
+[editor]
+
+version_control/autoload_on_startup=true
 
 [physics]
 

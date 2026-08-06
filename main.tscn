@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://jmi5mu7dprje" path="res://src/island_generation/IslandGenerator.cs" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://icw2vrwc5qj4" path="res://box.tscn" id="3_1bvp3"]
-[ext_resource type="Script" uid="uid://ee0xw8tw25mt" path="res://src/island_generation/features/RockSpawner.cs" id="3_dg77c"]
+[ext_resource type="Script" uid="uid://ee0xw8tw25mt" path="res://src/island_generation/features/rock/RockSpawner.cs" id="3_dg77c"]
 [ext_resource type="Script" uid="uid://dom0p7hp8h4c0" path="res://src/TownCamera.cs" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://bpuhgeon2r0xn" path="res://src/island_generation/features/BoxSpawner.cs" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://bpuhgeon2r0xn" path="res://src/island_generation/features/box/BoxSpawner.cs" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b47fqfxqrg8ws" path="res://rock_1.tscn" id="4_82xsv"]
-[ext_resource type="Script" uid="uid://wtsedns001f0" path="res://src/island_generation/features/TreeSpawner.cs" id="5_272bh"]
+[ext_resource type="Script" uid="uid://wtsedns001f0" path="res://src/island_generation/features/tree/TreeSpawner.cs" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://crvaijewk4ot4" path="res://rock_2.tscn" id="5_getpj"]
 [ext_resource type="PackedScene" uid="uid://ducurpcp78j48" path="res://tree_1.tscn" id="6_efxa6"]
 [ext_resource type="PackedScene" uid="uid://bsmncffucoxt6" path="res://rock_3.tscn" id="6_ryguw"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://s0vla7r23ob1" path="res://rock_7.tscn" id="10_lswn8"]
 [ext_resource type="PackedScene" uid="uid://b2ss2q46b8l6s" path="res://tree_5.tscn" id="10_vivmo"]
 [ext_resource type="PackedScene" uid="uid://c3dwfplti3vqd" path="res://rock_8.tscn" id="11_a6jrf"]
-[ext_resource type="Script" uid="uid://2c3yw1nocqhh" path="res://src/island_generation/features/PlantSpawner.cs" id="12_getpj"]
+[ext_resource type="Script" uid="uid://2c3yw1nocqhh" path="res://src/island_generation/features/plant/PlantSpawner.cs" id="12_getpj"]
 [ext_resource type="PackedScene" uid="uid://cu4hx0bxw5h5w" path="res://plant_1.tscn" id="13_facbu"]
 [ext_resource type="PackedScene" uid="uid://bvl4hdlre3a1w" path="res://plant_2.tscn" id="14_b1qrp"]
 [ext_resource type="PackedScene" uid="uid://cl54mhxnyr67v" path="res://plant_3.tscn" id="15_come4"]
@@ -54,24 +54,7 @@
 [ext_resource type="PackedScene" uid="uid://qyob3cyxwktd" path="res://path_straight.tscn" id="44_wnkbs"]
 [ext_resource type="ArrayMesh" uid="uid://coga7p2t7vhhm" path="res://terrain/terrain/rock_largeF.obj" id="45_ppx11"]
 [ext_resource type="Texture2D" uid="uid://do14ojhdajqip" path="res://terrain/Previews/rocks.png" id="45_wnkbs"]
-[ext_resource type="ArrayMesh" uid="uid://4rii56jr5qa2" path="res://terrain/terrain/mushroom_red.obj" id="46_1yv1y"]
-[ext_resource type="ArrayMesh" uid="uid://bycj0gkhakxwl" path="res://terrain/terrain/plant_bushTriangle.obj" id="47_5yh34"]
 [ext_resource type="Texture2D" uid="uid://dyqgwwfo5piyx" path="res://terrain/Previews/platform-ramp.png" id="47_wnkbs"]
-[ext_resource type="ArrayMesh" uid="uid://ykpb7plqnero" path="res://terrain/terrain/mushroom_tanTall.obj" id="48_pjuso"]
-[ext_resource type="ArrayMesh" uid="uid://b6dxc6o2onuh1" path="res://terrain/terrain/grass_leafs.obj" id="49_23xmf"]
-[ext_resource type="ArrayMesh" uid="uid://bwxuvrrc2uhc8" path="res://terrain/terrain/plant_bushSmall.obj" id="50_swlj1"]
-[ext_resource type="ArrayMesh" uid="uid://cny1sbah6m0hr" path="res://terrain/terrain/plant_bushLargeTriangle.obj" id="51_yysqy"]
-[ext_resource type="ArrayMesh" uid="uid://v0qc4pljoqwk" path="res://terrain/terrain/plant_flatShort.obj" id="52_n5t1e"]
-[ext_resource type="ArrayMesh" uid="uid://pmdwkcvfeymn" path="res://terrain/terrain/mushroom_tan.obj" id="53_h6isl"]
-[ext_resource type="ArrayMesh" uid="uid://dtunmx2d3ucve" path="res://terrain/terrain/mushroom_redTall.obj" id="54_53bls"]
-[ext_resource type="ArrayMesh" uid="uid://d3aj85evhw0qe" path="res://terrain/terrain/plant_bush.obj" id="55_lwnsi"]
-[ext_resource type="ArrayMesh" uid="uid://daj77yu2t6ixg" path="res://terrain/terrain/mushroom_tanGroup.obj" id="56_41lik"]
-[ext_resource type="ArrayMesh" uid="uid://c81oobqv6waks" path="res://terrain/terrain/plant_bushDetailed.obj" id="57_jbvwl"]
-[ext_resource type="ArrayMesh" uid="uid://b0rgybvvm4v5l" path="res://terrain/terrain/plant_flatTall.obj" id="58_sn1fb"]
-[ext_resource type="ArrayMesh" uid="uid://bg0boyrpqi67" path="res://terrain/terrain/mushroom_redGroup.obj" id="59_yvsr8"]
-[ext_resource type="ArrayMesh" uid="uid://b4necnypb5dk2" path="res://terrain/terrain/plant_bushLarge.obj" id="60_vieuh"]
-[ext_resource type="ArrayMesh" uid="uid://dwh04hd4k3m0x" path="res://terrain/terrain/grass_large.obj" id="61_yjja3"]
-[ext_resource type="ArrayMesh" uid="uid://dwaq1trigoj0t" path="res://terrain/Models/OBJ format/crate.obj" id="62_l0gw7"]
 [ext_resource type="ArrayMesh" uid="uid://dwp55f58tptc6" path="res://terrain/terrain/tree_pineTallC.obj" id="63_inymm"]
 [ext_resource type="ArrayMesh" uid="uid://b6p7ex3i0vgmp" path="res://terrain/terrain/tree_thin_dark.obj" id="64_jcxqu"]
 [ext_resource type="ArrayMesh" uid="uid://60myw6sjbv23" path="res://terrain/terrain/tree_tall.obj" id="65_0arob"]
@@ -267,19 +250,20 @@ MaxHeight = 20
 NoiseFrequency = 0.02
 IslandRadius = 100.0
 
+[node name="BoxSpawner" type="Node" parent="environment/Island" unique_id=444391430]
+script = ExtResource("4_7mycd")
+BoxTemplate = ExtResource("3_1bvp3")
+SpawnCount = 70
+
+[node name="PlantSpawner" type="Node" parent="environment/Island" unique_id=277640481]
+script = ExtResource("12_getpj")
+PlantTemplates = Array[PackedScene]([ExtResource("13_facbu"), ExtResource("14_b1qrp"), ExtResource("15_come4"), ExtResource("16_h8e4i"), ExtResource("17_4lmeg"), ExtResource("18_0cp0l"), ExtResource("19_d2t1y"), ExtResource("20_gngh3"), ExtResource("21_0n3wm"), ExtResource("22_qnost"), ExtResource("23_wnkbs"), ExtResource("24_f6a44"), ExtResource("25_0cbny"), ExtResource("26_hrvbo"), ExtResource("27_uypp3"), ExtResource("28_blkrb")])
+SpawnCount = 100
+
 [node name="RockSpawner" type="Node" parent="environment/Island" unique_id=796420405]
 script = ExtResource("3_dg77c")
 RockTemplates = Array[PackedScene]([ExtResource("4_82xsv"), ExtResource("5_getpj"), ExtResource("6_ryguw"), ExtResource("7_d13ii"), ExtResource("8_1u8w0"), ExtResource("9_0odxb"), ExtResource("10_lswn8"), ExtResource("11_a6jrf")])
 SpawnCount = 50
-
-[node name="PlantSpawner" type="Node" parent="environment/Island" unique_id=1112612796]
-script = ExtResource("12_getpj")
-PlantTemplates = Array[PackedScene]([ExtResource("13_facbu"), ExtResource("14_b1qrp"), ExtResource("15_come4"), ExtResource("16_h8e4i"), ExtResource("17_4lmeg"), ExtResource("18_0cp0l"), ExtResource("19_d2t1y"), ExtResource("20_gngh3"), ExtResource("21_0n3wm"), ExtResource("22_qnost"), ExtResource("23_wnkbs"), ExtResource("24_f6a44"), ExtResource("25_0cbny"), ExtResource("26_hrvbo"), ExtResource("27_uypp3"), ExtResource("28_blkrb")])
-SpawnCount = 300
-
-[node name="BoxSpawner" type="Node" parent="environment/Island" unique_id=359498542]
-script = ExtResource("4_7mycd")
-BoxTemplate = ExtResource("3_1bvp3")
 
 [node name="TreeSpawner" type="Node" parent="environment/Island" unique_id=1156370660]
 script = ExtResource("5_272bh")
@@ -289,2035 +273,803 @@ SpawnCount = 70
 [node name="RiverGenerator" type="Node" parent="environment/Island" unique_id=1294554047]
 script = ExtResource("37_b1qrp")
 
-[node name="Rock_-19_29" type="MeshInstance3D" parent="environment/Island" unique_id=860813535 instance=ExtResource("4_82xsv")]
-transform = Transform3D(0.054853506, 0, 0.9984944, 0, 1, 0, -0.9984944, 0, 0.054853506, -18.10307, 5, 29.854765)
-mesh = ExtResource("43_4obbf")
-
-[node name="Rock_19_32" type="MeshInstance3D" parent="environment/Island" unique_id=1842427988 instance=ExtResource("7_d13ii")]
-transform = Transform3D(-0.49032286, 0, 0.8715409, 0, 1, 0, -0.8715409, 0, -0.49032286, 19.213995, 4, 32.1788)
-mesh = ExtResource("42_f1p13")
-
-[node name="Rock_-12_-40" type="MeshInstance3D" parent="environment/Island" unique_id=1329820650 instance=ExtResource("9_0odxb")]
-transform = Transform3D(0.93669987, 0, 0.35013333, 0, 1, 0, -0.35013333, 0, 0.93669987, -11.560514, 3, -39.743793)
-mesh = ExtResource("45_ppx11")
-
-[node name="Rock_36_24" type="MeshInstance3D" parent="environment/Island" unique_id=1280992972 instance=ExtResource("7_d13ii")]
-transform = Transform3D(0.89009845, 0, 0.4557683, 0, 1, 0, -0.4557683, 0, 0.89009845, 36.09629, 2, 24.901857)
-mesh = ExtResource("42_f1p13")
-
-[node name="Rock_59_23" type="MeshInstance3D" parent="environment/Island" unique_id=1436651369 instance=ExtResource("4_82xsv")]
-transform = Transform3D(-0.7010076, 0, -0.7131538, 0, 1, 0, 0.7131538, 0, -0.7010076, 59.77191, 2, 23.924194)
-mesh = ExtResource("43_4obbf")
-
-[node name="Rock_-11_-12" type="MeshInstance3D" parent="environment/Island" unique_id=1464497667 instance=ExtResource("10_lswn8")]
-transform = Transform3D(-0.8608654, 0, -0.50883275, 0, 1, 0, 0.50883275, 0, -0.8608654, -10.441858, 8, -11.876255)
-mesh = ExtResource("39_5dllo")
-
-[node name="Rock_-17_-34" type="MeshInstance3D" parent="environment/Island" unique_id=594123456 instance=ExtResource("8_1u8w0")]
-transform = Transform3D(-0.19186677, 0, 0.981421, 0, 1, 0, -0.981421, 0, -0.19186677, -16.446241, 2, -33.736046)
+[node name="Rock_69_6" type="MeshInstance3D" parent="environment/Island" unique_id=594123456 instance=ExtResource("8_1u8w0")]
+transform = Transform3D(0.9461201, 0, 0.32381597, 0, 1, 0, -0.32381597, 0, 0.9461201, 69.09428, 1, 6.8098955)
 mesh = ExtResource("40_phcyf")
 
-[node name="Rock_-25_-37" type="MeshInstance3D" parent="environment/Island" unique_id=1041555929 instance=ExtResource("5_getpj")]
-transform = Transform3D(-0.20751643, 0, 0.97823155, 0, 1, 0, -0.97823155, 0, -0.20751643, -24.161985, 2, -36.04567)
-mesh = ExtResource("41_birbe")
-
-[node name="Rock_-8_-24" type="MeshInstance3D" parent="environment/Island" unique_id=431996890 instance=ExtResource("4_82xsv")]
-transform = Transform3D(0.8454799, 0, 0.53400725, 0, 1, 0, -0.53400725, 0, 0.8454799, -7.4795437, 3, -23.175894)
-mesh = ExtResource("43_4obbf")
-
-[node name="Rock_21_-54" type="MeshInstance3D" parent="environment/Island" unique_id=1939129553 instance=ExtResource("5_getpj")]
-transform = Transform3D(0.80813736, 0, 0.588994, 0, 1, 0, -0.588994, 0, 0.80813736, 21.763004, 1, -53.88637)
-mesh = ExtResource("41_birbe")
-
-[node name="Rock_-38_33" type="MeshInstance3D" parent="environment/Island" unique_id=1915850358 instance=ExtResource("8_1u8w0")]
-transform = Transform3D(0.85018295, 0, -0.5264874, 0, 1, 0, 0.5264874, 0, 0.85018295, -37.919376, 2, 33.96359)
-mesh = ExtResource("40_phcyf")
-
-[node name="Rock_-1_-9" type="MeshInstance3D" parent="environment/Island" unique_id=131545670 instance=ExtResource("4_82xsv")]
-transform = Transform3D(0.4138205, 0, 0.9103585, 0, 1, 0, -0.9103585, 0, 0.4138205, -0.026202142, 9, -8.073417)
-mesh = ExtResource("43_4obbf")
-
-[node name="Rock_41_-15" type="MeshInstance3D" parent="environment/Island" unique_id=785443300 instance=ExtResource("11_a6jrf")]
-transform = Transform3D(-0.013825441, 0, -0.99990445, 0, 1, 0, 0.99990445, 0, -0.013825441, 41.690384, 3, -14.905736)
+[node name="Rock_42_-34" type="MeshInstance3D" parent="environment/Island" unique_id=785443300 instance=ExtResource("11_a6jrf")]
+transform = Transform3D(-0.99795574, 0, 0.06390901, 0, 1, 0, -0.06390901, 0, -0.99795574, 42.035343, 1, -33.136967)
 mesh = ExtResource("44_ovcoh")
 
-[node name="Rock_-28_-10" type="MeshInstance3D" parent="environment/Island" unique_id=555528884 instance=ExtResource("9_0odxb")]
-transform = Transform3D(0.98558533, 0, -0.16917896, 0, 1, 0, 0.16917896, 0, 0.98558533, -27.327297, 5, -9.02463)
+[node name="Rock_-7_22" type="MeshInstance3D" parent="environment/Island" unique_id=1842427988 instance=ExtResource("7_d13ii")]
+transform = Transform3D(0.802925, 0, -0.5960801, 0, 1, 0, 0.5960801, 0, 0.802925, -6.8537245, 7, 22.48877)
+mesh = ExtResource("42_f1p13")
+
+[node name="Rock_-31_-4" type="MeshInstance3D" parent="environment/Island" unique_id=371915638 instance=ExtResource("7_d13ii")]
+transform = Transform3D(0.6045209, 0, 0.7965893, 0, 1, 0, -0.7965893, 0, 0.6045209, -30.907871, 4, -3.8511117)
+mesh = ExtResource("42_f1p13")
+
+[node name="Rock_-34_59" type="MeshInstance3D" parent="environment/Island" unique_id=1464497667 instance=ExtResource("10_lswn8")]
+transform = Transform3D(0.94783795, 0, 0.31875253, 0, 1, 0, -0.31875253, 0, 0.94783795, -33.593273, 1, 59.48527)
+mesh = ExtResource("39_5dllo")
+
+[node name="Rock_-10_-51" type="MeshInstance3D" parent="environment/Island" unique_id=228237210 instance=ExtResource("7_d13ii")]
+transform = Transform3D(-0.008409389, 0, -0.99996465, 0, 1, 0, 0.99996465, 0, -0.008409389, -9.346766, 2, -50.202812)
+mesh = ExtResource("42_f1p13")
+
+[node name="Rock_-55_31" type="MeshInstance3D" parent="environment/Island" unique_id=1329820650 instance=ExtResource("9_0odxb")]
+transform = Transform3D(-0.76244366, 0, -0.64705455, 0, 1, 0, 0.64705455, 0, -0.76244366, -54.654274, 1, 31.563688)
 mesh = ExtResource("45_ppx11")
 
-[node name="Rock_-14_-24" type="MeshInstance3D" parent="environment/Island" unique_id=1425818967 instance=ExtResource("4_82xsv")]
-transform = Transform3D(-0.40002298, 0, -0.9165051, 0, 1, 0, 0.9165051, 0, -0.40002298, -13.492178, 3, -23.909199)
-mesh = ExtResource("43_4obbf")
+[node name="Rock_40_38" type="MeshInstance3D" parent="environment/Island" unique_id=517749420 instance=ExtResource("9_0odxb")]
+transform = Transform3D(-0.62504596, 0, 0.780588, 0, 1, 0, -0.780588, 0, -0.62504596, 40.318222, 1, 38.028477)
+mesh = ExtResource("45_ppx11")
 
-[node name="Rock_18_-7" type="MeshInstance3D" parent="environment/Island" unique_id=656610127 instance=ExtResource("6_ryguw")]
-transform = Transform3D(-0.0054258914, 0, -0.9999853, 0, 1, 0, 0.9999853, 0, -0.0054258914, 18.068663, 7, -6.890774)
+[node name="Rock_29_61" type="MeshInstance3D" parent="environment/Island" unique_id=656610127 instance=ExtResource("6_ryguw")]
+transform = Transform3D(0.47741818, 0, -0.87867624, 0, 1, 0, 0.87867624, 0, 0.47741818, 29.358114, 1, 61.677654)
 mesh = ExtResource("38_gx4rg")
 
-[node name="Rock_10_-5" type="MeshInstance3D" parent="environment/Island" unique_id=795974883 instance=ExtResource("11_a6jrf")]
-transform = Transform3D(0.99337256, 0, -0.11493908, 0, 1, 0, 0.11493908, 0, 0.99337256, 10.409103, 6, -4.1496763)
+[node name="Rock_65_-8" type="MeshInstance3D" parent="environment/Island" unique_id=480424219 instance=ExtResource("11_a6jrf")]
+transform = Transform3D(-0.05532078, 0, 0.99846864, 0, 1, 0, -0.99846864, 0, -0.05532078, 65.92852, 1, -7.200178)
 mesh = ExtResource("44_ovcoh")
 
-[node name="Rock_-26_13" type="MeshInstance3D" parent="environment/Island" unique_id=296465829 instance=ExtResource("6_ryguw")]
-transform = Transform3D(0.86492985, 0, -0.5018928, 0, 1, 0, 0.5018928, 0, 0.86492985, -25.937338, 3, 13.763583)
-mesh = ExtResource("38_gx4rg")
-
-[node name="Rock_8_-49" type="MeshInstance3D" parent="environment/Island" unique_id=1116458158 instance=ExtResource("11_a6jrf")]
-transform = Transform3D(0.717293, 0, 0.6967716, 0, 1, 0, -0.6967716, 0, 0.717293, 8.628299, 4, -48.110645)
-mesh = ExtResource("44_ovcoh")
-
-[node name="Rock_14_52" type="MeshInstance3D" parent="environment/Island" unique_id=33342555 instance=ExtResource("9_0odxb")]
-transform = Transform3D(0.9730665, 0, 0.23052461, 0, 1, 0, -0.23052461, 0, 0.9730665, 14.337439, 3, 52.309185)
+[node name="Rock_-40_16" type="MeshInstance3D" parent="environment/Island" unique_id=1945830183 instance=ExtResource("9_0odxb")]
+transform = Transform3D(-0.33419892, 0, 0.94250256, 0, 1, 0, -0.94250256, 0, -0.33419892, -39.32059, 2, 16.042557)
 mesh = ExtResource("45_ppx11")
 
-[node name="Rock_39_-35" type="MeshInstance3D" parent="environment/Island" unique_id=816379044 instance=ExtResource("5_getpj")]
-transform = Transform3D(-0.4387031, 0, -0.89863205, 0, 1, 0, 0.89863205, 0, -0.4387031, 39.734806, 1, -34.869038)
+[node name="Rock_-39_43" type="MeshInstance3D" parent="environment/Island" unique_id=1041555929 instance=ExtResource("5_getpj")]
+transform = Transform3D(-0.72375935, 0, 0.69005245, 0, 1, 0, -0.69005245, 0, -0.72375935, -38.987103, 1, 43.29451)
 mesh = ExtResource("41_birbe")
 
-[node name="Rock_21_21" type="MeshInstance3D" parent="environment/Island" unique_id=1336524761 instance=ExtResource("4_82xsv")]
-transform = Transform3D(0.94005454, 0, 0.34102416, 0, 1, 0, -0.34102416, 0, 0.94005454, 21.511002, 6, 21.98674)
+[node name="Rock_-47_-32" type="MeshInstance3D" parent="environment/Island" unique_id=164477739 instance=ExtResource("10_lswn8")]
+transform = Transform3D(0.1996691, 0, 0.9798634, 0, 1, 0, -0.9798634, 0, 0.1996691, -46.921726, 1, -31.109598)
+mesh = ExtResource("39_5dllo")
+
+[node name="Rock_36_-37" type="MeshInstance3D" parent="environment/Island" unique_id=742132232 instance=ExtResource("8_1u8w0")]
+transform = Transform3D(0.62029016, 0, 0.78437245, 0, 1, 0, -0.78437245, 0, 0.62029016, 36.57664, 1, -36.927677)
+mesh = ExtResource("40_phcyf")
+
+[node name="Rock_22_-49" type="MeshInstance3D" parent="environment/Island" unique_id=2098364828 instance=ExtResource("10_lswn8")]
+transform = Transform3D(-0.4890365, 0, 0.8722633, 0, 1, 0, -0.8722633, 0, -0.4890365, 22.636349, 2, -48.500145)
+mesh = ExtResource("39_5dllo")
+
+[node name="Rock_47_-10" type="MeshInstance3D" parent="environment/Island" unique_id=860813535 instance=ExtResource("4_82xsv")]
+transform = Transform3D(-0.22342046, 0, -0.97472215, 0, 1, 0, 0.97472215, 0, -0.22342046, 47.438747, 2, -9.781285)
 mesh = ExtResource("43_4obbf")
 
-[node name="Rock_-5_41" type="MeshInstance3D" parent="environment/Island" unique_id=179200718 instance=ExtResource("7_d13ii")]
-transform = Transform3D(0.99552685, 0, 0.09447919, 0, 1, 0, -0.09447919, 0, 0.99552685, -4.993865, 3, 41.858654)
-mesh = ExtResource("42_f1p13")
-
-[node name="Rock_23_-47" type="MeshInstance3D" parent="environment/Island" unique_id=1985711239 instance=ExtResource("5_getpj")]
-transform = Transform3D(-0.73027366, 0, 0.68315476, 0, 1, 0, -0.68315476, 0, -0.73027366, 23.724552, 2, -46.57604)
-mesh = ExtResource("41_birbe")
-
-[node name="Rock_25_52" type="MeshInstance3D" parent="environment/Island" unique_id=1708954356 instance=ExtResource("9_0odxb")]
-transform = Transform3D(-0.9930904, 0, 0.11735173, 0, 1, 0, -0.11735173, 0, -0.9930904, 25.316486, 1, 52.570637)
-mesh = ExtResource("45_ppx11")
-
-[node name="Rock_-34_50" type="MeshInstance3D" parent="environment/Island" unique_id=108828288 instance=ExtResource("8_1u8w0")]
-transform = Transform3D(-0.75978816, 0, -0.6501707, 0, 1, 0, 0.6501707, 0, -0.75978816, -33.41903, 1, 50.67204)
-mesh = ExtResource("40_phcyf")
-
-[node name="Rock_-39_36" type="MeshInstance3D" parent="environment/Island" unique_id=1624651601 instance=ExtResource("10_lswn8")]
-transform = Transform3D(0.9860964, 0, 0.16617425, 0, 1, 0, -0.16617425, 0, 0.9860964, -38.620514, 2, 36.864853)
-mesh = ExtResource("39_5dllo")
-
-[node name="Rock_-20_15" type="MeshInstance3D" parent="environment/Island" unique_id=1573387900 instance=ExtResource("9_0odxb")]
-transform = Transform3D(0.98452896, 0, 0.17522193, 0, 1, 0, -0.17522193, 0, 0.98452896, -19.26669, 6, 15.934118)
-mesh = ExtResource("45_ppx11")
-
-[node name="Rock_-12_-16" type="MeshInstance3D" parent="environment/Island" unique_id=1700454204 instance=ExtResource("5_getpj")]
-transform = Transform3D(-0.5850079, 0, 0.8110276, 0, 1, 0, -0.8110276, 0, -0.5850079, -11.127415, 6, -15.196518)
-mesh = ExtResource("41_birbe")
-
-[node name="Rock_55_40" type="MeshInstance3D" parent="environment/Island" unique_id=835977433 instance=ExtResource("11_a6jrf")]
-transform = Transform3D(0.99982023, 0, -0.018959165, 0, 1, 0, 0.018959165, 0, 0.99982023, 55.3867, 1, 40.579803)
-mesh = ExtResource("44_ovcoh")
-
-[node name="Rock_46_-30" type="MeshInstance3D" parent="environment/Island" unique_id=1859988213 instance=ExtResource("9_0odxb")]
-transform = Transform3D(-0.17690004, 0, -0.98422885, 0, 1, 0, 0.98422885, 0, -0.17690004, 46.433807, 1, -29.579977)
-mesh = ExtResource("45_ppx11")
-
-[node name="Rock_-25_26" type="MeshInstance3D" parent="environment/Island" unique_id=1581177390 instance=ExtResource("8_1u8w0")]
-transform = Transform3D(-0.93690276, 0, -0.34959003, 0, 1, 0, 0.34959003, 0, -0.93690276, -24.06083, 3, 26.323156)
-mesh = ExtResource("40_phcyf")
-
-[node name="Rock_41_1" type="MeshInstance3D" parent="environment/Island" unique_id=217361778 instance=ExtResource("10_lswn8")]
-transform = Transform3D(-0.97405374, 0, -0.2263168, 0, 1, 0, 0.2263168, 0, -0.97405374, 41.737114, 2, 1.0708447)
-mesh = ExtResource("39_5dllo")
-
-[node name="Rock_46_48" type="MeshInstance3D" parent="environment/Island" unique_id=1318163641 instance=ExtResource("11_a6jrf")]
-transform = Transform3D(0.6685348, 0, -0.74368083, 0, 1, 0, 0.74368083, 0, 0.6685348, 46.324883, 1, 48.38381)
-mesh = ExtResource("44_ovcoh")
-
-[node name="Rock_17_-49" type="MeshInstance3D" parent="environment/Island" unique_id=611998897 instance=ExtResource("8_1u8w0")]
-transform = Transform3D(0.5772973, 0, 0.81653404, 0, 1, 0, -0.81653404, 0, 0.5772973, 17.459263, 2, -48.109215)
-mesh = ExtResource("40_phcyf")
-
-[node name="Rock_-27_-14" type="MeshInstance3D" parent="environment/Island" unique_id=48409430 instance=ExtResource("9_0odxb")]
-transform = Transform3D(-0.13762964, 0, 0.99048376, 0, 1, 0, -0.99048376, 0, -0.13762964, -26.625568, 4, -13.115954)
-mesh = ExtResource("45_ppx11")
-
-[node name="Rock_38_-33" type="MeshInstance3D" parent="environment/Island" unique_id=1333949661 instance=ExtResource("8_1u8w0")]
-transform = Transform3D(-0.45512766, 0, -0.8904262, 0, 1, 0, 0.8904262, 0, -0.45512766, 38.119682, 2, -32.746475)
-mesh = ExtResource("40_phcyf")
-
-[node name="Rock_-14_-31" type="MeshInstance3D" parent="environment/Island" unique_id=256321454 instance=ExtResource("6_ryguw")]
-transform = Transform3D(-0.9642519, 0, -0.2649875, 0, 1, 0, 0.2649875, 0, -0.9642519, -13.804327, 2, -30.137676)
+[node name="Rock_29_4" type="MeshInstance3D" parent="environment/Island" unique_id=67956058 instance=ExtResource("6_ryguw")]
+transform = Transform3D(0.15786046, 0, -0.98746145, 0, 1, 0, 0.98746145, 0, 0.15786046, 29.397213, 6, 4.251072)
 mesh = ExtResource("38_gx4rg")
 
-[node name="Rock_58_-28" type="MeshInstance3D" parent="environment/Island" unique_id=969125009 instance=ExtResource("10_lswn8")]
-transform = Transform3D(0.9693006, 0, 0.2458787, 0, 1, 0, -0.2458787, 0, 0.9693006, 58.267612, 1, -27.173193)
-mesh = ExtResource("39_5dllo")
+[node name="Rock_64_-1" type="MeshInstance3D" parent="environment/Island" unique_id=1656981132 instance=ExtResource("11_a6jrf")]
+transform = Transform3D(0.48990983, 0, 0.8717731, 0, 1, 0, -0.8717731, 0, 0.48990983, 64.10895, 1, -0.11824399)
+mesh = ExtResource("44_ovcoh")
 
-[node name="Rock_36_-1" type="MeshInstance3D" parent="environment/Island" unique_id=486537551 instance=ExtResource("9_0odxb")]
-transform = Transform3D(-0.3435713, 0, -0.9391266, 0, 1, 0, 0.9391266, 0, -0.3435713, 36.71508, 3, -0.042314947)
-mesh = ExtResource("45_ppx11")
-
-[node name="Rock_47_47" type="MeshInstance3D" parent="environment/Island" unique_id=35343996 instance=ExtResource("10_lswn8")]
-transform = Transform3D(-0.3940613, 0, 0.9190842, 0, 1, 0, -0.9190842, 0, -0.3940613, 47.420795, 1, 47.069626)
-mesh = ExtResource("39_5dllo")
-
-[node name="Rock_45_45" type="MeshInstance3D" parent="environment/Island" unique_id=1867823291 instance=ExtResource("7_d13ii")]
-transform = Transform3D(0.93026775, 0, 0.36688134, 0, 1, 0, -0.36688134, 0, 0.93026775, 45.06198, 1, 45.2286)
-mesh = ExtResource("42_f1p13")
-
-[node name="Rock_53_5" type="MeshInstance3D" parent="environment/Island" unique_id=735946013 instance=ExtResource("7_d13ii")]
-transform = Transform3D(0.82701355, 0, -0.562182, 0, 1, 0, 0.562182, 0, 0.82701355, 53.833473, 2, 5.9938745)
-mesh = ExtResource("42_f1p13")
-
-[node name="Rock_6_44" type="MeshInstance3D" parent="environment/Island" unique_id=1134996869 instance=ExtResource("10_lswn8")]
-transform = Transform3D(-0.8126826, 0, -0.5827066, 0, 1, 0, 0.5827066, 0, -0.8126826, 6.540422, 2, 44.558723)
-mesh = ExtResource("39_5dllo")
-
-[node name="Rock_15_53" type="MeshInstance3D" parent="environment/Island" unique_id=1406979689 instance=ExtResource("6_ryguw")]
-transform = Transform3D(0.77756876, 0, -0.62879795, 0, 1, 0, 0.62879795, 0, 0.77756876, 15.188984, 3, 53.967537)
+[node name="Rock_-32_45" type="MeshInstance3D" parent="environment/Island" unique_id=729395613 instance=ExtResource("6_ryguw")]
+transform = Transform3D(0.9202078, 0, -0.39143017, 0, 1, 0, 0.39143017, 0, 0.9202078, -31.752752, 2, 45.47076)
 mesh = ExtResource("38_gx4rg")
 
-[node name="Rock_33_44" type="MeshInstance3D" parent="environment/Island" unique_id=998866318 instance=ExtResource("5_getpj")]
-transform = Transform3D(-0.12311429, 0, 0.9923925, 0, 1, 0, -0.9923925, 0, -0.12311429, 33.525314, 1, 44.56243)
+[node name="Rock_58_11" type="MeshInstance3D" parent="environment/Island" unique_id=22189835 instance=ExtResource("4_82xsv")]
+transform = Transform3D(-0.7755603, 0, 0.63127345, 0, 1, 0, -0.63127345, 0, -0.7755603, 58.331856, 1, 11.833589)
+mesh = ExtResource("43_4obbf")
+
+[node name="Rock_64_8" type="MeshInstance3D" parent="environment/Island" unique_id=844410795 instance=ExtResource("6_ryguw")]
+transform = Transform3D(0.938663, 0, -0.3448359, 0, 1, 0, 0.3448359, 0, 0.938663, 64.134445, 1, 8.353426)
+mesh = ExtResource("38_gx4rg")
+
+[node name="Rock_37_-4" type="MeshInstance3D" parent="environment/Island" unique_id=2063401479 instance=ExtResource("8_1u8w0")]
+transform = Transform3D(0.19768392, 0, -0.9802658, 0, 1, 0, 0.9802658, 0, 0.19768392, 37.6983, 4, -3.6289732)
+mesh = ExtResource("40_phcyf")
+
+[node name="Rock_-11_27" type="MeshInstance3D" parent="environment/Island" unique_id=1226182695 instance=ExtResource("4_82xsv")]
+transform = Transform3D(-0.84065056, 0, 0.54157794, 0, 1, 0, -0.54157794, 0, -0.84065056, -10.575988, 7, 27.750307)
+mesh = ExtResource("43_4obbf")
+
+[node name="Rock_-58_7" type="MeshInstance3D" parent="environment/Island" unique_id=1959252470 instance=ExtResource("8_1u8w0")]
+transform = Transform3D(-0.9702842, 0, -0.24196807, 0, 1, 0, 0.24196807, 0, -0.9702842, -57.52385, 1, 7.5814385)
+mesh = ExtResource("40_phcyf")
+
+[node name="Rock_29_6" type="MeshInstance3D" parent="environment/Island" unique_id=299299652 instance=ExtResource("5_getpj")]
+transform = Transform3D(-0.744699, 0, 0.6674005, 0, 1, 0, -0.6674005, 0, -0.744699, 29.676764, 5, 6.377833)
 mesh = ExtResource("41_birbe")
 
-[node name="Rock_37_-1" type="MeshInstance3D" parent="environment/Island" unique_id=1166117139 instance=ExtResource("5_getpj")]
-transform = Transform3D(-0.50409794, 0, 0.8636465, 0, 1, 0, -0.8636465, 0, -0.50409794, 37.70703, 3, -0.40340698)
+[node name="Rock_-39_8" type="MeshInstance3D" parent="environment/Island" unique_id=1707700905 instance=ExtResource("5_getpj")]
+transform = Transform3D(-0.9048505, 0, -0.42572948, 0, 1, 0, 0.42572948, 0, -0.9048505, -38.294308, 4, 8.545105)
 mesh = ExtResource("41_birbe")
 
-[node name="Rock_5_32" type="MeshInstance3D" parent="environment/Island" unique_id=799267255 instance=ExtResource("5_getpj")]
-transform = Transform3D(0.42430547, 0, -0.9055191, 0, 1, 0, 0.9055191, 0, 0.42430547, 5.6070843, 5, 32.30678)
+[node name="Rock_-32_-46" type="MeshInstance3D" parent="environment/Island" unique_id=423815512 instance=ExtResource("10_lswn8")]
+transform = Transform3D(0.5236018, 0, -0.85196316, 0, 1, 0, 0.85196316, 0, 0.5236018, -31.377115, 1, -45.1317)
+mesh = ExtResource("39_5dllo")
+
+[node name="Rock_38_2" type="MeshInstance3D" parent="environment/Island" unique_id=1896017753 instance=ExtResource("5_getpj")]
+transform = Transform3D(-0.9793989, 0, -0.20193523, 0, 1, 0, 0.20193523, 0, -0.9793989, 38.117744, 4, 2.4796007)
 mesh = ExtResource("41_birbe")
 
-[node name="Rock_-57_9" type="MeshInstance3D" parent="environment/Island" unique_id=577092489 instance=ExtResource("7_d13ii")]
-transform = Transform3D(0.704866, 0, -0.7093405, 0, 1, 0, 0.7093405, 0, 0.704866, -56.356647, 1, 9.357741)
+[node name="Rock_18_5" type="MeshInstance3D" parent="environment/Island" unique_id=435979307 instance=ExtResource("11_a6jrf")]
+transform = Transform3D(0.7740815, 0, -0.63308597, 0, 1, 0, 0.63308597, 0, 0.7740815, 18.863071, 6, 5.820169)
+mesh = ExtResource("44_ovcoh")
+
+[node name="Rock_25_66" type="MeshInstance3D" parent="environment/Island" unique_id=222155600 instance=ExtResource("8_1u8w0")]
+transform = Transform3D(-0.82174027, 0, 0.56986225, 0, 1, 0, -0.56986225, 0, -0.82174027, 25.638636, 1, 66.75557)
+mesh = ExtResource("40_phcyf")
+
+[node name="Rock_41_17" type="MeshInstance3D" parent="environment/Island" unique_id=107755877 instance=ExtResource("5_getpj")]
+transform = Transform3D(-0.8354791, 0, 0.5495222, 0, 1, 0, -0.5495222, 0, -0.8354791, 41.62013, 1, 17.914234)
+mesh = ExtResource("41_birbe")
+
+[node name="Rock_-30_-39" type="MeshInstance3D" parent="environment/Island" unique_id=112847013 instance=ExtResource("11_a6jrf")]
+transform = Transform3D(0.7155562, 0, -0.6985551, 0, 1, 0, 0.6985551, 0, 0.7155562, -29.244457, 1, -38.644142)
+mesh = ExtResource("44_ovcoh")
+
+[node name="Rock_35_-13" type="MeshInstance3D" parent="environment/Island" unique_id=2115390296 instance=ExtResource("6_ryguw")]
+transform = Transform3D(0.17636931, 0, 0.98432404, 0, 1, 0, -0.98432404, 0, 0.17636931, 35.282677, 3, -12.944809)
+mesh = ExtResource("38_gx4rg")
+
+[node name="Rock_27_-24" type="MeshInstance3D" parent="environment/Island" unique_id=1408442835 instance=ExtResource("6_ryguw")]
+transform = Transform3D(-0.9956321, 0, -0.09336334, 0, 1, 0, 0.09336334, 0, -0.9956321, 27.317228, 2, -23.3334)
+mesh = ExtResource("38_gx4rg")
+
+[node name="Rock_12_35" type="MeshInstance3D" parent="environment/Island" unique_id=808094281 instance=ExtResource("7_d13ii")]
+transform = Transform3D(-0.49471807, 0, -0.86905354, 0, 1, 0, 0.86905354, 0, -0.49471807, 12.003637, 5, 35.43944)
 mesh = ExtResource("42_f1p13")
 
-[node name="Rock_18_29" type="MeshInstance3D" parent="environment/Island" unique_id=223971705 instance=ExtResource("5_getpj")]
-transform = Transform3D(0.97554106, 0, 0.21981739, 0, 1, 0, -0.21981739, 0, 0.97554106, 18.14077, 6, 29.997726)
-mesh = ExtResource("41_birbe")
-
-[node name="Plant_-10_-6" type="MeshInstance3D" parent="environment/Island" unique_id=402830808 instance=ExtResource("13_facbu")]
-transform = Transform3D(0.67467463, 0, -0.73811525, 0, 1, 0, 0.73811525, 0, 0.67467463, -9.453249, 10, -5.1589313)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_5_-39" type="MeshInstance3D" parent="environment/Island" unique_id=1842081135 instance=ExtResource("20_gngh3")]
-transform = Transform3D(0.96266675, 0, 0.27068946, 0, 1, 0, -0.27068946, 0, 0.96266675, 5.9525943, 4, -38.76335)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_32_42" type="MeshInstance3D" parent="environment/Island" unique_id=543272838 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.8183, 0, -0.5747913, 0, 1, 0, 0.5747913, 0, -0.8183, 32.19692, 1, 42.905327)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_-30_-21" type="MeshInstance3D" parent="environment/Island" unique_id=1839535091 instance=ExtResource("27_uypp3")]
-transform = Transform3D(-0.8938506, 0, -0.44836482, 0, 1, 0, 0.44836482, 0, -0.8938506, -29.025307, 3, -20.764534)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_-42_-6" type="MeshInstance3D" parent="environment/Island" unique_id=1779453519 instance=ExtResource("24_f6a44")]
-transform = Transform3D(0.98274004, 0, 0.18499176, 0, 1, 0, -0.18499176, 0, 0.98274004, -41.64935, 4, -5.002614)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_-2_-11" type="MeshInstance3D" parent="environment/Island" unique_id=170564604 instance=ExtResource("25_0cbny")]
-transform = Transform3D(0.5600516, 0, -0.8284577, 0, 1, 0, 0.8284577, 0, 0.5600516, -1.5403689, 8, -10.537905)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_2_24" type="MeshInstance3D" parent="environment/Island" unique_id=995146004 instance=ExtResource("27_uypp3")]
-transform = Transform3D(0.9923057, 0, -0.12381202, 0, 1, 0, 0.12381202, 0, 0.9923057, 2.40962, 6, 24.922495)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_9_14" type="MeshInstance3D" parent="environment/Island" unique_id=1032008992 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.3572695, 0, 0.9340013, 0, 1, 0, -0.9340013, 0, 0.3572695, 9.488531, 6, 14.206235)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_12_1" type="MeshInstance3D" parent="environment/Island" unique_id=1780593480 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.3047989, 0, 0.9524167, 0, 1, 0, -0.9524167, 0, 0.3047989, 12.835544, 5, 1.7594323)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-40_16" type="MeshInstance3D" parent="environment/Island" unique_id=1811441138 instance=ExtResource("24_f6a44")]
-transform = Transform3D(-0.089081764, 0, -0.9960243, 0, 1, 0, 0.9960243, 0, -0.089081764, -39.30437, 1, 16.494272)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_13_31" type="MeshInstance3D" parent="environment/Island" unique_id=1723907945 instance=ExtResource("28_blkrb")]
-transform = Transform3D(0.5835719, 0, 0.8120615, 0, 1, 0, -0.8120615, 0, 0.5835719, 13.827847, 5, 31.973772)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_1_-43" type="MeshInstance3D" parent="environment/Island" unique_id=346333066 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(0.66408247, 0, -0.7476593, 0, 1, 0, 0.7476593, 0, 0.66408247, 1.8829973, 4, -42.251102)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_37_16" type="MeshInstance3D" parent="environment/Island" unique_id=888417185 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(-0.90706325, 0, -0.4209944, 0, 1, 0, 0.4209944, 0, -0.90706325, 37.37786, 3, 16.446978)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_28_-8" type="MeshInstance3D" parent="environment/Island" unique_id=1432159188 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.7497107, 0, 0.66176575, 0, 1, 0, -0.66176575, 0, 0.7497107, 28.047726, 4, -7.9642425)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-46_17" type="MeshInstance3D" parent="environment/Island" unique_id=1134317265 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.7046455, 0, 0.7095595, 0, 1, 0, -0.7095595, 0, -0.7046455, -45.70595, 2, 17.573162)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_9_38" type="MeshInstance3D" parent="environment/Island" unique_id=164832214 instance=ExtResource("15_come4")]
-transform = Transform3D(-0.37628138, 0, 0.92650545, 0, 1, 0, -0.92650545, 0, -0.37628138, 9.328692, 4, 38.46362)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_13_-25" type="MeshInstance3D" parent="environment/Island" unique_id=494507200 instance=ExtResource("25_0cbny")]
-transform = Transform3D(0.7675905, 0, 0.64094055, 0, 1, 0, -0.64094055, 0, 0.7675905, 13.688433, 4, -24.76735)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_20_-4" type="MeshInstance3D" parent="environment/Island" unique_id=1374613715 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(0.8779721, 0, -0.47871175, 0, 1, 0, 0.47871175, 0, 0.8779721, 20.205694, 4, -3.0975585)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_17_37" type="MeshInstance3D" parent="environment/Island" unique_id=1477391787 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.16192825, 0, -0.9868025, 0, 1, 0, 0.9868025, 0, -0.16192825, 17.402473, 4, 37.259785)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_61_-27" type="MeshInstance3D" parent="environment/Island" unique_id=1517475758 instance=ExtResource("13_facbu")]
-transform = Transform3D(-0.9848433, 0, -0.1734463, 0, 1, 0, 0.1734463, 0, -0.9848433, 61.40126, 1, -26.056261)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_-17_-9" type="MeshInstance3D" parent="environment/Island" unique_id=731013646 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.8752806, 0, -0.4836154, 0, 1, 0, 0.4836154, 0, 0.8752806, -16.888628, 8, -8.298973)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_8_-20" type="MeshInstance3D" parent="environment/Island" unique_id=543806583 instance=ExtResource("22_qnost")]
-transform = Transform3D(0.34284022, 0, 0.9393937, 0, 1, 0, -0.9393937, 0, 0.34284022, 8.375489, 5, -19.132334)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_16_63" type="MeshInstance3D" parent="environment/Island" unique_id=1687273454 instance=ExtResource("27_uypp3")]
-transform = Transform3D(-0.4890147, 0, 0.87227553, 0, 1, 0, -0.87227553, 0, -0.4890147, 16.477388, 1, 63.736176)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_0_-24" type="MeshInstance3D" parent="environment/Island" unique_id=1271387560 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(-0.07296942, 0, 0.9973342, 0, 1, 0, -0.9973342, 0, -0.07296942, 0.42098317, 4, -23.549301)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_59_-15" type="MeshInstance3D" parent="environment/Island" unique_id=2092747547 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(-0.9996042, 0, 0.028132215, 0, 1, 0, -0.028132215, 0, -0.9996042, 59.33741, 1, -14.977193)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_44_-14" type="MeshInstance3D" parent="environment/Island" unique_id=1676657707 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.4764814, 0, 0.87918454, 0, 1, 0, -0.87918454, 0, -0.4764814, 44.395203, 2, -13.693156)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_-46_22" type="MeshInstance3D" parent="environment/Island" unique_id=1585477665 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.9883462, 0, 0.15222257, 0, 1, 0, -0.15222257, 0, 0.9883462, -45.038322, 2, 22.897142)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_56_40" type="MeshInstance3D" parent="environment/Island" unique_id=240887050 instance=ExtResource("13_facbu")]
-transform = Transform3D(-0.9984265, 0, 0.05607562, 0, 1, 0, -0.05607562, 0, -0.9984265, 56.084923, 1, 40.638412)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_44_13" type="MeshInstance3D" parent="environment/Island" unique_id=769538140 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(0.90354204, 0, -0.4284994, 0, 1, 0, 0.4284994, 0, 0.90354204, 44.563812, 2, 13.348074)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_19_-41" type="MeshInstance3D" parent="environment/Island" unique_id=737835245 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.6956212, 0, -0.71840876, 0, 1, 0, 0.71840876, 0, -0.6956212, 19.284855, 2, -40.929546)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_-29_-25" type="MeshInstance3D" parent="environment/Island" unique_id=828489019 instance=ExtResource("13_facbu")]
-transform = Transform3D(-0.98736215, 0, 0.15848021, 0, 1, 0, -0.15848021, 0, -0.98736215, -28.61862, 3, -24.345722)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_7_-42" type="MeshInstance3D" parent="environment/Island" unique_id=1813461888 instance=ExtResource("28_blkrb")]
-transform = Transform3D(0.9693022, 0, 0.24587241, 0, 1, 0, -0.24587241, 0, 0.9693022, 7.207435, 4, -41.1771)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_-41_-3" type="MeshInstance3D" parent="environment/Island" unique_id=715397704 instance=ExtResource("28_blkrb")]
-transform = Transform3D(-0.9912227, 0, 0.13220276, 0, 1, 0, -0.13220276, 0, -0.9912227, -40.839005, 5, -2.2743077)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_25_-18" type="MeshInstance3D" parent="environment/Island" unique_id=525143827 instance=ExtResource("27_uypp3")]
-transform = Transform3D(-0.8769178, 0, -0.48064038, 0, 1, 0, 0.48064038, 0, -0.8769178, 25.07899, 4, -17.255033)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_-3_-41" type="MeshInstance3D" parent="environment/Island" unique_id=710780045 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.9776524, 0, 0.21022803, 0, 1, 0, -0.21022803, 0, 0.9776524, -2.4400954, 4, -40.708374)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-3_31" type="MeshInstance3D" parent="environment/Island" unique_id=999626109 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(0.99945164, 0, 0.03311182, 0, 1, 0, -0.03311182, 0, 0.99945164, -2.5769427, 5, 31.345158)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_-23_-38" type="MeshInstance3D" parent="environment/Island" unique_id=2128779573 instance=ExtResource("15_come4")]
-transform = Transform3D(-0.23422948, 0, 0.9721813, 0, 1, 0, -0.9721813, 0, -0.23422948, -22.707125, 2, -37.08418)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-16_48" type="MeshInstance3D" parent="environment/Island" unique_id=708901015 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.7245606, 0, -0.6892111, 0, 1, 0, 0.6892111, 0, 0.7245606, -15.730211, 2, 48.73491)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-29_-37" type="MeshInstance3D" parent="environment/Island" unique_id=189419330 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(-0.6137588, 0, -0.7894936, 0, 1, 0, 0.7894936, 0, -0.6137588, -28.19984, 2, -36.116127)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_4_65" type="MeshInstance3D" parent="environment/Island" unique_id=1717982192 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.97642756, 0, 0.21584527, 0, 1, 0, -0.21584527, 0, 0.97642756, 4.8061786, 1, 65.7527)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-48_5" type="MeshInstance3D" parent="environment/Island" unique_id=1717471256 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(-0.04969741, 0, -0.99876434, 0, 1, 0, 0.99876434, 0, -0.04969741, -47.966457, 4, 5.872551)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-54_27" type="MeshInstance3D" parent="environment/Island" unique_id=1357457324 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(0.13048004, 0, 0.99145097, 0, 1, 0, -0.99145097, 0, 0.13048004, -53.785034, 1, 27.482351)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_-1_-6" type="MeshInstance3D" parent="environment/Island" unique_id=1577172768 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(-0.63824975, 0, -0.76982933, 0, 1, 0, 0.76982933, 0, -0.63824975, -0.44959933, 8, -5.726343)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_29_-18" type="MeshInstance3D" parent="environment/Island" unique_id=1239225013 instance=ExtResource("28_blkrb")]
-transform = Transform3D(-0.7836183, 0, -0.62124264, 0, 1, 0, 0.62124264, 0, -0.7836183, 29.775702, 5, -17.392788)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_-12_-47" type="MeshInstance3D" parent="environment/Island" unique_id=1558712015 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(-0.48484728, 0, 0.8745988, 0, 1, 0, -0.8745988, 0, -0.48484728, -11.410621, 2, -46.76364)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_9_22" type="MeshInstance3D" parent="environment/Island" unique_id=607157320 instance=ExtResource("22_qnost")]
-transform = Transform3D(0.993365, 0, 0.11500415, 0, 1, 0, -0.11500415, 0, 0.993365, 9.875115, 5, 22.834574)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_49_26" type="MeshInstance3D" parent="environment/Island" unique_id=1082936455 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(-0.64374983, 0, -0.76523596, 0, 1, 0, 0.76523596, 0, -0.64374983, 49.255283, 2, 26.623154)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-11_53" type="MeshInstance3D" parent="environment/Island" unique_id=2025564580 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(0.50094074, 0, -0.86548156, 0, 1, 0, 0.86548156, 0, 0.50094074, -10.585093, 1, 53.07745)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_14_24" type="MeshInstance3D" parent="environment/Island" unique_id=518870182 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(0.7855651, 0, -0.61877906, 0, 1, 0, 0.61877906, 0, 0.7855651, 14.948215, 6, 24.460457)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_-31_62" type="MeshInstance3D" parent="environment/Island" unique_id=1309739834 instance=ExtResource("15_come4")]
-transform = Transform3D(0.9032603, 0, 0.42909303, 0, 1, 0, -0.42909303, 0, 0.9032603, -30.87248, 1, 62.625538)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_18_59" type="MeshInstance3D" parent="environment/Island" unique_id=559598830 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.12010624, 0, 0.992761, 0, 1, 0, -0.992761, 0, -0.12010624, 18.179056, 2, 59.11525)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_-54_18" type="MeshInstance3D" parent="environment/Island" unique_id=307320917 instance=ExtResource("25_0cbny")]
-transform = Transform3D(0.23961902, 0, -0.970867, 0, 1, 0, 0.970867, 0, 0.23961902, -53.187767, 2, 18.567516)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_18_-28" type="MeshInstance3D" parent="environment/Island" unique_id=50569935 instance=ExtResource("27_uypp3")]
-transform = Transform3D(-0.62080246, 0, 0.783967, 0, 1, 0, -0.783967, 0, -0.62080246, 18.056736, 3, -27.64695)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_-36_-42" type="MeshInstance3D" parent="environment/Island" unique_id=1575919043 instance=ExtResource("13_facbu")]
-transform = Transform3D(-0.9985833, 0, -0.053210713, 0, 1, 0, 0.053210713, 0, -0.9985833, -35.306442, 2, -41.460888)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_11_31" type="MeshInstance3D" parent="environment/Island" unique_id=870349928 instance=ExtResource("22_qnost")]
-transform = Transform3D(0.457519, 0, -0.88919985, 0, 1, 0, 0.88919985, 0, 0.457519, 11.356311, 5, 31.2336)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_52_28" type="MeshInstance3D" parent="environment/Island" unique_id=1803306336 instance=ExtResource("22_qnost")]
-transform = Transform3D(0.9776821, 0, 0.2100898, 0, 1, 0, -0.2100898, 0, 0.9776821, 52.534866, 2, 28.579227)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-49_-22" type="MeshInstance3D" parent="environment/Island" unique_id=1125228218 instance=ExtResource("22_qnost")]
-transform = Transform3D(-0.48250344, 0, 0.87589407, 0, 1, 0, -0.87589407, 0, -0.48250344, -48.073746, 1, -21.971752)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-57_1" type="MeshInstance3D" parent="environment/Island" unique_id=1394450657 instance=ExtResource("22_qnost")]
-transform = Transform3D(0.63272446, 0, 0.774377, 0, 1, 0, -0.774377, 0, 0.63272446, -56.96158, 2, 1.8025649)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-19_2" type="MeshInstance3D" parent="environment/Island" unique_id=159748328 instance=ExtResource("28_blkrb")]
-transform = Transform3D(0.4584905, 0, 0.8886993, 0, 1, 0, -0.8886993, 0, 0.4584905, -18.372177, 7, 2.9199834)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_-54_-3" type="MeshInstance3D" parent="environment/Island" unique_id=230497430 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.8240595, 0, -0.5665033, 0, 1, 0, 0.5665033, 0, -0.8240595, -53.598934, 2, -2.551281)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_20_53" type="MeshInstance3D" parent="environment/Island" unique_id=1149417055 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.71613, 0, 0.6979669, 0, 1, 0, -0.6979669, 0, -0.71613, 20.178387, 2, 53.79941)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_61_-8" type="MeshInstance3D" parent="environment/Island" unique_id=814122084 instance=ExtResource("24_f6a44")]
-transform = Transform3D(-0.7858854, 0, -0.6183722, 0, 1, 0, 0.6183722, 0, -0.7858854, 61.949062, 1, -7.899316)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_7_-3" type="MeshInstance3D" parent="environment/Island" unique_id=1960349886 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(0.93491256, 0, 0.35487816, 0, 1, 0, -0.35487816, 0, 0.93491256, 7.8509374, 5, -2.218205)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_-58_9" type="MeshInstance3D" parent="environment/Island" unique_id=1891524541 instance=ExtResource("27_uypp3")]
-transform = Transform3D(0.8674663, 0, -0.497496, 0, 1, 0, 0.497496, 0, 0.8674663, -57.716812, 1, 9.687756)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_68_-11" type="MeshInstance3D" parent="environment/Island" unique_id=1963602365 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.6177615, 0, 0.7863655, 0, 1, 0, -0.7863655, 0, 0.6177615, 68.84639, 1, -10.139222)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-17_-29" type="MeshInstance3D" parent="environment/Island" unique_id=1884782647 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(-0.6965163, 0, -0.717541, 0, 1, 0, 0.717541, 0, -0.6965163, -16.753683, 1, -28.6713)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_37_-35" type="MeshInstance3D" parent="environment/Island" unique_id=806821411 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(-0.40001845, 0, 0.91650707, 0, 1, 0, -0.91650707, 0, -0.40001845, 37.950737, 1, -34.908264)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_31_15" type="MeshInstance3D" parent="environment/Island" unique_id=653168566 instance=ExtResource("15_come4")]
-transform = Transform3D(0.38589066, 0, 0.92254454, 0, 1, 0, -0.92254454, 0, 0.38589066, 31.04915, 4, 15.773659)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-25_-36" type="MeshInstance3D" parent="environment/Island" unique_id=521321098 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.36942372, 0, 0.929261, 0, 1, 0, -0.929261, 0, -0.36942372, -24.627993, 2, -35.82729)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_56_28" type="MeshInstance3D" parent="environment/Island" unique_id=748221279 instance=ExtResource("13_facbu")]
-transform = Transform3D(0.87061983, 0, -0.49195638, 0, 1, 0, 0.49195638, 0, 0.87061983, 56.433483, 2, 28.548868)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_4_-32" type="MeshInstance3D" parent="environment/Island" unique_id=607242514 instance=ExtResource("20_gngh3")]
-transform = Transform3D(0.95409846, 0, -0.29949313, 0, 1, 0, 0.29949313, 0, 0.95409846, 4.792335, 3, -31.42325)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_21_-55" type="MeshInstance3D" parent="environment/Island" unique_id=1720058021 instance=ExtResource("24_f6a44")]
-transform = Transform3D(-0.40737715, 0, 0.91326, 0, 1, 0, -0.91326, 0, -0.40737715, 21.192799, 1, -54.57873)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_-14_-3" type="MeshInstance3D" parent="environment/Island" unique_id=1800818262 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.45272812, 0, 0.8916486, 0, 1, 0, -0.8916486, 0, 0.45272812, -13.779805, 9, -2.0691667)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-41_2" type="MeshInstance3D" parent="environment/Island" unique_id=687166673 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(-0.9411549, 0, 0.33797562, 0, 1, 0, -0.33797562, 0, -0.9411549, -40.23549, 5, 2.645934)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-5_-9" type="MeshInstance3D" parent="environment/Island" unique_id=645171641 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.9366708, 0, -0.3502111, 0, 1, 0, 0.3502111, 0, 0.9366708, -4.326369, 8, -8.8722515)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_27_-32" type="MeshInstance3D" parent="environment/Island" unique_id=794470720 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(0.77242726, 0, -0.6351032, 0, 1, 0, 0.6351032, 0, 0.77242726, 27.81294, 3, -31.554577)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_45_3" type="MeshInstance3D" parent="environment/Island" unique_id=2013013328 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(-0.047059778, 0, -0.99889207, 0, 1, 0, 0.99889207, 0, -0.047059778, 45.956356, 2, 3.373758)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_36_-13" type="MeshInstance3D" parent="environment/Island" unique_id=1076600945 instance=ExtResource("20_gngh3")]
-transform = Transform3D(0.5958095, 0, -0.80312574, 0, 1, 0, 0.80312574, 0, 0.5958095, 36.711037, 4, -12.682125)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_-6_38" type="MeshInstance3D" parent="environment/Island" unique_id=503424398 instance=ExtResource("28_blkrb")]
-transform = Transform3D(-0.7995835, 0, -0.6005549, 0, 1, 0, 0.6005549, 0, -0.7995835, -5.2788534, 4, 38.058865)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_-11_0" type="MeshInstance3D" parent="environment/Island" unique_id=1400342186 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(0.76287925, 0, 0.646541, 0, 1, 0, -0.646541, 0, 0.76287925, -10.292147, 9, 0.87634563)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_-34_52" type="MeshInstance3D" parent="environment/Island" unique_id=1828951531 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.7283052, 0, -0.68525285, 0, 1, 0, 0.68525285, 0, 0.7283052, -33.199738, 1, 52.992344)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_13_17" type="MeshInstance3D" parent="environment/Island" unique_id=1180302492 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.5313121, 0, 0.84717613, 0, 1, 0, -0.84717613, 0, -0.5313121, 13.460722, 6, 17.548399)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_8_36" type="MeshInstance3D" parent="environment/Island" unique_id=302476046 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(-0.8440868, 0, 0.53620654, 0, 1, 0, -0.53620654, 0, -0.8440868, 8.466014, 4, 36.85847)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_25_16" type="MeshInstance3D" parent="environment/Island" unique_id=222384927 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.35866553, 0, 0.93346614, 0, 1, 0, -0.93346614, 0, -0.35866553, 25.253145, 5, 16.307087)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_-5_61" type="MeshInstance3D" parent="environment/Island" unique_id=769897541 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(-0.24547039, 0, -0.9694041, 0, 1, 0, 0.9694041, 0, -0.24547039, -4.9349604, 1, 61.79021)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-1_15" type="MeshInstance3D" parent="environment/Island" unique_id=239275765 instance=ExtResource("25_0cbny")]
-transform = Transform3D(0.54653645, 0, 0.8374353, 0, 1, 0, -0.8374353, 0, 0.54653645, -0.1803183, 6, 15.026229)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_-34_0" type="MeshInstance3D" parent="environment/Island" unique_id=1979062967 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.44387686, 0, 0.8960878, 0, 1, 0, -0.8960878, 0, 0.44387686, -33.82192, 5, 0.8046571)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_-38_-44" type="MeshInstance3D" parent="environment/Island" unique_id=1898850606 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(-0.20073318, 0, 0.97964597, 0, 1, 0, -0.97964597, 0, -0.20073318, -37.274887, 1, -43.447174)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_5_35" type="MeshInstance3D" parent="environment/Island" unique_id=854690255 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.16361038, 0, 0.98652506, 0, 1, 0, -0.98652506, 0, -0.16361038, 5.4715605, 4, 35.341034)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_-46_5" type="MeshInstance3D" parent="environment/Island" unique_id=1878562134 instance=ExtResource("20_gngh3")]
-transform = Transform3D(0.06672257, 0, 0.99777156, 0, 1, 0, -0.99777156, 0, 0.06672257, -45.225418, 4, 5.755513)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_13_-5" type="MeshInstance3D" parent="environment/Island" unique_id=50016571 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.09487765, 0, 0.99548894, 0, 1, 0, -0.99548894, 0, -0.09487765, 13.909024, 6, -4.888317)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_36_22" type="MeshInstance3D" parent="environment/Island" unique_id=1827708479 instance=ExtResource("25_0cbny")]
-transform = Transform3D(0.98289734, 0, -0.1841544, 0, 1, 0, 0.1841544, 0, 0.98289734, 36.268173, 2, 22.104265)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_52_-14" type="MeshInstance3D" parent="environment/Island" unique_id=460923718 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.28718656, 0, -0.95787466, 0, 1, 0, 0.95787466, 0, -0.28718656, 52.018467, 2, -13.811193)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_-19_-58" type="MeshInstance3D" parent="environment/Island" unique_id=1957694579 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.70133585, 0, 0.712831, 0, 1, 0, -0.712831, 0, -0.70133585, -18.752205, 2, -57.855736)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_40_1" type="MeshInstance3D" parent="environment/Island" unique_id=2085902625 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.28274497, 0, 0.95919514, 0, 1, 0, -0.95919514, 0, 0.28274497, 40.83805, 2, 1.1493351)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_42_47" type="MeshInstance3D" parent="environment/Island" unique_id=112297148 instance=ExtResource("28_blkrb")]
-transform = Transform3D(-0.45102042, 0, 0.89251363, 0, 1, 0, -0.89251363, 0, -0.45102042, 42.718952, 1, 47.562084)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_31_50" type="MeshInstance3D" parent="environment/Island" unique_id=2012396970 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.3954989, 0, -0.91846645, 0, 1, 0, 0.91846645, 0, 0.3954989, 31.745247, 1, 50.640457)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_-54_9" type="MeshInstance3D" parent="environment/Island" unique_id=194688313 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(0.86940795, 0, -0.49409497, 0, 1, 0, 0.49409497, 0, 0.86940795, -53.96596, 2, 9.3669615)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_58_19" type="MeshInstance3D" parent="environment/Island" unique_id=33333542 instance=ExtResource("20_gngh3")]
-transform = Transform3D(0.9996971, 0, -0.024612628, 0, 1, 0, 0.024612628, 0, 0.9996971, 58.943474, 2, 19.153782)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_-4_9" type="MeshInstance3D" parent="environment/Island" unique_id=144993506 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(-0.93197536, 0, 0.36252156, 0, 1, 0, -0.36252156, 0, -0.93197536, -3.0079408, 9, 9.965267)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_-40_46" type="MeshInstance3D" parent="environment/Island" unique_id=1498602502 instance=ExtResource("13_facbu")]
-transform = Transform3D(-0.5849886, 0, -0.81104153, 0, 1, 0, 0.81104153, 0, -0.5849886, -39.977, 2, 46.97763)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_6_45" type="MeshInstance3D" parent="environment/Island" unique_id=1488253042 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.94039273, 0, 0.34009045, 0, 1, 0, -0.34009045, 0, 0.94039273, 6.217873, 2, 45.007084)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_-25_-16" type="MeshInstance3D" parent="environment/Island" unique_id=597541833 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(-0.7283821, 0, 0.6851711, 0, 1, 0, -0.6851711, 0, -0.7283821, -24.270607, 4, -15.776888)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_-5_60" type="MeshInstance3D" parent="environment/Island" unique_id=1314692117 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.75017864, 0, -0.6612353, 0, 1, 0, 0.6612353, 0, -0.75017864, -4.488917, 1, 60.89581)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_-21_39" type="MeshInstance3D" parent="environment/Island" unique_id=1001928029 instance=ExtResource("27_uypp3")]
-transform = Transform3D(-0.9984885, 0, 0.05496083, 0, 1, 0, -0.05496083, 0, -0.9984885, -20.746761, 4, 39.67347)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_33_33" type="MeshInstance3D" parent="environment/Island" unique_id=618747895 instance=ExtResource("22_qnost")]
-transform = Transform3D(0.9492119, 0, 0.31463757, 0, 1, 0, -0.31463757, 0, 0.9492119, 33.118755, 1, 33.01103)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_5_25" type="MeshInstance3D" parent="environment/Island" unique_id=625874319 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.72321147, 0, 0.6906267, 0, 1, 0, -0.6906267, 0, 0.72321147, 5.6120253, 6, 25.451998)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-26_-4" type="MeshInstance3D" parent="environment/Island" unique_id=1263815807 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(-0.94321483, 0, -0.33218333, 0, 1, 0, 0.33218333, 0, -0.94321483, -25.81925, 7, -3.9035122)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_-16_-11" type="MeshInstance3D" parent="environment/Island" unique_id=1995833359 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.9242443, 0, 0.38180172, 0, 1, 0, -0.38180172, 0, 0.9242443, -15.106404, 7, -10.502049)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_48_17" type="MeshInstance3D" parent="environment/Island" unique_id=502115521 instance=ExtResource("22_qnost")]
-transform = Transform3D(-0.8534896, 0, 0.52110994, 0, 1, 0, -0.52110994, 0, -0.8534896, 48.566, 2, 17.925701)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_7_-55" type="MeshInstance3D" parent="environment/Island" unique_id=1223204917 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.4581091, 0, -0.888896, 0, 1, 0, 0.888896, 0, 0.4581091, 7.414689, 2, -54.335636)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_30_12" type="MeshInstance3D" parent="environment/Island" unique_id=1376108730 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.41884303, 0, 0.90805864, 0, 1, 0, -0.90805864, 0, 0.41884303, 30.166994, 4, 12.029989)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_51_13" type="MeshInstance3D" parent="environment/Island" unique_id=608564635 instance=ExtResource("25_0cbny")]
-transform = Transform3D(-0.9806161, 0, 0.19593884, 0, 1, 0, -0.19593884, 0, -0.9806161, 51.904797, 3, 13.427806)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_9_-33" type="MeshInstance3D" parent="environment/Island" unique_id=1257329181 instance=ExtResource("27_uypp3")]
-transform = Transform3D(0.6458453, 0, 0.76346827, 0, 1, 0, -0.76346827, 0, 0.6458453, 9.463427, 2, -32.2128)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_-30_38" type="MeshInstance3D" parent="environment/Island" unique_id=2446564 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(0.81043196, 0, -0.5858328, 0, 1, 0, 0.5858328, 0, 0.81043196, -29.261484, 3, 38.87619)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_-16_37" type="MeshInstance3D" parent="environment/Island" unique_id=141515773 instance=ExtResource("24_f6a44")]
-transform = Transform3D(0.09203393, 0, 0.99575585, 0, 1, 0, -0.99575585, 0, 0.09203393, -15.4485655, 4, 37.33141)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_47_44" type="MeshInstance3D" parent="environment/Island" unique_id=1542336617 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(0.9947418, 0, -0.102414794, 0, 1, 0, 0.102414794, 0, 0.9947418, 47.903374, 1, 44.87509)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_36_54" type="MeshInstance3D" parent="environment/Island" unique_id=1025114115 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(-0.1997266, 0, -0.97985166, 0, 1, 0, 0.97985166, 0, -0.1997266, 36.181774, 1, 54.32368)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_-42_-38" type="MeshInstance3D" parent="environment/Island" unique_id=797416367 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(-0.13228673, 0, -0.9912115, 0, 1, 0, 0.9912115, 0, -0.13228673, -41.92765, 2, -37.950283)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-34_-40" type="MeshInstance3D" parent="environment/Island" unique_id=826328867 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.5657796, 0, -0.8245565, 0, 1, 0, 0.8245565, 0, -0.5657796, -33.661503, 3, -39.75971)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_33_-15" type="MeshInstance3D" parent="environment/Island" unique_id=658167205 instance=ExtResource("27_uypp3")]
-transform = Transform3D(0.99965984, 0, -0.026081767, 0, 1, 0, 0.026081767, 0, 0.99965984, 33.816017, 4, -14.916596)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_-48_12" type="MeshInstance3D" parent="environment/Island" unique_id=570748610 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(0.88471437, 0, 0.4661336, 0, 1, 0, -0.4661336, 0, 0.88471437, -47.168507, 3, 12.790123)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_22_58" type="MeshInstance3D" parent="environment/Island" unique_id=430309616 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(0.7043375, 0, -0.7098653, 0, 1, 0, 0.7098653, 0, 0.7043375, 22.627142, 1, 58.45339)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_-23_-56" type="MeshInstance3D" parent="environment/Island" unique_id=1478300619 instance=ExtResource("15_come4")]
-transform = Transform3D(-0.38773516, 0, 0.9217708, 0, 1, 0, -0.9217708, 0, -0.38773516, -22.599493, 2, -55.06715)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-12_-4" type="MeshInstance3D" parent="environment/Island" unique_id=1818745879 instance=ExtResource("22_qnost")]
-transform = Transform3D(-0.3806553, 0, -0.924717, 0, 1, 0, 0.924717, 0, -0.3806553, -11.557007, 10, -3.0191865)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-6_13" type="MeshInstance3D" parent="environment/Island" unique_id=1152855878 instance=ExtResource("25_0cbny")]
-transform = Transform3D(-0.47667095, 0, -0.8790818, 0, 1, 0, 0.8790818, 0, -0.47667095, -5.905303, 9, 13.116945)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_26_8" type="MeshInstance3D" parent="environment/Island" unique_id=368577615 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.2890797, 0, -0.957305, 0, 1, 0, 0.957305, 0, 0.2890797, 26.340496, 3, 8.170614)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_43_53" type="MeshInstance3D" parent="environment/Island" unique_id=557445229 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(0.16327716, 0, -0.98658025, 0, 1, 0, 0.98658025, 0, 0.16327716, 43.916256, 1, 53.29761)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_30_20" type="MeshInstance3D" parent="environment/Island" unique_id=1296470366 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(-0.8282943, 0, 0.56029326, 0, 1, 0, -0.56029326, 0, -0.8282943, 30.72995, 4, 20.220919)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_-61_-3" type="MeshInstance3D" parent="environment/Island" unique_id=1006250864 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(-0.5991628, 0, 0.80062723, 0, 1, 0, -0.80062723, 0, -0.5991628, -60.433887, 1, -2.2880135)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_58_-25" type="MeshInstance3D" parent="environment/Island" unique_id=548023613 instance=ExtResource("15_come4")]
-transform = Transform3D(-0.9969934, 0, -0.0774861, 0, 1, 0, 0.0774861, 0, -0.9969934, 58.13348, 1, -24.479136)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-48_-14" type="MeshInstance3D" parent="environment/Island" unique_id=2036244176 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(0.983849, 0, -0.17900062, 0, 1, 0, 0.17900062, 0, 0.983849, -47.11068, 2, -13.092008)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_44_49" type="MeshInstance3D" parent="environment/Island" unique_id=807049071 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.30586037, 0, 0.9520764, 0, 1, 0, -0.9520764, 0, -0.30586037, 44.718803, 1, 49.775833)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_-14_23" type="MeshInstance3D" parent="environment/Island" unique_id=1971145251 instance=ExtResource("28_blkrb")]
-transform = Transform3D(0.38050935, 0, -0.9247771, 0, 1, 0, 0.9247771, 0, 0.38050935, -13.030857, 6, 23.521559)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_-30_16" type="MeshInstance3D" parent="environment/Island" unique_id=1505909180 instance=ExtResource("25_0cbny")]
-transform = Transform3D(-0.49399433, 0, 0.8694651, 0, 1, 0, -0.8694651, 0, -0.49399433, -29.986961, 2, 16.894117)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_39_0" type="MeshInstance3D" parent="environment/Island" unique_id=1900523878 instance=ExtResource("22_qnost")]
-transform = Transform3D(-0.52631354, 0, 0.85029054, 0, 1, 0, -0.85029054, 0, -0.52631354, 39.42733, 3, 0.8918631)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_57_15" type="MeshInstance3D" parent="environment/Island" unique_id=1745586467 instance=ExtResource("25_0cbny")]
-transform = Transform3D(-0.23367801, 0, 0.97231406, 0, 1, 0, -0.97231406, 0, -0.23367801, 57.995213, 2, 15.66265)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_-44_46" type="MeshInstance3D" parent="environment/Island" unique_id=1757946954 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(0.31937996, 0, 0.94762677, 0, 1, 0, -0.94762677, 0, 0.31937996, -43.124447, 1, 46.54049)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_-35_15" type="MeshInstance3D" parent="environment/Island" unique_id=1044213305 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(0.5716319, 0, -0.8205102, 0, 1, 0, 0.8205102, 0, 0.5716319, -34.08827, 1, 15.064992)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_19_-42" type="MeshInstance3D" parent="environment/Island" unique_id=1287954855 instance=ExtResource("15_come4")]
-transform = Transform3D(0.14018837, 0, 0.9901248, 0, 1, 0, -0.9901248, 0, 0.14018837, 19.625391, 2, -41.814243)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_56_44" type="MeshInstance3D" parent="environment/Island" unique_id=1908977625 instance=ExtResource("27_uypp3")]
-transform = Transform3D(0.9822936, 0, -0.18734796, 0, 1, 0, 0.18734796, 0, 0.9822936, 56.21306, 1, 44.068886)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_27_47" type="MeshInstance3D" parent="environment/Island" unique_id=437557798 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(-0.30853453, 0, -0.9512131, 0, 1, 0, 0.9512131, 0, -0.30853453, 27.914768, 2, 47.841827)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_-45_-27" type="MeshInstance3D" parent="environment/Island" unique_id=915356779 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.52327263, 0, -0.85216534, 0, 1, 0, 0.85216534, 0, 0.52327263, -44.599636, 3, -26.571724)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_48_39" type="MeshInstance3D" parent="environment/Island" unique_id=1409893824 instance=ExtResource("13_facbu")]
-transform = Transform3D(-0.44190305, 0, 0.8970628, 0, 1, 0, -0.8970628, 0, -0.44190305, 48.679756, 1, 39.954185)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_52_-30" type="MeshInstance3D" parent="environment/Island" unique_id=644457200 instance=ExtResource("27_uypp3")]
-transform = Transform3D(-0.10821393, 0, 0.99412763, 0, 1, 0, -0.99412763, 0, -0.10821393, 52.67981, 1, -29.222021)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_51_44" type="MeshInstance3D" parent="environment/Island" unique_id=449660179 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.13134722, 0, 0.9913364, 0, 1, 0, -0.9913364, 0, -0.13134722, 51.985416, 1, 44.12974)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_6_19" type="MeshInstance3D" parent="environment/Island" unique_id=1579535770 instance=ExtResource("28_blkrb")]
-transform = Transform3D(-0.57214624, 0, -0.8201516, 0, 1, 0, 0.8201516, 0, -0.57214624, 6.6611776, 6, 19.320875)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_7_40" type="MeshInstance3D" parent="environment/Island" unique_id=1213664103 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.34337384, 0, -0.9391988, 0, 1, 0, 0.9391988, 0, 0.34337384, 7.0862994, 3, 40.866497)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_-36_-20" type="MeshInstance3D" parent="environment/Island" unique_id=424389151 instance=ExtResource("15_come4")]
-transform = Transform3D(0.61934465, 0, -0.78511924, 0, 1, 0, 0.78511924, 0, 0.61934465, -35.751934, 3, -19.737541)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-38_21" type="MeshInstance3D" parent="environment/Island" unique_id=81425498 instance=ExtResource("22_qnost")]
-transform = Transform3D(0.9375469, 0, -0.3478589, 0, 1, 0, 0.3478589, 0, 0.9375469, -37.305046, 1, 21.84544)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-40_-6" type="MeshInstance3D" parent="environment/Island" unique_id=84393566 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(-0.7821428, 0, 0.62309915, 0, 1, 0, -0.62309915, 0, -0.7821428, -39.917953, 4, -5.857461)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-15_-9" type="MeshInstance3D" parent="environment/Island" unique_id=1108161528 instance=ExtResource("24_f6a44")]
-transform = Transform3D(0.80983007, 0, -0.5866645, 0, 1, 0, 0.5866645, 0, 0.80983007, -14.117334, 8, -8.436261)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_-21_47" type="MeshInstance3D" parent="environment/Island" unique_id=231357520 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(-0.9646442, 0, 0.2635557, 0, 1, 0, -0.2635557, 0, -0.9646442, -20.98795, 2, 47.561314)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_-20_21" type="MeshInstance3D" parent="environment/Island" unique_id=2070530486 instance=ExtResource("25_0cbny")]
-transform = Transform3D(-0.87955797, 0, -0.47579178, 0, 1, 0, 0.47579178, 0, -0.87955797, -19.550735, 4, 21.503817)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_32_-26" type="MeshInstance3D" parent="environment/Island" unique_id=1896986117 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(-0.5789643, 0, -0.8153529, 0, 1, 0, 0.8153529, 0, -0.5789643, 32.018806, 3, -25.834743)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_5_13" type="MeshInstance3D" parent="environment/Island" unique_id=1982708635 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(-0.24891213, 0, -0.96852607, 0, 1, 0, 0.96852607, 0, -0.24891213, 5.742085, 6, 13.217152)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_50_11" type="MeshInstance3D" parent="environment/Island" unique_id=1720384347 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.9904465, 0, -0.1378976, 0, 1, 0, 0.1378976, 0, -0.9904465, 50.044678, 3, 11.045901)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_45_39" type="MeshInstance3D" parent="environment/Island" unique_id=1356376234 instance=ExtResource("13_facbu")]
-transform = Transform3D(-0.8230217, 0, 0.5680099, 0, 1, 0, -0.5680099, 0, -0.8230217, 45.944466, 1, 39.508736)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_38_-19" type="MeshInstance3D" parent="environment/Island" unique_id=1856071533 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(0.30083695, 0, -0.95367557, 0, 1, 0, 0.95367557, 0, 0.30083695, 38.097702, 3, -18.350471)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_13_36" type="MeshInstance3D" parent="environment/Island" unique_id=1524311435 instance=ExtResource("15_come4")]
-transform = Transform3D(0.18613862, 0, -0.9825235, 0, 1, 0, 0.9825235, 0, 0.18613862, 13.9754715, 4, 36.177063)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-13_27" type="MeshInstance3D" parent="environment/Island" unique_id=629266343 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.25724614, 0, 0.9663459, 0, 1, 0, -0.9663459, 0, -0.25724614, -12.746, 6, 27.123575)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_25_33" type="MeshInstance3D" parent="environment/Island" unique_id=1657545121 instance=ExtResource("24_f6a44")]
-transform = Transform3D(-0.9393538, 0, 0.3429496, 0, 1, 0, -0.3429496, 0, -0.9393538, 25.88496, 3, 33.05253)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_-12_51" type="MeshInstance3D" parent="environment/Island" unique_id=594272300 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.8639096, 0, 0.5036469, 0, 1, 0, -0.5036469, 0, 0.8639096, -11.611193, 1, 51.048252)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-25_-49" type="MeshInstance3D" parent="environment/Island" unique_id=1148453866 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.7192296, 0, 0.6947725, 0, 1, 0, -0.6947725, 0, 0.7192296, -24.858507, 2, -48.40097)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_65_6" type="MeshInstance3D" parent="environment/Island" unique_id=1610076223 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.9955728, 0, 0.09399366, 0, 1, 0, -0.09399366, 0, 0.9955728, 65.52293, 1, 6.6109953)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_2_-40" type="MeshInstance3D" parent="environment/Island" unique_id=1989569467 instance=ExtResource("24_f6a44")]
-transform = Transform3D(-0.3904235, 0, -0.92063534, 0, 1, 0, 0.92063534, 0, -0.3904235, 2.9256988, 4, -39.7553)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_-17_-13" type="MeshInstance3D" parent="environment/Island" unique_id=908408908 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(-0.81154627, 0, 0.5842881, 0, 1, 0, -0.5842881, 0, -0.81154627, -16.350418, 6, -12.186192)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-35_-8" type="MeshInstance3D" parent="environment/Island" unique_id=625417466 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.9997768, 0, -0.021127861, 0, 1, 0, 0.021127861, 0, 0.9997768, -34.61363, 5, -7.233143)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_28_26" type="MeshInstance3D" parent="environment/Island" unique_id=887939576 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.98295814, 0, -0.18382959, 0, 1, 0, 0.18382959, 0, 0.98295814, 28.456638, 4, 26.411695)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_7_54" type="MeshInstance3D" parent="environment/Island" unique_id=1667944182 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(0.8169494, 0, 0.57670933, 0, 1, 0, -0.57670933, 0, 0.8169494, 7.9986687, 2, 54.570667)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_24_17" type="MeshInstance3D" parent="environment/Island" unique_id=388680294 instance=ExtResource("22_qnost")]
-transform = Transform3D(-0.90915143, 0, -0.41646564, 0, 1, 0, 0.41646564, 0, -0.90915143, 24.116114, 5, 17.85963)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-46_-7" type="MeshInstance3D" parent="environment/Island" unique_id=1640226495 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(-0.96783143, 0, -0.25159955, 0, 1, 0, 0.25159955, 0, -0.96783143, -45.110355, 3, -6.4076056)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-8_-36" type="MeshInstance3D" parent="environment/Island" unique_id=757091539 instance=ExtResource("22_qnost")]
-transform = Transform3D(0.6079096, 0, -0.7940062, 0, 1, 0, 0.7940062, 0, 0.6079096, -7.448673, 4, -35.69848)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-1_-27" type="MeshInstance3D" parent="environment/Island" unique_id=226684362 instance=ExtResource("28_blkrb")]
-transform = Transform3D(0.9974325, 0, -0.0716133, 0, 1, 0, 0.0716133, 0, 0.9974325, -0.862966, 4, -26.313656)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_17_64" type="MeshInstance3D" parent="environment/Island" unique_id=269154588 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(0.20803507, 0, -0.97812134, 0, 1, 0, 0.97812134, 0, 0.20803507, 17.611227, 1, 64.61277)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_20_-32" type="MeshInstance3D" parent="environment/Island" unique_id=704954340 instance=ExtResource("15_come4")]
-transform = Transform3D(0.99715173, 0, -0.075421475, 0, 1, 0, 0.075421475, 0, 0.99715173, 20.443668, 2, -31.7134)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_30_-36" type="MeshInstance3D" parent="environment/Island" unique_id=1215727735 instance=ExtResource("27_uypp3")]
-transform = Transform3D(-0.9960634, 0, 0.08864379, 0, 1, 0, -0.08864379, 0, -0.9960634, 30.368614, 2, -35.004173)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_33_22" type="MeshInstance3D" parent="environment/Island" unique_id=824272636 instance=ExtResource("24_f6a44")]
-transform = Transform3D(-0.2273001, 0, -0.97382474, 0, 1, 0, 0.97382474, 0, -0.2273001, 33.890575, 3, 22.444548)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_-19_22" type="MeshInstance3D" parent="environment/Island" unique_id=1791268385 instance=ExtResource("25_0cbny")]
-transform = Transform3D(0.21789478, 0, 0.9759723, 0, 1, 0, -0.9759723, 0, 0.21789478, -18.578403, 4, 22.084461)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_20_-21" type="MeshInstance3D" parent="environment/Island" unique_id=852098176 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(0.020413423, 0, -0.9997916, 0, 1, 0, 0.9997916, 0, 0.020413423, 20.759909, 4, -20.244936)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_20_-40" type="MeshInstance3D" parent="environment/Island" unique_id=590207125 instance=ExtResource("22_qnost")]
-transform = Transform3D(0.44681206, 0, 0.89462787, 0, 1, 0, -0.89462787, 0, 0.44681206, 20.391354, 2, -39.347206)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-45_-26" type="MeshInstance3D" parent="environment/Island" unique_id=868372393 instance=ExtResource("22_qnost")]
-transform = Transform3D(-0.9920786, 0, 0.1256187, 0, 1, 0, -0.1256187, 0, -0.9920786, -44.29481, 3, -25.28497)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-47_42" type="MeshInstance3D" parent="environment/Island" unique_id=52845749 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.99476033, 0, 0.10223463, 0, 1, 0, -0.10223463, 0, -0.99476033, -46.660778, 1, 42.72242)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_-25_35" type="MeshInstance3D" parent="environment/Island" unique_id=1128824365 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.3017454, 0, -0.9533886, 0, 1, 0, 0.9533886, 0, 0.3017454, -24.032486, 3, 35.990665)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_-44_-38" type="MeshInstance3D" parent="environment/Island" unique_id=798889611 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(0.51746804, 0, 0.8557025, 0, 1, 0, -0.8557025, 0, 0.51746804, -43.871563, 2, -37.24558)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_7_-18" type="MeshInstance3D" parent="environment/Island" unique_id=1689034356 instance=ExtResource("25_0cbny")]
-transform = Transform3D(0.9937806, 0, -0.111355916, 0, 1, 0, 0.111355916, 0, 0.9937806, 7.996228, 5, -17.883467)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_-31_-43" type="MeshInstance3D" parent="environment/Island" unique_id=1080981243 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.122494034, 0, 0.99246925, 0, 1, 0, -0.99246925, 0, 0.122494034, -30.760557, 2, -42.63051)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-48_18" type="MeshInstance3D" parent="environment/Island" unique_id=1542829852 instance=ExtResource("25_0cbny")]
-transform = Transform3D(-0.06219803, 0, -0.9980638, 0, 1, 0, 0.9980638, 0, -0.06219803, -47.035847, 2, 18.688366)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_-10_-51" type="MeshInstance3D" parent="environment/Island" unique_id=1396823596 instance=ExtResource("25_0cbny")]
-transform = Transform3D(0.737955, 0, 0.6748499, 0, 1, 0, -0.6748499, 0, 0.737955, -9.951572, 2, -50.59035)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_-41_44" type="MeshInstance3D" parent="environment/Island" unique_id=569421357 instance=ExtResource("24_f6a44")]
-transform = Transform3D(0.997326, 0, 0.07308074, 0, 1, 0, -0.07308074, 0, 0.997326, -40.655613, 2, 44.285656)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_22_9" type="MeshInstance3D" parent="environment/Island" unique_id=689188531 instance=ExtResource("25_0cbny")]
-transform = Transform3D(0.4382882, 0, 0.89883447, 0, 1, 0, -0.89883447, 0, 0.4382882, 22.827333, 3, 9.085369)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_54_-29" type="MeshInstance3D" parent="environment/Island" unique_id=423000963 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(-0.38991207, 0, 0.92085207, 0, 1, 0, -0.92085207, 0, -0.38991207, 54.595577, 1, -28.5322)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-47_-26" type="MeshInstance3D" parent="environment/Island" unique_id=1488524301 instance=ExtResource("15_come4")]
-transform = Transform3D(-0.99475646, 0, -0.10227228, 0, 1, 0, 0.10227228, 0, -0.99475646, -46.506912, 2, -25.069736)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-12_-27" type="MeshInstance3D" parent="environment/Island" unique_id=2017053305 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(0.9971676, 0, 0.075211585, 0, 1, 0, -0.075211585, 0, 0.9971676, -11.032894, 2, -26.309153)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_28_-45" type="MeshInstance3D" parent="environment/Island" unique_id=764515177 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.62967825, 0, -0.776856, 0, 1, 0, 0.776856, 0, -0.62967825, 28.817533, 1, -44.191193)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_38_-21" type="MeshInstance3D" parent="environment/Island" unique_id=733918895 instance=ExtResource("13_facbu")]
-transform = Transform3D(0.9799561, 0, 0.19921365, 0, 1, 0, -0.19921365, 0, 0.9799561, 38.77512, 3, -20.512886)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_-40_13" type="MeshInstance3D" parent="environment/Island" unique_id=452717004 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.82684505, 0, 0.5624298, 0, 1, 0, -0.5624298, 0, 0.82684505, -39.386112, 2, 13.1353655)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_-5_39" type="MeshInstance3D" parent="environment/Island" unique_id=2039089410 instance=ExtResource("28_blkrb")]
-transform = Transform3D(0.73147506, 0, 0.6818682, 0, 1, 0, -0.6818682, 0, 0.73147506, -4.33384, 4, 39.043144)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_19_56" type="MeshInstance3D" parent="environment/Island" unique_id=1109657769 instance=ExtResource("13_facbu")]
-transform = Transform3D(0.9972276, 0, 0.07441156, 0, 1, 0, -0.07441156, 0, 0.9972276, 19.158577, 2, 56.856365)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_-3_28" type="MeshInstance3D" parent="environment/Island" unique_id=1676068310 instance=ExtResource("27_uypp3")]
-transform = Transform3D(-0.95546263, 0, 0.2951121, 0, 1, 0, -0.2951121, 0, -0.95546263, -2.8822536, 4, 28.784159)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_-25_-33" type="MeshInstance3D" parent="environment/Island" unique_id=796895936 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.5706382, 0, 0.82120156, 0, 1, 0, -0.82120156, 0, -0.5706382, -24.345684, 2, -32.99487)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_-38_1" type="MeshInstance3D" parent="environment/Island" unique_id=1389502895 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.9974883, 0, -0.07083115, 0, 1, 0, 0.07083115, 0, -0.9974883, -37.172974, 6, 1.0859091)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_-27_1" type="MeshInstance3D" parent="environment/Island" unique_id=885725088 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.7102973, 0, 0.70390177, 0, 1, 0, -0.70390177, 0, -0.7102973, -26.262438, 6, 1.6499282)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_0_-23" type="MeshInstance3D" parent="environment/Island" unique_id=1562707903 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.9424843, 0, -0.3342503, 0, 1, 0, 0.3342503, 0, -0.9424843, 0.35751274, 5, -22.666225)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_-37_47" type="MeshInstance3D" parent="environment/Island" unique_id=47651400 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.76814973, 0, -0.6402703, 0, 1, 0, 0.6402703, 0, -0.76814973, -36.232597, 2, 47.474754)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_49_33" type="MeshInstance3D" parent="environment/Island" unique_id=1555004269 instance=ExtResource("15_come4")]
-transform = Transform3D(0.4175445, 0, -0.9086565, 0, 1, 0, 0.9086565, 0, 0.4175445, 49.31112, 1, 33.3387)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-37_-6" type="MeshInstance3D" parent="environment/Island" unique_id=1740861910 instance=ExtResource("24_f6a44")]
-transform = Transform3D(-0.47182825, 0, 0.8816905, 0, 1, 0, -0.8816905, 0, -0.47182825, -36.785076, 5, -5.7958236)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_-25_-5" type="MeshInstance3D" parent="environment/Island" unique_id=453120308 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.8072387, 0, -0.59022516, 0, 1, 0, 0.59022516, 0, -0.8072387, -24.125721, 7, -4.5544753)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_-4_-10" type="MeshInstance3D" parent="environment/Island" unique_id=202683791 instance=ExtResource("27_uypp3")]
-transform = Transform3D(0.41330278, 0, 0.9105936, 0, 1, 0, -0.9105936, 0, 0.41330278, -3.9687696, 8, -9.245484)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_7_-4" type="MeshInstance3D" parent="environment/Island" unique_id=1316665791 instance=ExtResource("28_blkrb")]
-transform = Transform3D(0.98853, 0, 0.1510247, 0, 1, 0, -0.1510247, 0, 0.98853, 7.1192536, 5, -3.419513)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_-46_-11" type="MeshInstance3D" parent="environment/Island" unique_id=573976505 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(-0.99719787, 0, -0.07480907, 0, 1, 0, 0.07480907, 0, -0.99719787, -45.068943, 2, -10.1684675)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-49_5" type="MeshInstance3D" parent="environment/Island" unique_id=1184469542 instance=ExtResource("15_come4")]
-transform = Transform3D(-0.95945483, 0, -0.28186247, 0, 1, 0, 0.28186247, 0, -0.95945483, -48.560364, 4, 5.642206)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-34_21" type="MeshInstance3D" parent="environment/Island" unique_id=1147535342 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.75191385, 0, -0.6592614, 0, 1, 0, 0.6592614, 0, 0.75191385, -33.64713, 2, 21.1256)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_57_30" type="MeshInstance3D" parent="environment/Island" unique_id=1224136375 instance=ExtResource("15_come4")]
-transform = Transform3D(0.9497297, 0, 0.31307122, 0, 1, 0, -0.31307122, 0, 0.9497297, 57.638752, 1, 30.060955)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_1_47" type="MeshInstance3D" parent="environment/Island" unique_id=388537677 instance=ExtResource("22_qnost")]
-transform = Transform3D(-0.9735049, 0, -0.2286661, 0, 1, 0, 0.2286661, 0, -0.9735049, 1.9723084, 1, 47.355904)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_46_-11" type="MeshInstance3D" parent="environment/Island" unique_id=344689112 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.80812305, 0, -0.5890137, 0, 1, 0, 0.5890137, 0, 0.80812305, 46.477573, 2, -10.877056)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_36_13" type="MeshInstance3D" parent="environment/Island" unique_id=206282721 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(-0.98515224, 0, -0.17168288, 0, 1, 0, 0.17168288, 0, -0.98515224, 36.736927, 3, 13.955066)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_47_-28" type="MeshInstance3D" parent="environment/Island" unique_id=1383350532 instance=ExtResource("25_0cbny")]
-transform = Transform3D(-0.41599357, 0, 0.90936756, 0, 1, 0, -0.90936756, 0, -0.41599357, 47.01516, 2, -27.23382)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_4_58" type="MeshInstance3D" parent="environment/Island" unique_id=826547127 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.77746415, 0, 0.62892723, 0, 1, 0, -0.62892723, 0, -0.77746415, 4.6112847, 2, 58.03653)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_-38_-13" type="MeshInstance3D" parent="environment/Island" unique_id=1345617103 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.23860092, 0, 0.97111773, 0, 1, 0, -0.97111773, 0, 0.23860092, -37.765823, 3, -12.866349)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_-22_47" type="MeshInstance3D" parent="environment/Island" unique_id=751676723 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(0.62461805, 0, 0.7809304, 0, 1, 0, -0.7809304, 0, 0.62461805, -21.097818, 2, 47.620358)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_6_40" type="MeshInstance3D" parent="environment/Island" unique_id=860473572 instance=ExtResource("13_facbu")]
-transform = Transform3D(0.99115163, 0, -0.13273463, 0, 1, 0, 0.13273463, 0, 0.99115163, 6.4319997, 3, 40.83931)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_36_-15" type="MeshInstance3D" parent="environment/Island" unique_id=1425954042 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(-0.88026595, 0, 0.47448066, 0, 1, 0, -0.47448066, 0, -0.88026595, 36.00274, 3, -14.5203285)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_-13_-24" type="MeshInstance3D" parent="environment/Island" unique_id=1874782011 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(-0.29853246, 0, 0.95439947, 0, 1, 0, -0.95439947, 0, -0.29853246, -12.727837, 3, -23.23576)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_23_-34" type="MeshInstance3D" parent="environment/Island" unique_id=1351369513 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(0.8907739, 0, -0.45444676, 0, 1, 0, 0.45444676, 0, 0.8907739, 23.716562, 2, -33.20258)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_-52_29" type="MeshInstance3D" parent="environment/Island" unique_id=436064092 instance=ExtResource("24_f6a44")]
-transform = Transform3D(0.1587811, 0, 0.9873138, 0, 1, 0, -0.9873138, 0, 0.1587811, -51.329006, 2, 29.16803)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_23_-32" type="MeshInstance3D" parent="environment/Island" unique_id=28781714 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.73334706, 0, -0.67985445, 0, 1, 0, 0.67985445, 0, 0.73334706, 23.683111, 3, -31.0081)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_53_8" type="MeshInstance3D" parent="environment/Island" unique_id=442104758 instance=ExtResource("27_uypp3")]
-transform = Transform3D(-0.89462453, 0, 0.44681874, 0, 1, 0, -0.44681874, 0, -0.89462453, 53.85848, 2, 8.827297)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_11_-21" type="MeshInstance3D" parent="environment/Island" unique_id=1834209586 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.69434196, 0, 0.7196452, 0, 1, 0, -0.7196452, 0, -0.69434196, 11.119553, 5, -20.558641)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_15_62" type="MeshInstance3D" parent="environment/Island" unique_id=190478053 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(-0.96334547, 0, 0.26826388, 0, 1, 0, -0.26826388, 0, -0.96334547, 15.647515, 2, 62.185944)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_-44_37" type="MeshInstance3D" parent="environment/Island" unique_id=1924409663 instance=ExtResource("15_come4")]
-transform = Transform3D(0.51936, 0, 0.85455555, 0, 1, 0, -0.85455555, 0, 0.51936, -43.418358, 2, 37.76635)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-2_-57" type="MeshInstance3D" parent="environment/Island" unique_id=53213584 instance=ExtResource("15_come4")]
-transform = Transform3D(-0.30984008, 0, -0.9507887, 0, 1, 0, 0.9507887, 0, -0.30984008, -1.3678254, 2, -56.12096)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_26_40" type="MeshInstance3D" parent="environment/Island" unique_id=1363700571 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(-0.9364246, 0, 0.3508688, 0, 1, 0, -0.3508688, 0, -0.9364246, 26.773542, 3, 40.605846)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-35_-26" type="MeshInstance3D" parent="environment/Island" unique_id=200558089 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.9293542, 0, 0.36918932, 0, 1, 0, -0.36918932, 0, 0.9293542, -34.019947, 4, -25.54744)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-16_-33" type="MeshInstance3D" parent="environment/Island" unique_id=1425902368 instance=ExtResource("15_come4")]
-transform = Transform3D(-0.17974237, 0, 0.98371375, 0, 1, 0, -0.98371375, 0, -0.17974237, -15.420538, 2, -32.12408)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-3_43" type="MeshInstance3D" parent="environment/Island" unique_id=1133069444 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(-0.9991999, 0, 0.03999445, 0, 1, 0, -0.03999445, 0, -0.9991999, -2.2895036, 1, 43.891705)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-22_-25" type="MeshInstance3D" parent="environment/Island" unique_id=1565807380 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(0.73683494, 0, -0.6760727, 0, 1, 0, 0.6760727, 0, 0.73683494, -21.232613, 2, -24.694502)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_-38_24" type="MeshInstance3D" parent="environment/Island" unique_id=1027605924 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(-0.7289716, 0, 0.68454397, 0, 1, 0, -0.68454397, 0, -0.7289716, -37.02146, 1, 24.038565)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_40_2" type="MeshInstance3D" parent="environment/Island" unique_id=2055048692 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.90134287, 0, 0.43310624, 0, 1, 0, -0.43310624, 0, 0.90134287, 40.38602, 2, 2.2420511)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-31_38" type="MeshInstance3D" parent="environment/Island" unique_id=724929721 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.81482625, 0, 0.57970524, 0, 1, 0, -0.57970524, 0, 0.81482625, -30.044374, 3, 38.455715)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_36_-9" type="MeshInstance3D" parent="environment/Island" unique_id=1181420802 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(-0.64273345, 0, -0.7660899, 0, 1, 0, 0.7660899, 0, -0.64273345, 36.45377, 4, -8.942494)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_-44_-15" type="MeshInstance3D" parent="environment/Island" unique_id=398853870 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(0.9931517, 0, 0.11683166, 0, 1, 0, -0.11683166, 0, 0.9931517, -43.403362, 3, -14.44464)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_30_43" type="MeshInstance3D" parent="environment/Island" unique_id=783904198 instance=ExtResource("25_0cbny")]
-transform = Transform3D(-0.9933943, 0, 0.11475088, 0, 1, 0, -0.11475088, 0, -0.9933943, 30.723923, 2, 43.522972)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_-5_21" type="MeshInstance3D" parent="environment/Island" unique_id=1072000896 instance=ExtResource("20_gngh3")]
-transform = Transform3D(0.61394966, 0, -0.7893452, 0, 1, 0, 0.7893452, 0, 0.61394966, -4.714525, 7, 21.851757)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_57_-23" type="MeshInstance3D" parent="environment/Island" unique_id=2091998465 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(0.96858424, 0, 0.24868572, 0, 1, 0, -0.24868572, 0, 0.96858424, 57.441902, 1, -22.231232)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_59_-6" type="MeshInstance3D" parent="environment/Island" unique_id=1109186762 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(0.21939445, 0, 0.97563624, 0, 1, 0, -0.97563624, 0, 0.21939445, 59.827606, 1, -5.7598324)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_16_52" type="MeshInstance3D" parent="environment/Island" unique_id=1119437852 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(0.34357893, 0, -0.9391238, 0, 1, 0, 0.9391238, 0, 0.34357893, 16.503153, 2, 52.411987)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_45_-8" type="MeshInstance3D" parent="environment/Island" unique_id=714096395 instance=ExtResource("22_qnost")]
-transform = Transform3D(-0.40369943, 0, 0.91489166, 0, 1, 0, -0.91489166, 0, -0.40369943, 45.242855, 2, -7.882956)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_2_-15" type="MeshInstance3D" parent="environment/Island" unique_id=186980666 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(0.9509236, 0, 0.30942574, 0, 1, 0, -0.30942574, 0, 0.9509236, 2.0083144, 5, -14.839689)
-mesh = ExtResource("47_5yh34")
-
-[node name="Plant_0_-57" type="MeshInstance3D" parent="environment/Island" unique_id=1300808152 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(0.7973144, 0, -0.6035642, 0, 1, 0, 0.6035642, 0, 0.7973144, 0.59142596, 2, -56.98199)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_56_30" type="MeshInstance3D" parent="environment/Island" unique_id=1266932883 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(0.8324183, 0, -0.5541477, 0, 1, 0, 0.5541477, 0, 0.8324183, 56.97613, 2, 30.4476)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_2_-35" type="MeshInstance3D" parent="environment/Island" unique_id=1710362587 instance=ExtResource("13_facbu")]
-transform = Transform3D(-0.99976057, 0, -0.021882305, 0, 1, 0, 0.021882305, 0, -0.99976057, 2.2937248, 4, -34.708252)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_-22_55" type="MeshInstance3D" parent="environment/Island" unique_id=1307336744 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(0.77709866, 0, -0.6293788, 0, 1, 0, 0.6293788, 0, 0.77709866, -21.980373, 1, 55.077362)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_19_-49" type="MeshInstance3D" parent="environment/Island" unique_id=1252420617 instance=ExtResource("15_come4")]
-transform = Transform3D(0.713711, 0, 0.7004402, 0, 1, 0, -0.7004402, 0, 0.713711, 19.74494, 2, -48.100754)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_-32_46" type="MeshInstance3D" parent="environment/Island" unique_id=1324623864 instance=ExtResource("24_f6a44")]
-transform = Transform3D(0.65702057, 0, 0.75387263, 0, 1, 0, -0.75387263, 0, 0.65702057, -31.25204, 2, 46.255543)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_17_-28" type="MeshInstance3D" parent="environment/Island" unique_id=192611886 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(-0.3433687, 0, 0.9392007, 0, 1, 0, -0.9392007, 0, -0.3433687, 17.05645, 3, -27.942883)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_-7_-52" type="MeshInstance3D" parent="environment/Island" unique_id=217873469 instance=ExtResource("24_f6a44")]
-transform = Transform3D(-0.8709034, 0, 0.49145427, 0, 1, 0, -0.49145427, 0, -0.8709034, -6.9031076, 2, -51.533188)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_24_-8" type="MeshInstance3D" parent="environment/Island" unique_id=284980073 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.895899, 0, -0.44425774, 0, 1, 0, 0.44425774, 0, -0.895899, 24.678698, 5, -7.786735)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_11_42" type="MeshInstance3D" parent="environment/Island" unique_id=1163401559 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.45805055, 0, 0.88892615, 0, 1, 0, -0.88892615, 0, -0.45805055, 11.941608, 3, 42.578995)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_27_-45" type="MeshInstance3D" parent="environment/Island" unique_id=355823410 instance=ExtResource("15_come4")]
-transform = Transform3D(0.9278988, 0, 0.37283212, 0, 1, 0, -0.37283212, 0, 0.9278988, 27.888493, 1, -44.865944)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_26_35" type="MeshInstance3D" parent="environment/Island" unique_id=620003240 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.38889176, 0, -0.9212834, 0, 1, 0, 0.9212834, 0, -0.38889176, 26.727564, 3, 35.680683)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_-35_-16" type="MeshInstance3D" parent="environment/Island" unique_id=1350038888 instance=ExtResource("15_come4")]
-transform = Transform3D(-0.9943441, 0, -0.106206566, 0, 1, 0, 0.106206566, 0, -0.9943441, -34.1624, 3, -15.678806)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_38_50" type="MeshInstance3D" parent="environment/Island" unique_id=1541990445 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(-0.26417595, 0, 0.9644745, 0, 1, 0, -0.9644745, 0, -0.26417595, 38.950123, 1, 50.515724)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_16_11" type="MeshInstance3D" parent="environment/Island" unique_id=485539201 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.34899294, 0, 0.9371253, 0, 1, 0, -0.9371253, 0, -0.34899294, 16.527245, 5, 11.505517)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_9_55" type="MeshInstance3D" parent="environment/Island" unique_id=1272162518 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.62380457, 0, 0.7815804, 0, 1, 0, -0.7815804, 0, -0.62380457, 9.477945, 2, 55.50531)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_-34_-26" type="MeshInstance3D" parent="environment/Island" unique_id=855037909 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.8173294, 0, 0.5761707, 0, 1, 0, -0.5761707, 0, -0.8173294, -33.129, 4, -25.075294)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_-12_-34" type="MeshInstance3D" parent="environment/Island" unique_id=158610159 instance=ExtResource("15_come4")]
-transform = Transform3D(0.7778414, 0, 0.62846065, 0, 1, 0, -0.62846065, 0, 0.7778414, -11.904146, 2, -33.641994)
-mesh = ExtResource("60_vieuh")
-
-[node name="Plant_8_56" type="MeshInstance3D" parent="environment/Island" unique_id=1522785128 instance=ExtResource("25_0cbny")]
-transform = Transform3D(0.82517606, 0, 0.56487566, 0, 1, 0, -0.56487566, 0, 0.82517606, 8.361748, 2, 56.495224)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_-43_-31" type="MeshInstance3D" parent="environment/Island" unique_id=671681215 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(-0.8412118, 0, 0.54070574, 0, 1, 0, -0.54070574, 0, -0.8412118, -42.092323, 3, -30.405186)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_-28_54" type="MeshInstance3D" parent="environment/Island" unique_id=563641963 instance=ExtResource("25_0cbny")]
-transform = Transform3D(-0.9943207, 0, -0.106425144, 0, 1, 0, 0.106425144, 0, -0.9943207, -27.846643, 1, 54.114407)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_-29_9" type="MeshInstance3D" parent="environment/Island" unique_id=2011395911 instance=ExtResource("24_f6a44")]
-transform = Transform3D(-0.83352184, 0, -0.5524865, 0, 1, 0, 0.5524865, 0, -0.83352184, -28.72692, 3, 9.809716)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_13_37" type="MeshInstance3D" parent="environment/Island" unique_id=977574410 instance=ExtResource("17_4lmeg")]
-transform = Transform3D(-0.9909697, 0, -0.13408574, 0, 1, 0, 0.13408574, 0, -0.9909697, 13.664806, 4, 37.87552)
-mesh = ExtResource("50_swlj1")
-
-[node name="Plant_-12_-11" type="MeshInstance3D" parent="environment/Island" unique_id=1525181664 instance=ExtResource("25_0cbny")]
-transform = Transform3D(0.9388763, 0, 0.3442547, 0, 1, 0, -0.3442547, 0, 0.9388763, -11.205733, 7, -10.306745)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_-45_-8" type="MeshInstance3D" parent="environment/Island" unique_id=2112713399 instance=ExtResource("22_qnost")]
-transform = Transform3D(-0.97591686, 0, -0.21814272, 0, 1, 0, 0.21814272, 0, -0.97591686, -44.66791, 3, -7.88296)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_50_-18" type="MeshInstance3D" parent="environment/Island" unique_id=1414740343 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(0.99993926, 0, -0.011019786, 0, 1, 0, 0.011019786, 0, 0.99993926, 50.55289, 2, -17.460447)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_-14_-42" type="MeshInstance3D" parent="environment/Island" unique_id=470487381 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(-0.9915254, 0, -0.12991306, 0, 1, 0, 0.12991306, 0, -0.9915254, -13.046945, 2, -41.742004)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_-15_8" type="MeshInstance3D" parent="environment/Island" unique_id=682086334 instance=ExtResource("22_qnost")]
-transform = Transform3D(0.9841502, 0, 0.17733698, 0, 1, 0, -0.17733698, 0, 0.9841502, -14.293487, 6, 8.511666)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-15_-14" type="MeshInstance3D" parent="environment/Island" unique_id=1966485036 instance=ExtResource("19_d2t1y")]
-transform = Transform3D(0.45931628, 0, -0.8882728, 0, 1, 0, 0.8882728, 0, 0.45931628, -14.952663, 6, -13.8683195)
-mesh = ExtResource("52_n5t1e")
-
-[node name="Plant_33_-27" type="MeshInstance3D" parent="environment/Island" unique_id=1185526223 instance=ExtResource("28_blkrb")]
-transform = Transform3D(0.2579025, 0, 0.96617097, 0, 1, 0, -0.96617097, 0, 0.2579025, 33.290596, 3, -26.90058)
-mesh = ExtResource("49_23xmf")
-
-[node name="Plant_-37_-52" type="MeshInstance3D" parent="environment/Island" unique_id=1908981574 instance=ExtResource("16_h8e4i")]
-transform = Transform3D(-0.26907668, 0, -0.96311873, 0, 1, 0, 0.96311873, 0, -0.26907668, -36.44198, 1, -51.114567)
-mesh = ExtResource("51_yysqy")
-
-[node name="Plant_7_-62" type="MeshInstance3D" parent="environment/Island" unique_id=1887185257 instance=ExtResource("22_qnost")]
-transform = Transform3D(-0.7323233, 0, -0.68095714, 0, 1, 0, 0.68095714, 0, -0.7323233, 7.0897326, 1, -61.12657)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-33_6" type="MeshInstance3D" parent="environment/Island" unique_id=729081800 instance=ExtResource("25_0cbny")]
-transform = Transform3D(-0.99380124, 0, -0.111171365, 0, 1, 0, 0.111171365, 0, -0.99380124, -32.32209, 4, 6.41608)
-mesh = ExtResource("56_41lik")
-
-[node name="Plant_-9_59" type="MeshInstance3D" parent="environment/Island" unique_id=1900996286 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(0.9694421, 0, -0.24532, 0, 1, 0, 0.24532, 0, 0.9694421, -8.505959, 1, 59.19363)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_13_-3" type="MeshInstance3D" parent="environment/Island" unique_id=465234366 instance=ExtResource("27_uypp3")]
-transform = Transform3D(-0.107059404, 0, -0.9942526, 0, 1, 0, 0.9942526, 0, -0.107059404, 13.278461, 6, -2.606796)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_-32_-42" type="MeshInstance3D" parent="environment/Island" unique_id=250217331 instance=ExtResource("26_hrvbo")]
-transform = Transform3D(-0.88422394, 0, -0.46706322, 0, 1, 0, 0.46706322, 0, -0.88422394, -31.170431, 2, -41.336796)
-mesh = ExtResource("48_pjuso")
-
-[node name="Plant_51_-20" type="MeshInstance3D" parent="environment/Island" unique_id=1703210778 instance=ExtResource("24_f6a44")]
-transform = Transform3D(-0.9775634, 0, -0.21064137, 0, 1, 0, 0.21064137, 0, -0.9775634, 51.395897, 2, -19.508863)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_-11_46" type="MeshInstance3D" parent="environment/Island" unique_id=180221389 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.88604385, 0, 0.4636014, 0, 1, 0, -0.4636014, 0, 0.88604385, -10.410813, 1, 46.79656)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_-6_23" type="MeshInstance3D" parent="environment/Island" unique_id=1091409101 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(-0.79841864, 0, 0.60210276, 0, 1, 0, -0.60210276, 0, -0.79841864, -5.104969, 6, 23.673513)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_-2_25" type="MeshInstance3D" parent="environment/Island" unique_id=621268710 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.99457395, 0, -0.10403212, 0, 1, 0, 0.10403212, 0, 0.99457395, -1.0239587, 5, 25.328373)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_-12_5" type="MeshInstance3D" parent="environment/Island" unique_id=498810171 instance=ExtResource("14_b1qrp")]
-transform = Transform3D(-0.81482905, 0, -0.5797013, 0, 1, 0, 0.5797013, 0, -0.81482905, -11.495212, 7, 5.509023)
-mesh = ExtResource("57_jbvwl")
-
-[node name="Plant_18_-38" type="MeshInstance3D" parent="environment/Island" unique_id=1947458170 instance=ExtResource("20_gngh3")]
-transform = Transform3D(-0.6420208, 0, -0.7666872, 0, 1, 0, 0.7666872, 0, -0.6420208, 18.39799, 1, -37.152752)
-mesh = ExtResource("58_sn1fb")
-
-[node name="Plant_51_-19" type="MeshInstance3D" parent="environment/Island" unique_id=1412870813 instance=ExtResource("13_facbu")]
-transform = Transform3D(0.5382324, 0, -0.84279644, 0, 1, 0, 0.84279644, 0, 0.5382324, 51.56377, 2, -18.86542)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_-36_-37" type="MeshInstance3D" parent="environment/Island" unique_id=1107437025 instance=ExtResource("24_f6a44")]
-transform = Transform3D(-0.33377945, 0, 0.9426512, 0, 1, 0, -0.9426512, 0, -0.33377945, -35.74109, 3, -36.46643)
-mesh = ExtResource("53_h6isl")
-
-[node name="Plant_-22_-17" type="MeshInstance3D" parent="environment/Island" unique_id=1100721458 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(-0.8819082, 0, 0.4714212, 0, 1, 0, -0.4714212, 0, -0.8819082, -21.096426, 4, -16.373045)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_-10_24" type="MeshInstance3D" parent="environment/Island" unique_id=518451571 instance=ExtResource("13_facbu")]
-transform = Transform3D(0.7780085, 0, 0.6282537, 0, 1, 0, -0.6282537, 0, 0.7780085, -9.028653, 6, 24.548292)
-mesh = ExtResource("55_lwnsi")
-
-[node name="Plant_-14_-27" type="MeshInstance3D" parent="environment/Island" unique_id=1056038360 instance=ExtResource("22_qnost")]
-transform = Transform3D(-0.8193007, 0, -0.5733641, 0, 1, 0, 0.5733641, 0, -0.8193007, -13.5020895, 2, -26.502533)
-mesh = ExtResource("59_yvsr8")
-
-[node name="Plant_-20_-17" type="MeshInstance3D" parent="environment/Island" unique_id=591746431 instance=ExtResource("23_wnkbs")]
-transform = Transform3D(0.13265589, 0, -0.9911622, 0, 1, 0, 0.9911622, 0, 0.13265589, -19.34785, 5, -16.36439)
-mesh = ExtResource("54_53bls")
-
-[node name="Plant_7_-38" type="MeshInstance3D" parent="environment/Island" unique_id=256317716 instance=ExtResource("21_0n3wm")]
-transform = Transform3D(0.79747844, 0, -0.6033475, 0, 1, 0, 0.6033475, 0, 0.79747844, 7.121722, 3, -37.321827)
-mesh = ExtResource("46_1yv1y")
-
-[node name="Plant_-15_35" type="MeshInstance3D" parent="environment/Island" unique_id=1045195263 instance=ExtResource("27_uypp3")]
-transform = Transform3D(-0.9312797, 0, -0.36430487, 0, 1, 0, 0.36430487, 0, -0.9312797, -14.079456, 5, 35.424927)
-mesh = ExtResource("61_yjja3")
-
-[node name="Plant_-42_41" type="MeshInstance3D" parent="environment/Island" unique_id=691780190 instance=ExtResource("18_0cp0l")]
-transform = Transform3D(-0.9614341, 0, -0.2750354, 0, 1, 0, 0.2750354, 0, -0.9614341, -41.757206, 2, 41.917137)
-mesh = ExtResource("47_5yh34")
-
-[node name="Box_-45_-41" type="MeshInstance3D" parent="environment/Island" unique_id=1196717425 instance=ExtResource("3_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -44.416077, 1, -40.526127)
-mesh = ExtResource("62_l0gw7")
-
-[node name="Box_65_-9" type="MeshInstance3D" parent="environment/Island" unique_id=1979669770 instance=ExtResource("3_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 65.193344, 1, -8.279187)
-mesh = ExtResource("62_l0gw7")
-
-[node name="Box_-33_33" type="MeshInstance3D" parent="environment/Island" unique_id=1553606933 instance=ExtResource("3_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -32.293278, 3, 33.599426)
-mesh = ExtResource("62_l0gw7")
-
-[node name="Box_51_-14" type="MeshInstance3D" parent="environment/Island" unique_id=981586815 instance=ExtResource("3_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 51.861824, 2, -13.286206)
-mesh = ExtResource("62_l0gw7")
-
-[node name="Box_43_-50" type="MeshInstance3D" parent="environment/Island" unique_id=1367819461 instance=ExtResource("3_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 43.30342, 1, -49.240364)
-mesh = ExtResource("62_l0gw7")
-
-[node name="Box_-20_-66" type="MeshInstance3D" parent="environment/Island" unique_id=235239987 instance=ExtResource("3_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.659279, 1, -65.42194)
-mesh = ExtResource("62_l0gw7")
-
-[node name="Box_-7_20" type="MeshInstance3D" parent="environment/Island" unique_id=517916428 instance=ExtResource("3_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.966598, 6, 20.903458)
-mesh = ExtResource("62_l0gw7")
-
-[node name="Box_34_-13" type="MeshInstance3D" parent="environment/Island" unique_id=1960556553 instance=ExtResource("3_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 34.06116, 4, -12.563305)
-mesh = ExtResource("62_l0gw7")
-
-[node name="Box_22_18" type="MeshInstance3D" parent="environment/Island" unique_id=1632650760 instance=ExtResource("3_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22.209442, 5, 18.767244)
-mesh = ExtResource("62_l0gw7")
-
-[node name="Box_-53_39" type="MeshInstance3D" parent="environment/Island" unique_id=722477801 instance=ExtResource("3_1bvp3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -52.552036, 1, 39.526615)
-mesh = ExtResource("62_l0gw7")
-
-[node name="Tree_-9_-47" type="MeshInstance3D" parent="environment/Island" unique_id=1440512213 instance=ExtResource("10_vivmo")]
-transform = Transform3D(-0.9889604, 0, -0.14818028, 0, 1, 0, 0.14818028, 0, -0.9889604, -8.673744, 3, -46.07228)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_57_37" type="MeshInstance3D" parent="environment/Island" unique_id=23117357 instance=ExtResource("6_efxa6")]
-transform = Transform3D(-0.68677866, 0, -0.7268666, 0, 1, 0, 0.7268666, 0, -0.68677866, 57.342545, 1, 37.339268)
+[node name="Rock_-27_26" type="MeshInstance3D" parent="environment/Island" unique_id=145657404 instance=ExtResource("4_82xsv")]
+transform = Transform3D(0.9822062, 0, 0.18780543, 0, 1, 0, -0.18780543, 0, 0.9822062, -26.186478, 4, 26.619871)
+mesh = ExtResource("43_4obbf")
+
+[node name="Rock_31_-1" type="MeshInstance3D" parent="environment/Island" unique_id=1114252639 instance=ExtResource("8_1u8w0")]
+transform = Transform3D(-0.94265777, 0, -0.33376086, 0, 1, 0, 0.33376086, 0, -0.94265777, 31.777924, 4, -0.73694265)
+mesh = ExtResource("40_phcyf")
+
+[node name="Rock_-35_-29" type="MeshInstance3D" parent="environment/Island" unique_id=891073540 instance=ExtResource("7_d13ii")]
+transform = Transform3D(0.9163849, 0, 0.40029836, 0, 1, 0, -0.40029836, 0, 0.9163849, -34.14359, 3, -28.996464)
+mesh = ExtResource("42_f1p13")
+
+[node name="Rock_-33_54" type="MeshInstance3D" parent="environment/Island" unique_id=916331108 instance=ExtResource("7_d13ii")]
+transform = Transform3D(0.086825594, 0, -0.9962235, 0, 1, 0, 0.9962235, 0, 0.086825594, -32.968052, 1, 54.158)
+mesh = ExtResource("42_f1p13")
+
+[node name="Rock_-20_-29" type="MeshInstance3D" parent="environment/Island" unique_id=1962823919 instance=ExtResource("10_lswn8")]
+transform = Transform3D(0.38511235, 0, 0.9228697, 0, 1, 0, -0.9228697, 0, 0.38511235, -19.046347, 2, -28.979658)
+mesh = ExtResource("39_5dllo")
+
+[node name="Rock_-10_18" type="MeshInstance3D" parent="environment/Island" unique_id=1883678866 instance=ExtResource("6_ryguw")]
+transform = Transform3D(0.75450397, 0, -0.6562955, 0, 1, 0, 0.6562955, 0, 0.75450397, -9.110309, 9, 18.224972)
+mesh = ExtResource("38_gx4rg")
+
+[node name="Rock_-19_-1" type="MeshInstance3D" parent="environment/Island" unique_id=607105021 instance=ExtResource("6_ryguw")]
+transform = Transform3D(0.89812195, 0, -0.43974647, 0, 1, 0, 0.43974647, 0, 0.89812195, -18.74203, 9, -0.018926024)
+mesh = ExtResource("38_gx4rg")
+
+[node name="Rock_-42_0" type="MeshInstance3D" parent="environment/Island" unique_id=1427327044 instance=ExtResource("8_1u8w0")]
+transform = Transform3D(0.9030276, 0, 0.42958257, 0, 1, 0, -0.42958257, 0, 0.9030276, -41.233227, 3, 0.7249765)
+mesh = ExtResource("40_phcyf")
+
+[node name="Rock_31_22" type="MeshInstance3D" parent="environment/Island" unique_id=1719833113 instance=ExtResource("8_1u8w0")]
+transform = Transform3D(0.061361376, 0, -0.9981156, 0, 1, 0, 0.9981156, 0, 0.061361376, 31.910385, 2, 22.461332)
+mesh = ExtResource("40_phcyf")
+
+[node name="Rock_60_-38" type="MeshInstance3D" parent="environment/Island" unique_id=1876679233 instance=ExtResource("7_d13ii")]
+transform = Transform3D(0.4073441, 0, 0.91327477, 0, 1, 0, -0.91327477, 0, 0.4073441, 60.01787, 1, -37.950787)
+mesh = ExtResource("42_f1p13")
+
+[node name="Rock_-31_13" type="MeshInstance3D" parent="environment/Island" unique_id=655321804 instance=ExtResource("7_d13ii")]
+transform = Transform3D(0.9977452, 0, 0.067115046, 0, 1, 0, -0.067115046, 0, 0.9977452, -30.395672, 5, 13.246101)
+mesh = ExtResource("42_f1p13")
+
+[node name="Rock_12_20" type="MeshInstance3D" parent="environment/Island" unique_id=1321786747 instance=ExtResource("6_ryguw")]
+transform = Transform3D(0.9805363, 0, -0.19633783, 0, 1, 0, 0.19633783, 0, 0.9805363, 12.939847, 6, 20.592772)
+mesh = ExtResource("38_gx4rg")
+
+[node name="Rock_25_18" type="MeshInstance3D" parent="environment/Island" unique_id=1593034072 instance=ExtResource("11_a6jrf")]
+transform = Transform3D(-0.8112146, 0, -0.5847485, 0, 1, 0, 0.5847485, 0, -0.8112146, 25.4083, 2, 18.580006)
+mesh = ExtResource("44_ovcoh")
+
+[node name="Rock_41_-20" type="MeshInstance3D" parent="environment/Island" unique_id=1945289623 instance=ExtResource("11_a6jrf")]
+transform = Transform3D(0.49303514, 0, -0.8700094, 0, 1, 0, 0.8700094, 0, 0.49303514, 41.443108, 2, -19.614607)
+mesh = ExtResource("44_ovcoh")
+
+[node name="Rock_25_48" type="MeshInstance3D" parent="environment/Island" unique_id=1204549596 instance=ExtResource("11_a6jrf")]
+transform = Transform3D(-0.24832572, 0, 0.96867657, 0, 1, 0, -0.96867657, 0, -0.24832572, 25.684307, 2, 48.19609)
+mesh = ExtResource("44_ovcoh")
+
+[node name="Box_11_13" type="MeshInstance3D" parent="environment/Island" unique_id=23117357 instance=ExtResource("6_efxa6")]
+transform = Transform3D(-0.43678278, 0, 0.899567, 0, 1, 0, -0.899567, 0, -0.43678278, 11.685255, 6, 13.37561)
 mesh = ExtResource("67_k1udn")
 
-[node name="Tree_-42_25" type="MeshInstance3D" parent="environment/Island" unique_id=847255757 instance=ExtResource("9_w48qg")]
-transform = Transform3D(0.6595104, 0, 0.7516955, 0, 1, 0, -0.7516955, 0, 0.6595104, -41.531208, 2, 25.816425)
+[node name="Box_-12_11" type="MeshInstance3D" parent="environment/Island" unique_id=189509757 instance=ExtResource("7_dg77c")]
+transform = Transform3D(0.9645392, 0, -0.26393968, 0, 1, 0, 0.26393968, 0, 0.9645392, -11.421841, 8, 11.682136)
+mesh = ExtResource("65_0arob")
+
+[node name="Box_-2_-56" type="MeshInstance3D" parent="environment/Island" unique_id=847255757 instance=ExtResource("9_w48qg")]
+transform = Transform3D(-0.65624166, 0, -0.7545508, 0, 1, 0, 0.7545508, 0, -0.65624166, -1.7099059, 1, -55.421593)
 mesh = ExtResource("63_inymm")
 
-[node name="Tree_-16_-40" type="MeshInstance3D" parent="environment/Island" unique_id=139677107 instance=ExtResource("6_efxa6")]
-transform = Transform3D(-0.94050455, 0, 0.33978108, 0, 1, 0, -0.33978108, 0, -0.94050455, -15.139745, 2, -39.715656)
+[node name="Box_43_-20" type="MeshInstance3D" parent="environment/Island" unique_id=1363532982 instance=ExtResource("8_ycdy4")]
+transform = Transform3D(-0.9034015, 0, 0.42879567, 0, 1, 0, -0.42879567, 0, -0.9034015, 43.58887, 2, -19.634789)
+mesh = ExtResource("64_jcxqu")
+
+[node name="Box_-38_8" type="MeshInstance3D" parent="environment/Island" unique_id=1440512213 instance=ExtResource("10_vivmo")]
+transform = Transform3D(-0.8494615, 0, -0.52765065, 0, 1, 0, 0.52765065, 0, -0.8494615, -37.632927, 4, 8.39882)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_9_-60" type="MeshInstance3D" parent="environment/Island" unique_id=1491885149 instance=ExtResource("7_dg77c")]
+transform = Transform3D(-0.88231725, 0, -0.4706552, 0, 1, 0, 0.4706552, 0, -0.88231725, 9.99117, 1, -59.444923)
+mesh = ExtResource("65_0arob")
+
+[node name="Box_16_-27" type="MeshInstance3D" parent="environment/Island" unique_id=429410622 instance=ExtResource("8_ycdy4")]
+transform = Transform3D(-0.9863631, 0, -0.16458374, 0, 1, 0, 0.16458374, 0, -0.9863631, 16.314741, 4, -26.16919)
+mesh = ExtResource("64_jcxqu")
+
+[node name="Box_31_-50" type="MeshInstance3D" parent="environment/Island" unique_id=1791730550 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.93666613, 0, -0.35022363, 0, 1, 0, 0.35022363, 0, 0.93666613, 31.774752, 1, -49.403084)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_15_-54" type="MeshInstance3D" parent="environment/Island" unique_id=900735661 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.41190344, 0, -0.9112275, 0, 1, 0, 0.9112275, 0, 0.41190344, 15.117879, 3, -53.56489)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_-21_42" type="MeshInstance3D" parent="environment/Island" unique_id=356581589 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.80729216, 0, 0.59015197, 0, 1, 0, -0.59015197, 0, 0.80729216, -20.869555, 1, 42.51092)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_-10_46" type="MeshInstance3D" parent="environment/Island" unique_id=1529703936 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.96732426, 0, 0.2535425, 0, 1, 0, -0.2535425, 0, 0.96732426, -9.496129, 2, 46.274094)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_-15_41" type="MeshInstance3D" parent="environment/Island" unique_id=194331993 instance=ExtResource("6_efxa6")]
+transform = Transform3D(-0.59172755, 0, -0.80613804, 0, 1, 0, 0.80613804, 0, -0.59172755, -14.009131, 2, 41.185345)
 mesh = ExtResource("67_k1udn")
 
-[node name="Tree_-48_-28" type="MeshInstance3D" parent="environment/Island" unique_id=957310268 instance=ExtResource("6_efxa6")]
-transform = Transform3D(0.52223176, 0, 0.8528036, 0, 1, 0, -0.8528036, 0, 0.52223176, -47.83973, 2, -27.450233)
+[node name="Box_71_9" type="MeshInstance3D" parent="environment/Island" unique_id=2065490333 instance=ExtResource("8_ycdy4")]
+transform = Transform3D(0.8923443, 0, 0.45135534, 0, 1, 0, -0.45135534, 0, 0.8923443, 71.251366, 1, 9.319023)
+mesh = ExtResource("64_jcxqu")
+
+[node name="Box_22_-26" type="MeshInstance3D" parent="environment/Island" unique_id=1963893266 instance=ExtResource("10_vivmo")]
+transform = Transform3D(0.9994197, 0, -0.034062296, 0, 1, 0, 0.034062296, 0, 0.9994197, 22.361767, 5, -25.376877)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_12_28" type="MeshInstance3D" parent="environment/Island" unique_id=160600077 instance=ExtResource("10_vivmo")]
+transform = Transform3D(-0.027767112, 0, 0.9996144, 0, 1, 0, -0.9996144, 0, -0.027767112, 12.185234, 7, 28.822948)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_4_-2" type="MeshInstance3D" parent="environment/Island" unique_id=2081657786 instance=ExtResource("6_efxa6")]
+transform = Transform3D(-0.6669117, 0, 0.74513674, 0, 1, 0, -0.74513674, 0, -0.6669117, 4.945904, 8, -1.6926467)
 mesh = ExtResource("67_k1udn")
 
-[node name="Tree_26_-30" type="MeshInstance3D" parent="environment/Island" unique_id=1430647930 instance=ExtResource("9_w48qg")]
-transform = Transform3D(-0.8094514, 0, 0.5871869, 0, 1, 0, -0.5871869, 0, -0.8094514, 26.47275, 3, -29.401896)
+[node name="Box_-25_-60" type="MeshInstance3D" parent="environment/Island" unique_id=160816324 instance=ExtResource("10_vivmo")]
+transform = Transform3D(0.015164704, 0, 0.999885, 0, 1, 0, -0.999885, 0, 0.015164704, -24.214478, 1, -59.71784)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_-6_-35" type="MeshInstance3D" parent="environment/Island" unique_id=1414334624 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.8614877, 0, -0.5077784, 0, 1, 0, 0.5077784, 0, 0.8614877, -5.363551, 2, -34.550636)
 mesh = ExtResource("63_inymm")
 
-[node name="Tree_0_23" type="MeshInstance3D" parent="environment/Island" unique_id=1363532982 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(0.34830657, 0, -0.9373807, 0, 1, 0, 0.9373807, 0, 0.34830657, 0.1703941, 6, 23.204136)
+[node name="Box_25_-4" type="MeshInstance3D" parent="environment/Island" unique_id=395616658 instance=ExtResource("10_vivmo")]
+transform = Transform3D(0.9918862, 0, 0.127129, 0, 1, 0, -0.127129, 0, 0.9918862, 25.865107, 3, -3.734769)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_8_-57" type="MeshInstance3D" parent="environment/Island" unique_id=1134349738 instance=ExtResource("8_ycdy4")]
+transform = Transform3D(0.87528205, 0, 0.48361275, 0, 1, 0, -0.48361275, 0, 0.87528205, 8.455134, 1, -56.354134)
 mesh = ExtResource("64_jcxqu")
 
-[node name="Tree_-21_-59" type="MeshInstance3D" parent="environment/Island" unique_id=1394898737 instance=ExtResource("9_w48qg")]
-transform = Transform3D(0.50765574, 0, -0.86156, 0, 1, 0, 0.86156, 0, 0.50765574, -20.42745, 2, -58.87803)
-mesh = ExtResource("63_inymm")
-
-[node name="Tree_47_14" type="MeshInstance3D" parent="environment/Island" unique_id=189509757 instance=ExtResource("7_dg77c")]
-transform = Transform3D(-0.553667, 0, 0.83273816, 0, 1, 0, -0.83273816, 0, -0.553667, 47.045338, 2, 14.2687235)
-mesh = ExtResource("65_0arob")
-
-[node name="Tree_-27_-17" type="MeshInstance3D" parent="environment/Island" unique_id=2094896389 instance=ExtResource("7_dg77c")]
-transform = Transform3D(-0.91915673, 0, -0.39389193, 0, 1, 0, 0.39389193, 0, -0.91915673, -26.772799, 4, -16.922527)
-mesh = ExtResource("65_0arob")
-
-[node name="Tree_-11_3" type="MeshInstance3D" parent="environment/Island" unique_id=971894886 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(0.97766703, 0, -0.21015981, 0, 1, 0, 0.21015981, 0, 0.97766703, -10.662002, 8, 3.5661688)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_-3_11" type="MeshInstance3D" parent="environment/Island" unique_id=1642855938 instance=ExtResource("9_w48qg")]
-transform = Transform3D(-0.9970957, 0, -0.0761587, 0, 1, 0, 0.0761587, 0, -0.9970957, -2.5217955, 9, 11.405217)
-mesh = ExtResource("63_inymm")
-
-[node name="Tree_-28_50" type="MeshInstance3D" parent="environment/Island" unique_id=215130741 instance=ExtResource("6_efxa6")]
-transform = Transform3D(-0.42195687, 0, -0.9066159, 0, 1, 0, 0.9066159, 0, -0.42195687, -27.488512, 1, 50.29532)
+[node name="Box_23_-8" type="MeshInstance3D" parent="environment/Island" unique_id=927775346 instance=ExtResource("6_efxa6")]
+transform = Transform3D(-0.71392256, 0, 0.7002247, 0, 1, 0, -0.7002247, 0, -0.71392256, 23.438671, 3, -7.241764)
 mesh = ExtResource("67_k1udn")
 
-[node name="Tree_-22_29" type="MeshInstance3D" parent="environment/Island" unique_id=2143210285 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(0.8502304, 0, -0.5264108, 0, 1, 0, 0.5264108, 0, 0.8502304, -21.593502, 3, 29.38548)
+[node name="Box_51_-3" type="MeshInstance3D" parent="environment/Island" unique_id=1323217922 instance=ExtResource("7_dg77c")]
+transform = Transform3D(-0.5682988, 0, -0.8228223, 0, 1, 0, 0.8228223, 0, -0.5682988, 51.178226, 3, -2.9515164)
+mesh = ExtResource("65_0arob")
+
+[node name="Box_-45_-1" type="MeshInstance3D" parent="environment/Island" unique_id=2106948348 instance=ExtResource("8_ycdy4")]
+transform = Transform3D(-0.8302987, 0, 0.55731857, 0, 1, 0, -0.55731857, 0, -0.8302987, -44.335484, 2, -0.008777499)
 mesh = ExtResource("64_jcxqu")
 
-[node name="Tree_9_-28" type="MeshInstance3D" parent="environment/Island" unique_id=1002416322 instance=ExtResource("10_vivmo")]
-transform = Transform3D(0.46307167, 0, -0.8863208, 0, 1, 0, 0.8863208, 0, 0.46307167, 9.712191, 4, -27.300058)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_33_52" type="MeshInstance3D" parent="environment/Island" unique_id=1768012265 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(0.9498771, 0, -0.31262365, 0, 1, 0, 0.31262365, 0, 0.9498771, 33.341114, 1, 52.86774)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_49_-19" type="MeshInstance3D" parent="environment/Island" unique_id=713918453 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(-0.77453285, 0, 0.63253367, 0, 1, 0, -0.63253367, 0, -0.77453285, 49.419678, 2, -18.783934)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_-15_-47" type="MeshInstance3D" parent="environment/Island" unique_id=1570984494 instance=ExtResource("10_vivmo")]
-transform = Transform3D(0.91815007, 0, 0.39623284, 0, 1, 0, -0.39623284, 0, 0.91815007, -14.931897, 2, -46.31829)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_-44_-24" type="MeshInstance3D" parent="environment/Island" unique_id=212950166 instance=ExtResource("10_vivmo")]
-transform = Transform3D(0.65267634, 0, -0.75763685, 0, 1, 0, 0.75763685, 0, 0.65267634, -43.844242, 3, -23.4664)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_10_43" type="MeshInstance3D" parent="environment/Island" unique_id=1550914589 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(-0.37250844, 0, -0.9280288, 0, 1, 0, 0.9280288, 0, -0.37250844, 10.862112, 3, 43.93933)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_-36_-51" type="MeshInstance3D" parent="environment/Island" unique_id=739069004 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(-0.45379153, 0, 0.89110786, 0, 1, 0, -0.89110786, 0, -0.45379153, -35.496227, 1, -50.394646)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_-31_58" type="MeshInstance3D" parent="environment/Island" unique_id=1015239095 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(-0.5704393, 0, 0.8213398, 0, 1, 0, -0.8213398, 0, -0.5704393, -30.69442, 1, 58.104633)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_-40_-39" type="MeshInstance3D" parent="environment/Island" unique_id=135549792 instance=ExtResource("10_vivmo")]
-transform = Transform3D(0.99682313, 0, -0.07964732, 0, 1, 0, 0.07964732, 0, 0.99682313, -39.0172, 2, -38.83656)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_-25_-21" type="MeshInstance3D" parent="environment/Island" unique_id=1954001116 instance=ExtResource("9_w48qg")]
-transform = Transform3D(0.93245894, 0, -0.36127594, 0, 1, 0, 0.36127594, 0, 0.93245894, -24.72575, 3, -20.042488)
-mesh = ExtResource("63_inymm")
-
-[node name="Tree_23_54" type="MeshInstance3D" parent="environment/Island" unique_id=414208091 instance=ExtResource("9_w48qg")]
-transform = Transform3D(-0.8730641, 0, -0.48760542, 0, 1, 0, 0.48760542, 0, -0.8730641, 23.199627, 2, 54.406124)
-mesh = ExtResource("63_inymm")
-
-[node name="Tree_-52_12" type="MeshInstance3D" parent="environment/Island" unique_id=1169465265 instance=ExtResource("6_efxa6")]
-transform = Transform3D(0.84029406, 0, 0.5421309, 0, 1, 0, -0.5421309, 0, 0.84029406, -51.219036, 3, 12.952865)
+[node name="Box_23_-53" type="MeshInstance3D" parent="environment/Island" unique_id=1926395595 instance=ExtResource("6_efxa6")]
+transform = Transform3D(0.9979429, 0, 0.06410906, 0, 1, 0, -0.06410906, 0, 0.9979429, 23.52399, 2, -52.717915)
 mesh = ExtResource("67_k1udn")
 
-[node name="Tree_-8_-29" type="MeshInstance3D" parent="environment/Island" unique_id=1499423320 instance=ExtResource("7_dg77c")]
-transform = Transform3D(0.27348056, 0, 0.9618775, 0, 1, 0, -0.9618775, 0, 0.27348056, -7.8587923, 2, -28.04527)
+[node name="Box_15_10" type="MeshInstance3D" parent="environment/Island" unique_id=2029326042 instance=ExtResource("7_dg77c")]
+transform = Transform3D(-0.111684285, 0, 0.9937437, 0, 1, 0, -0.9937437, 0, -0.111684285, 15.225814, 6, 10.681208)
 mesh = ExtResource("65_0arob")
 
-[node name="Tree_17_-29" type="MeshInstance3D" parent="environment/Island" unique_id=1648436958 instance=ExtResource("6_efxa6")]
-transform = Transform3D(-0.36388865, 0, -0.93144244, 0, 1, 0, 0.93144244, 0, -0.36388865, 17.51698, 2, -28.23743)
+[node name="Box_22_60" type="MeshInstance3D" parent="environment/Island" unique_id=1602088543 instance=ExtResource("8_ycdy4")]
+transform = Transform3D(0.8023737, 0, 0.5968219, 0, 1, 0, -0.5968219, 0, 0.8023737, 22.91211, 1, 60.811356)
+mesh = ExtResource("64_jcxqu")
+
+[node name="Box_-28_-17" type="MeshInstance3D" parent="environment/Island" unique_id=1392945464 instance=ExtResource("6_efxa6")]
+transform = Transform3D(0.69869995, 0, 0.7154148, 0, 1, 0, -0.7154148, 0, 0.69869995, -27.466854, 5, -16.737282)
 mesh = ExtResource("67_k1udn")
 
-[node name="Tree_-44_-36" type="MeshInstance3D" parent="environment/Island" unique_id=2099917699 instance=ExtResource("7_dg77c")]
-transform = Transform3D(0.8992997, 0, -0.43733293, 0, 1, 0, 0.43733293, 0, 0.8992997, -43.166286, 2, -35.206573)
+[node name="Box_33_-33" type="MeshInstance3D" parent="environment/Island" unique_id=1540701279 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.6867778, 0, 0.7268675, 0, 1, 0, -0.7268675, 0, 0.6867778, 33.055153, 2, -32.406994)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_-36_49" type="MeshInstance3D" parent="environment/Island" unique_id=80835837 instance=ExtResource("7_dg77c")]
+transform = Transform3D(-0.9993492, 0, -0.036071904, 0, 1, 0, 0.036071904, 0, -0.9993492, -35.43158, 1, 49.426292)
 mesh = ExtResource("65_0arob")
 
-[node name="Tree_-45_-14" type="MeshInstance3D" parent="environment/Island" unique_id=2108050894 instance=ExtResource("6_efxa6")]
-transform = Transform3D(0.9999437, 0, -0.010615451, 0, 1, 0, 0.010615451, 0, 0.9999437, -44.7317, 3, -13.589987)
+[node name="Box_53_-15" type="MeshInstance3D" parent="environment/Island" unique_id=1474527482 instance=ExtResource("6_efxa6")]
+transform = Transform3D(0.66381717, 0, -0.7478949, 0, 1, 0, 0.7478949, 0, 0.66381717, 53.787193, 2, -14.40503)
 mesh = ExtResource("67_k1udn")
 
-[node name="Tree_49_13" type="MeshInstance3D" parent="environment/Island" unique_id=1229062536 instance=ExtResource("7_dg77c")]
-transform = Transform3D(-0.58269364, 0, 0.81269187, 0, 1, 0, -0.81269187, 0, -0.58269364, 49.935772, 3, 13.514433)
-mesh = ExtResource("65_0arob")
-
-[node name="Tree_-41_-15" type="MeshInstance3D" parent="environment/Island" unique_id=1164581313 instance=ExtResource("7_dg77c")]
-transform = Transform3D(-0.9997412, 0, -0.022749694, 0, 1, 0, 0.022749694, 0, -0.9997412, -40.189587, 4, -14.37523)
-mesh = ExtResource("65_0arob")
-
-[node name="Tree_-31_-14" type="MeshInstance3D" parent="environment/Island" unique_id=1770193822 instance=ExtResource("10_vivmo")]
-transform = Transform3D(0.98665065, 0, -0.16285121, 0, 1, 0, 0.16285121, 0, 0.98665065, -30.106749, 4, -13.3637495)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_-49_-20" type="MeshInstance3D" parent="environment/Island" unique_id=2106057666 instance=ExtResource("9_w48qg")]
-transform = Transform3D(-0.44744828, 0, 0.8943098, 0, 1, 0, -0.8943098, 0, -0.44744828, -48.987297, 1, -19.618849)
-mesh = ExtResource("63_inymm")
-
-[node name="Tree_-25_-53" type="MeshInstance3D" parent="environment/Island" unique_id=708646254 instance=ExtResource("7_dg77c")]
-transform = Transform3D(0.97080225, 0, -0.2398813, 0, 1, 0, 0.2398813, 0, 0.97080225, -24.748833, 2, -52.743683)
-mesh = ExtResource("65_0arob")
-
-[node name="Tree_-19_-26" type="MeshInstance3D" parent="environment/Island" unique_id=371510867 instance=ExtResource("7_dg77c")]
-transform = Transform3D(0.70653796, 0, -0.70767516, 0, 1, 0, 0.70767516, 0, 0.70653796, -18.78422, 2, -25.27679)
-mesh = ExtResource("65_0arob")
-
-[node name="Tree_-3_33" type="MeshInstance3D" parent="environment/Island" unique_id=489771994 instance=ExtResource("7_dg77c")]
-transform = Transform3D(-0.5190981, 0, -0.85471463, 0, 1, 0, 0.85471463, 0, -0.5190981, -2.480289, 5, 33.087402)
-mesh = ExtResource("65_0arob")
-
-[node name="Tree_-46_-3" type="MeshInstance3D" parent="environment/Island" unique_id=1218765415 instance=ExtResource("10_vivmo")]
-transform = Transform3D(0.679108, 0, -0.73403835, 0, 1, 0, 0.73403835, 0, 0.679108, -45.875946, 4, -2.6755705)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_43_2" type="MeshInstance3D" parent="environment/Island" unique_id=1121658529 instance=ExtResource("9_w48qg")]
-transform = Transform3D(-0.31891316, 0, -0.94778395, 0, 1, 0, 0.94778395, 0, -0.31891316, 43.446503, 2, 2.6877797)
-mesh = ExtResource("63_inymm")
-
-[node name="Tree_9_-48" type="MeshInstance3D" parent="environment/Island" unique_id=2070138929 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(-0.7805211, 0, -0.6251294, 0, 1, 0, 0.6251294, 0, -0.7805211, 9.731032, 4, -47.757915)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_-24_-20" type="MeshInstance3D" parent="environment/Island" unique_id=2037258964 instance=ExtResource("9_w48qg")]
-transform = Transform3D(0.759222, 0, 0.65083176, 0, 1, 0, -0.65083176, 0, 0.759222, -23.795464, 3, -19.120808)
-mesh = ExtResource("63_inymm")
-
-[node name="Tree_0_4" type="MeshInstance3D" parent="environment/Island" unique_id=1964200798 instance=ExtResource("10_vivmo")]
-transform = Transform3D(-0.010033721, 0, 0.99994963, 0, 1, 0, -0.99994963, 0, -0.010033721, 0.39249986, 10, 4.2070646)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_-37_36" type="MeshInstance3D" parent="environment/Island" unique_id=306401943 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(0.8863612, 0, 0.46299443, 0, 1, 0, -0.46299443, 0, 0.8863612, -36.085667, 2, 36.61724)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_-8_63" type="MeshInstance3D" parent="environment/Island" unique_id=1787771710 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(-0.34132168, 0, 0.93994653, 0, 1, 0, -0.93994653, 0, -0.34132168, -7.805308, 1, 63.980694)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_-49_-28" type="MeshInstance3D" parent="environment/Island" unique_id=1058097626 instance=ExtResource("7_dg77c")]
-transform = Transform3D(0.35946932, 0, -0.9331569, 0, 1, 0, 0.9331569, 0, 0.35946932, -48.98057, 2, -27.23552)
-mesh = ExtResource("65_0arob")
-
-[node name="Tree_-21_32" type="MeshInstance3D" parent="environment/Island" unique_id=1349051157 instance=ExtResource("10_vivmo")]
-transform = Transform3D(0.4773231, 0, 0.87872785, 0, 1, 0, -0.87872785, 0, 0.4773231, -20.047564, 4, 32.45467)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_-11_-33" type="MeshInstance3D" parent="environment/Island" unique_id=918117598 instance=ExtResource("9_w48qg")]
-transform = Transform3D(0.9340638, 0, -0.35710615, 0, 1, 0, 0.35710615, 0, 0.9340638, -10.111456, 2, -32.602028)
-mesh = ExtResource("63_inymm")
-
-[node name="Tree_32_-39" type="MeshInstance3D" parent="environment/Island" unique_id=348558772 instance=ExtResource("7_dg77c")]
-transform = Transform3D(-0.930201, 0, -0.3670505, 0, 1, 0, 0.3670505, 0, -0.930201, 32.32257, 1, -38.169586)
-mesh = ExtResource("65_0arob")
-
-[node name="Tree_-18_25" type="MeshInstance3D" parent="environment/Island" unique_id=1914100351 instance=ExtResource("6_efxa6")]
-transform = Transform3D(0.925494, 0, 0.37876225, 0, 1, 0, -0.37876225, 0, 0.925494, -17.699797, 5, 25.724005)
+[node name="Box_-56_-5" type="MeshInstance3D" parent="environment/Island" unique_id=144632760 instance=ExtResource("6_efxa6")]
+transform = Transform3D(-0.76371294, 0, -0.645556, 0, 1, 0, 0.645556, 0, -0.76371294, -55.28966, 1, -4.939758)
 mesh = ExtResource("67_k1udn")
 
-[node name="Tree_-40_-32" type="MeshInstance3D" parent="environment/Island" unique_id=947143909 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(-0.92016524, 0, -0.39153025, 0, 1, 0, 0.39153025, 0, -0.92016524, -39.25013, 3, -31.389668)
+[node name="Box_23_44" type="MeshInstance3D" parent="environment/Island" unique_id=2100919145 instance=ExtResource("8_ycdy4")]
+transform = Transform3D(-0.956706, 0, -0.29105616, 0, 1, 0, 0.29105616, 0, -0.956706, 23.332382, 3, 44.16951)
 mesh = ExtResource("64_jcxqu")
 
-[node name="Tree_-31_-52" type="MeshInstance3D" parent="environment/Island" unique_id=1298534682 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(0.6561318, 0, 0.75464636, 0, 1, 0, -0.75464636, 0, 0.6561318, -30.07562, 2, -51.156067)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_10_-44" type="MeshInstance3D" parent="environment/Island" unique_id=805901725 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(-0.9715294, 0, 0.23691902, 0, 1, 0, -0.23691902, 0, -0.9715294, 10.67966, 4, -43.4362)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_30_28" type="MeshInstance3D" parent="environment/Island" unique_id=1644994025 instance=ExtResource("6_efxa6")]
-transform = Transform3D(0.94152635, 0, 0.33693933, 0, 1, 0, -0.33693933, 0, 0.94152635, 30.97329, 2, 28.781147)
+[node name="Box_36_1" type="MeshInstance3D" parent="environment/Island" unique_id=38916532 instance=ExtResource("6_efxa6")]
+transform = Transform3D(-0.25389147, 0, -0.9672327, 0, 1, 0, 0.9672327, 0, -0.25389147, 36.685444, 5, 1.497301)
 mesh = ExtResource("67_k1udn")
 
-[node name="Tree_44_-19" type="MeshInstance3D" parent="environment/Island" unique_id=1381120027 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(-0.5991789, 0, -0.8006152, 0, 1, 0, 0.8006152, 0, -0.5991789, 44.63756, 3, -18.39089)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_-24_-43" type="MeshInstance3D" parent="environment/Island" unique_id=1634178315 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(0.8323335, 0, -0.5542751, 0, 1, 0, 0.5542751, 0, 0.8323335, -23.334019, 2, -42.598694)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_36_-21" type="MeshInstance3D" parent="environment/Island" unique_id=1190983673 instance=ExtResource("10_vivmo")]
-transform = Transform3D(-0.666359, 0, 0.74563104, 0, 1, 0, -0.74563104, 0, -0.666359, 36.761055, 4, -20.651548)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_36_-11" type="MeshInstance3D" parent="environment/Island" unique_id=782078175 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(-0.5960557, 0, 0.8029431, 0, 1, 0, -0.8029431, 0, -0.5960557, 36.266083, 4, -10.950927)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_37_-18" type="MeshInstance3D" parent="environment/Island" unique_id=617381701 instance=ExtResource("9_w48qg")]
-transform = Transform3D(0.7582429, 0, -0.6519722, 0, 1, 0, 0.6519722, 0, 0.7582429, 37.477837, 3, -17.635048)
+[node name="Box_-33_21" type="MeshInstance3D" parent="environment/Island" unique_id=577760297 instance=ExtResource("9_w48qg")]
+transform = Transform3D(-0.9543976, 0, 0.29853836, 0, 1, 0, -0.29853836, 0, -0.9543976, -32.419476, 5, 21.924107)
 mesh = ExtResource("63_inymm")
 
-[node name="Tree_38_-31" type="MeshInstance3D" parent="environment/Island" unique_id=1671607401 instance=ExtResource("10_vivmo")]
-transform = Transform3D(-0.99973553, 0, -0.022996869, 0, 1, 0, 0.022996869, 0, -0.99973553, 38.994656, 2, -30.836779)
+[node name="Box_16_20" type="MeshInstance3D" parent="environment/Island" unique_id=1057868291 instance=ExtResource("10_vivmo")]
+transform = Transform3D(0.41033992, 0, -0.91193265, 0, 1, 0, 0.91193265, 0, 0.41033992, 16.71978, 4, 20.59603)
 mesh = ExtResource("66_dij0e")
 
-[node name="Tree_-60_2" type="MeshInstance3D" parent="environment/Island" unique_id=139496320 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(-0.61003405, 0, 0.7923752, 0, 1, 0, -0.7923752, 0, -0.61003405, -59.86743, 2, 2.9559083)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_-10_-48" type="MeshInstance3D" parent="environment/Island" unique_id=1894371830 instance=ExtResource("10_vivmo")]
-transform = Transform3D(0.96641034, 0, -0.2570041, 0, 1, 0, 0.2570041, 0, 0.96641034, -9.26189, 3, -47.355762)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_-10_-5" type="MeshInstance3D" parent="environment/Island" unique_id=26999952 instance=ExtResource("8_ycdy4")]
-transform = Transform3D(0.7783851, 0, 0.6277871, 0, 1, 0, -0.6277871, 0, 0.7783851, -9.239819, 10, -4.313224)
-mesh = ExtResource("64_jcxqu")
-
-[node name="Tree_-4_-35" type="MeshInstance3D" parent="environment/Island" unique_id=1834291061 instance=ExtResource("9_w48qg")]
-transform = Transform3D(0.43373498, 0, 0.9010405, 0, 1, 0, -0.9010405, 0, 0.43373498, -3.6118412, 4, -34.095455)
+[node name="Box_-22_10" type="MeshInstance3D" parent="environment/Island" unique_id=1235724287 instance=ExtResource("9_w48qg")]
+transform = Transform3D(-0.50380826, 0, -0.86381555, 0, 1, 0, 0.86381555, 0, -0.50380826, -21.125448, 7, 10.238528)
 mesh = ExtResource("63_inymm")
 
-[node name="Tree_-2_22" type="MeshInstance3D" parent="environment/Island" unique_id=1836991725 instance=ExtResource("10_vivmo")]
-transform = Transform3D(0.28974792, 0, -0.957103, 0, 1, 0, 0.957103, 0, 0.28974792, -1.6475452, 6, 22.76149)
-mesh = ExtResource("66_dij0e")
-
-[node name="Tree_-18_-16" type="MeshInstance3D" parent="environment/Island" unique_id=1001203676 instance=ExtResource("6_efxa6")]
-transform = Transform3D(0.24077152, 0, 0.9705818, 0, 1, 0, -0.9705818, 0, 0.24077152, -17.195744, 5, -15.973363)
+[node name="Box_13_44" type="MeshInstance3D" parent="environment/Island" unique_id=1433826514 instance=ExtResource("6_efxa6")]
+transform = Transform3D(0.3604381, 0, 0.9327831, 0, 1, 0, -0.9327831, 0, 0.3604381, 13.245835, 3, 44.312286)
 mesh = ExtResource("67_k1udn")
 
-[node name="Tree_28_-17" type="MeshInstance3D" parent="environment/Island" unique_id=1538914884 instance=ExtResource("9_w48qg")]
-transform = Transform3D(-0.44493315, 0, -0.8955638, 0, 1, 0, 0.8955638, 0, -0.44493315, 28.78844, 5, -16.763279)
+[node name="Box_13_41" type="MeshInstance3D" parent="environment/Island" unique_id=1747881338 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.69744486, 0, 0.71663845, 0, 1, 0, -0.71663845, 0, 0.69744486, 13.574692, 4, 41.30652)
 mesh = ExtResource("63_inymm")
 
-[node name="Tree_5_4" type="MeshInstance3D" parent="environment/Island" unique_id=730568558 instance=ExtResource("10_vivmo")]
-transform = Transform3D(0.31526104, 0, 0.949005, 0, 1, 0, -0.949005, 0, 0.31526104, 5.297, 7, 4.7082367)
-mesh = ExtResource("66_dij0e")
+[node name="Box_14_-24" type="MeshInstance3D" parent="environment/Island" unique_id=2085552552 instance=ExtResource("9_w48qg")]
+transform = Transform3D(-0.10550418, 0, 0.99441886, 0, 1, 0, -0.99441886, 0, -0.10550418, 14.066505, 4, -23.385143)
+mesh = ExtResource("63_inymm")
 
-[node name="Tree_17_-52" type="MeshInstance3D" parent="environment/Island" unique_id=1280755785 instance=ExtResource("6_efxa6")]
-transform = Transform3D(-0.96995544, 0, -0.24328251, 0, 1, 0, 0.24328251, 0, -0.96995544, 17.607162, 2, -51.974335)
-mesh = ExtResource("67_k1udn")
+[node name="Box_-36_1" type="MeshInstance3D" parent="environment/Island" unique_id=393160571 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.9150145, 0, -0.40342098, 0, 1, 0, 0.40342098, 0, 0.9150145, -35.456936, 4, 1.4348006)
+mesh = ExtResource("63_inymm")
 
-[node name="Tree_-32_-53" type="MeshInstance3D" parent="environment/Island" unique_id=706421247 instance=ExtResource("6_efxa6")]
-transform = Transform3D(0.9867597, 0, -0.16218875, 0, 1, 0, 0.16218875, 0, 0.9867597, -31.145048, 1, -52.95785)
-mesh = ExtResource("67_k1udn")
+[node name="Box_18_-29" type="MeshInstance3D" parent="environment/Island" unique_id=1471303871 instance=ExtResource("8_ycdy4")]
+transform = Transform3D(-0.60338104, 0, -0.797453, 0, 1, 0, 0.797453, 0, -0.60338104, 18.087576, 4, -28.365576)
+mesh = ExtResource("64_jcxqu")
 
-[node name="Tree_54_26" type="MeshInstance3D" parent="environment/Island" unique_id=1900808192 instance=ExtResource("7_dg77c")]
-transform = Transform3D(-0.87572294, 0, 0.48281395, 0, 1, 0, -0.48281395, 0, -0.87572294, 54.00804, 2, 26.04284)
+[node name="Box_31_27" type="MeshInstance3D" parent="environment/Island" unique_id=882391293 instance=ExtResource("7_dg77c")]
+transform = Transform3D(-0.4202792, 0, -0.9073948, 0, 1, 0, 0.9073948, 0, -0.4202792, 31.529253, 2, 27.28528)
 mesh = ExtResource("65_0arob")
 
-[node name="Chunk_-5_0" type="StaticBody3D" parent="environment/Island" unique_id=522025469]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 0)
-script = ExtResource("37_wnkbs")
+[node name="Box_-18_30" type="MeshInstance3D" parent="environment/Island" unique_id=673709939 instance=ExtResource("10_vivmo")]
+transform = Transform3D(-0.8678253, 0, -0.49686944, 0, 1, 0, 0.49686944, 0, -0.8678253, -17.896069, 3, 30.5893)
+mesh = ExtResource("66_dij0e")
 
-[node name="Chunk_-5_-1" type="StaticBody3D" parent="environment/Island" unique_id=1465037158]
+[node name="Box_28_-25" type="MeshInstance3D" parent="environment/Island" unique_id=727779462 instance=ExtResource("8_ycdy4")]
+transform = Transform3D(-0.73931754, 0, -0.67335695, 0, 1, 0, 0.67335695, 0, -0.73931754, 28.49865, 2, -24.345234)
+mesh = ExtResource("64_jcxqu")
+
+[node name="Box_-1_-17" type="MeshInstance3D" parent="environment/Island" unique_id=1959334977 instance=ExtResource("9_w48qg")]
+transform = Transform3D(-0.22238898, 0, -0.974958, 0, 1, 0, 0.974958, 0, -0.22238898, -0.7893514, 3, -16.765663)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_46_-29" type="MeshInstance3D" parent="environment/Island" unique_id=677689004 instance=ExtResource("9_w48qg")]
+transform = Transform3D(-0.41595763, 0, -0.909384, 0, 1, 0, 0.909384, 0, -0.41595763, 46.855453, 1, -28.020512)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_16_13" type="MeshInstance3D" parent="environment/Island" unique_id=882662959 instance=ExtResource("10_vivmo")]
+transform = Transform3D(0.027641427, 0, 0.9996179, 0, 1, 0, -0.9996179, 0, 0.027641427, 16.836407, 5, 13.942355)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_-15_-25" type="MeshInstance3D" parent="environment/Island" unique_id=329489637 instance=ExtResource("8_ycdy4")]
+transform = Transform3D(-0.99332863, 0, -0.11531803, 0, 1, 0, 0.11531803, 0, -0.99332863, -14.866179, 4, -24.887241)
+mesh = ExtResource("64_jcxqu")
+
+[node name="Box_-2_22" type="MeshInstance3D" parent="environment/Island" unique_id=1326933063 instance=ExtResource("6_efxa6")]
+transform = Transform3D(-0.062049124, 0, 0.9980731, 0, 1, 0, -0.9980731, 0, -0.062049124, -1.9780151, 6, 22.573513)
+mesh = ExtResource("67_k1udn")
+
+[node name="Box_1_51" type="MeshInstance3D" parent="environment/Island" unique_id=1140726339 instance=ExtResource("7_dg77c")]
+transform = Transform3D(0.4440969, 0, 0.89597875, 0, 1, 0, -0.89597875, 0, 0.4440969, 1.9780991, 2, 51.653526)
+mesh = ExtResource("65_0arob")
+
+[node name="Box_-4_35" type="MeshInstance3D" parent="environment/Island" unique_id=193580810 instance=ExtResource("9_w48qg")]
+transform = Transform3D(-0.3798164, 0, 0.9250619, 0, 1, 0, -0.9250619, 0, -0.3798164, -3.8904376, 4, 35.368668)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_25_38" type="MeshInstance3D" parent="environment/Island" unique_id=1416650399 instance=ExtResource("10_vivmo")]
+transform = Transform3D(0.6189455, 0, -0.78543395, 0, 1, 0, 0.78543395, 0, 0.6189455, 25.856775, 4, 38.82174)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_41_-17" type="MeshInstance3D" parent="environment/Island" unique_id=278671752 instance=ExtResource("10_vivmo")]
+transform = Transform3D(-0.8201121, 0, -0.57220286, 0, 1, 0, 0.57220286, 0, -0.8201121, 41.998657, 3, -16.292133)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_20_36" type="MeshInstance3D" parent="environment/Island" unique_id=354443091 instance=ExtResource("10_vivmo")]
+transform = Transform3D(-0.856085, 0, -0.51683503, 0, 1, 0, 0.51683503, 0, -0.856085, 20.616474, 5, 36.64467)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_32_3" type="MeshInstance3D" parent="environment/Island" unique_id=361348624 instance=ExtResource("10_vivmo")]
+transform = Transform3D(-0.21023361, 0, -0.9776512, 0, 1, 0, 0.9776512, 0, -0.21023361, 32.402103, 5, 3.336625)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_6_-31" type="MeshInstance3D" parent="environment/Island" unique_id=1364371765 instance=ExtResource("10_vivmo")]
+transform = Transform3D(-0.858372, 0, -0.51302785, 0, 1, 0, 0.51302785, 0, -0.858372, 6.279329, 3, -30.297825)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_17_5" type="MeshInstance3D" parent="environment/Island" unique_id=609644459 instance=ExtResource("7_dg77c")]
+transform = Transform3D(-0.75643873, 0, -0.65406454, 0, 1, 0, 0.65406454, 0, -0.75643873, 17.774733, 5, 5.11155)
+mesh = ExtResource("65_0arob")
+
+[node name="Box_38_46" type="MeshInstance3D" parent="environment/Island" unique_id=1027117390 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.30391443, 0, 0.95269936, 0, 1, 0, -0.95269936, 0, 0.30391443, 38.998722, 2, 46.15407)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_-3_32" type="MeshInstance3D" parent="environment/Island" unique_id=1709614161 instance=ExtResource("10_vivmo")]
+transform = Transform3D(0.18367165, 0, 0.98298764, 0, 1, 0, -0.98298764, 0, 0.18367165, -2.528551, 6, 32.910553)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_-34_-59" type="MeshInstance3D" parent="environment/Island" unique_id=677841606 instance=ExtResource("6_efxa6")]
+transform = Transform3D(0.95358324, 0, -0.3011296, 0, 1, 0, 0.3011296, 0, 0.95358324, -33.667137, 1, -58.997776)
+mesh = ExtResource("67_k1udn")
+
+[node name="Box_55_15" type="MeshInstance3D" parent="environment/Island" unique_id=1548805516 instance=ExtResource("10_vivmo")]
+transform = Transform3D(-0.9821727, 0, 0.18798082, 0, 1, 0, -0.18798082, 0, -0.9821727, 55.865837, 1, 15.812683)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_-5_-33" type="MeshInstance3D" parent="environment/Island" unique_id=285752693 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.5003267, 0, 0.8658367, 0, 1, 0, -0.8658367, 0, 0.5003267, -4.7228837, 3, -32.457024)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_37_2" type="MeshInstance3D" parent="environment/Island" unique_id=1253841502 instance=ExtResource("9_w48qg")]
+transform = Transform3D(-0.9151364, 0, -0.4031444, 0, 1, 0, 0.4031444, 0, -0.9151364, 37.50263, 5, 2.1196244)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_46_-13" type="MeshInstance3D" parent="environment/Island" unique_id=147447229 instance=ExtResource("8_ycdy4")]
+transform = Transform3D(-0.90706104, 0, -0.42099914, 0, 1, 0, 0.42099914, 0, -0.90706104, 46.938244, 3, -12.408001)
+mesh = ExtResource("64_jcxqu")
+
+[node name="Box_-39_28" type="MeshInstance3D" parent="environment/Island" unique_id=274228479 instance=ExtResource("7_dg77c")]
+transform = Transform3D(0.9544228, 0, -0.29845795, 0, 1, 0, 0.29845795, 0, 0.9544228, -38.038563, 2, 28.964128)
+mesh = ExtResource("65_0arob")
+
+[node name="Box_-27_-18" type="MeshInstance3D" parent="environment/Island" unique_id=822050684 instance=ExtResource("7_dg77c")]
+transform = Transform3D(-0.9323478, 0, 0.3615628, 0, 1, 0, -0.3615628, 0, -0.9323478, -26.03719, 5, -17.889393)
+mesh = ExtResource("65_0arob")
+
+[node name="Box_28_-27" type="MeshInstance3D" parent="environment/Island" unique_id=66205967 instance=ExtResource("10_vivmo")]
+transform = Transform3D(-0.9770299, 0, 0.2131022, 0, 1, 0, -0.2131022, 0, -0.9770299, 28.9378, 3, -26.49964)
+mesh = ExtResource("66_dij0e")
+
+[node name="Box_-28_-19" type="MeshInstance3D" parent="environment/Island" unique_id=1154685831 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.7012109, 0, 0.7129539, 0, 1, 0, -0.7129539, 0, 0.7012109, -27.712328, 6, -18.133919)
+mesh = ExtResource("63_inymm")
+
+[node name="Box_-32_-24" type="MeshInstance3D" parent="environment/Island" unique_id=1012753026 instance=ExtResource("7_dg77c")]
+transform = Transform3D(-0.6597318, 0, -0.75150114, 0, 1, 0, 0.75150114, 0, -0.6597318, -31.60176, 5, -23.90123)
+mesh = ExtResource("65_0arob")
+
+[node name="Box_-3_6" type="MeshInstance3D" parent="environment/Island" unique_id=2003892202 instance=ExtResource("9_w48qg")]
+transform = Transform3D(0.69760346, 0, 0.71648407, 0, 1, 0, -0.71648407, 0, 0.69760346, -2.10373, 11, 6.7255077)
+mesh = ExtResource("63_inymm")
+
+[node name="Chunk_-5_-1" type="StaticBody3D" parent="environment/Island" unique_id=657004426]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, -16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-5_-2" type="StaticBody3D" parent="environment/Island" unique_id=719409236]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, -32)
+[node name="Chunk_-5_0" type="StaticBody3D" parent="environment/Island" unique_id=1648567319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 0)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-4_-1" type="StaticBody3D" parent="environment/Island" unique_id=1559098213]
+[node name="Chunk_-5_1" type="StaticBody3D" parent="environment/Island" unique_id=1204145259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 16)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_-5_2" type="StaticBody3D" parent="environment/Island" unique_id=238506444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 32)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_-4_-1" type="StaticBody3D" parent="environment/Island" unique_id=1552985862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-4_0" type="StaticBody3D" parent="environment/Island" unique_id=28052954]
+[node name="Chunk_-4_0" type="StaticBody3D" parent="environment/Island" unique_id=1152177318]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 0)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-4_1" type="StaticBody3D" parent="environment/Island" unique_id=118118061]
+[node name="Chunk_-4_1" type="StaticBody3D" parent="environment/Island" unique_id=566993583]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 16)
 script = ExtResource("37_wnkbs")
 
-[node name="@StaticBody3D@25286" type="StaticBody3D" parent="environment/Island" unique_id=852376256]
+[node name="Chunk_-4_2" type="StaticBody3D" parent="environment/Island" unique_id=685228206]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-4_-3" type="StaticBody3D" parent="environment/Island" unique_id=2070453500]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -48)
-script = ExtResource("37_wnkbs")
-
-[node name="Chunk_-4_-2" type="StaticBody3D" parent="environment/Island" unique_id=474502076]
+[node name="Chunk_-4_-2" type="StaticBody3D" parent="environment/Island" unique_id=242044742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-3_-3" type="StaticBody3D" parent="environment/Island" unique_id=88581499]
+[node name="Chunk_-4_-3" type="StaticBody3D" parent="environment/Island" unique_id=845321756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -48)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_-4_3" type="StaticBody3D" parent="environment/Island" unique_id=409765257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 48)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_-3_-3" type="StaticBody3D" parent="environment/Island" unique_id=54926960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -48)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-3_-2" type="StaticBody3D" parent="environment/Island" unique_id=7080412]
+[node name="Chunk_-3_-2" type="StaticBody3D" parent="environment/Island" unique_id=883363537]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-3_-1" type="StaticBody3D" parent="environment/Island" unique_id=473804495]
+[node name="Chunk_-3_-1" type="StaticBody3D" parent="environment/Island" unique_id=1358317058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-3_0" type="StaticBody3D" parent="environment/Island" unique_id=1834493894]
+[node name="Chunk_-3_0" type="StaticBody3D" parent="environment/Island" unique_id=1017432564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0)
 script = ExtResource("37_wnkbs")
 
-[node name="@StaticBody3D@25294" type="StaticBody3D" parent="environment/Island" unique_id=1600025545]
+[node name="Chunk_-3_1" type="StaticBody3D" parent="environment/Island" unique_id=1132290539]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 16)
 script = ExtResource("37_wnkbs")
 
-[node name="@StaticBody3D@25296" type="StaticBody3D" parent="environment/Island" unique_id=2008213924]
+[node name="Chunk_-3_2" type="StaticBody3D" parent="environment/Island" unique_id=1481453175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-3_3" type="StaticBody3D" parent="environment/Island" unique_id=1512222061]
+[node name="Chunk_-3_3" type="StaticBody3D" parent="environment/Island" unique_id=1711155923]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 48)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-3_-4" type="StaticBody3D" parent="environment/Island" unique_id=514562189]
+[node name="Chunk_-3_-4" type="StaticBody3D" parent="environment/Island" unique_id=365172680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -64)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-3_4" type="StaticBody3D" parent="environment/Island" unique_id=589665601]
+[node name="Chunk_-3_4" type="StaticBody3D" parent="environment/Island" unique_id=751961477]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 64)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-2_-5" type="StaticBody3D" parent="environment/Island" unique_id=1406233887]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -80)
-script = ExtResource("37_wnkbs")
-
-[node name="Chunk_-2_-4" type="StaticBody3D" parent="environment/Island" unique_id=670644274]
+[node name="Chunk_-2_-4" type="StaticBody3D" parent="environment/Island" unique_id=403712907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -64)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-2_-3" type="StaticBody3D" parent="environment/Island" unique_id=1781684271]
+[node name="Chunk_-2_-3" type="StaticBody3D" parent="environment/Island" unique_id=2129156455]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -48)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-2_-2" type="StaticBody3D" parent="environment/Island" unique_id=118081052]
+[node name="Chunk_-2_-2" type="StaticBody3D" parent="environment/Island" unique_id=1534120895]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-2_-1" type="StaticBody3D" parent="environment/Island" unique_id=42415734]
+[node name="Chunk_-2_-1" type="StaticBody3D" parent="environment/Island" unique_id=1939543817]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -16)
 script = ExtResource("37_wnkbs")
 
-[node name="@StaticBody3D@25306" type="StaticBody3D" parent="environment/Island" unique_id=1138502585]
+[node name="Chunk_-2_0" type="StaticBody3D" parent="environment/Island" unique_id=1083776608]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 0)
 script = ExtResource("37_wnkbs")
 
-[node name="@StaticBody3D@25308" type="StaticBody3D" parent="environment/Island" unique_id=432357847]
+[node name="Chunk_-2_1" type="StaticBody3D" parent="environment/Island" unique_id=2042937047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-2_2" type="StaticBody3D" parent="environment/Island" unique_id=857538657]
+[node name="Chunk_-2_2" type="StaticBody3D" parent="environment/Island" unique_id=231106829]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-2_3" type="StaticBody3D" parent="environment/Island" unique_id=2002183908]
+[node name="Chunk_-2_3" type="StaticBody3D" parent="environment/Island" unique_id=1746466482]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 48)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-2_4" type="StaticBody3D" parent="environment/Island" unique_id=1517898065]
+[node name="Chunk_-2_4" type="StaticBody3D" parent="environment/Island" unique_id=1889243043]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 64)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-1_-5" type="StaticBody3D" parent="environment/Island" unique_id=813025321]
+[node name="Chunk_-2_-5" type="StaticBody3D" parent="environment/Island" unique_id=1394486094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -80)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_-1_-5" type="StaticBody3D" parent="environment/Island" unique_id=1860043809]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -80)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-1_-4" type="StaticBody3D" parent="environment/Island" unique_id=1462326450]
+[node name="Chunk_-1_-4" type="StaticBody3D" parent="environment/Island" unique_id=673525842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -64)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-1_-3" type="StaticBody3D" parent="environment/Island" unique_id=916971623]
+[node name="Chunk_-1_-3" type="StaticBody3D" parent="environment/Island" unique_id=1529110305]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -48)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-1_-2" type="StaticBody3D" parent="environment/Island" unique_id=450165804]
+[node name="Chunk_-1_-2" type="StaticBody3D" parent="environment/Island" unique_id=1785041434]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -32)
 script = ExtResource("37_wnkbs")
 
-[node name="@StaticBody3D@25317" type="StaticBody3D" parent="environment/Island" unique_id=156443850]
+[node name="Chunk_-1_-1" type="StaticBody3D" parent="environment/Island" unique_id=162694396]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -16)
 script = ExtResource("37_wnkbs")
 
-[node name="@StaticBody3D@25319" type="StaticBody3D" parent="environment/Island" unique_id=691648080]
+[node name="Chunk_-1_0" type="StaticBody3D" parent="environment/Island" unique_id=1924839294]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-1_1" type="StaticBody3D" parent="environment/Island" unique_id=405320777]
+[node name="Chunk_-1_1" type="StaticBody3D" parent="environment/Island" unique_id=952554211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-1_2" type="StaticBody3D" parent="environment/Island" unique_id=1061648107]
+[node name="Chunk_-1_2" type="StaticBody3D" parent="environment/Island" unique_id=1671159553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-1_3" type="StaticBody3D" parent="environment/Island" unique_id=2020112004]
+[node name="Chunk_-1_3" type="StaticBody3D" parent="environment/Island" unique_id=273169722]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 48)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_-1_4" type="StaticBody3D" parent="environment/Island" unique_id=2133335369]
+[node name="Chunk_-1_4" type="StaticBody3D" parent="environment/Island" unique_id=1983865342]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 64)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_0_-4" type="StaticBody3D" parent="environment/Island" unique_id=649388690]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64)
-script = ExtResource("37_wnkbs")
-
-[node name="@StaticBody3D@25326" type="StaticBody3D" parent="environment/Island" unique_id=811110676]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48)
-script = ExtResource("37_wnkbs")
-
-[node name="@StaticBody3D@25328" type="StaticBody3D" parent="environment/Island" unique_id=149875684]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
-script = ExtResource("37_wnkbs")
-
-[node name="@StaticBody3D@25330" type="StaticBody3D" parent="environment/Island" unique_id=787519449]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
-script = ExtResource("37_wnkbs")
-
-[node name="@StaticBody3D@25332" type="StaticBody3D" parent="environment/Island" unique_id=1973042257]
-script = ExtResource("37_wnkbs")
-
-[node name="Chunk_0_1" type="StaticBody3D" parent="environment/Island" unique_id=669392967]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
-script = ExtResource("37_wnkbs")
-
-[node name="Chunk_0_2" type="StaticBody3D" parent="environment/Island" unique_id=204104215]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32)
-script = ExtResource("37_wnkbs")
-
-[node name="Chunk_0_3" type="StaticBody3D" parent="environment/Island" unique_id=2043576232]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 48)
-script = ExtResource("37_wnkbs")
-
-[node name="Chunk_0_4" type="StaticBody3D" parent="environment/Island" unique_id=652691749]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 64)
-script = ExtResource("37_wnkbs")
-
-[node name="Chunk_0_-5" type="StaticBody3D" parent="environment/Island" unique_id=1160595371]
+[node name="Chunk_0_-5" type="StaticBody3D" parent="environment/Island" unique_id=154659610]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -80)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_1_-4" type="StaticBody3D" parent="environment/Island" unique_id=1064899813]
+[node name="Chunk_0_-4" type="StaticBody3D" parent="environment/Island" unique_id=1588682920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_0_-3" type="StaticBody3D" parent="environment/Island" unique_id=1513836718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_0_-2" type="StaticBody3D" parent="environment/Island" unique_id=550194129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_0_-1" type="StaticBody3D" parent="environment/Island" unique_id=1536670438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_0_0" type="StaticBody3D" parent="environment/Island" unique_id=1636922760]
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_0_1" type="StaticBody3D" parent="environment/Island" unique_id=1062143347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_0_2" type="StaticBody3D" parent="environment/Island" unique_id=630003163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_0_3" type="StaticBody3D" parent="environment/Island" unique_id=1914340413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 48)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_1_-4" type="StaticBody3D" parent="environment/Island" unique_id=1961954700]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -64)
 script = ExtResource("37_wnkbs")
 
-[node name="@StaticBody3D@25340" type="StaticBody3D" parent="environment/Island" unique_id=977093033]
+[node name="Chunk_1_-3" type="StaticBody3D" parent="environment/Island" unique_id=209483428]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -48)
 script = ExtResource("37_wnkbs")
 
-[node name="@StaticBody3D@25342" type="StaticBody3D" parent="environment/Island" unique_id=307858923]
+[node name="Chunk_1_-2" type="StaticBody3D" parent="environment/Island" unique_id=271575042]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_1_-1" type="StaticBody3D" parent="environment/Island" unique_id=678818578]
+[node name="Chunk_1_-1" type="StaticBody3D" parent="environment/Island" unique_id=1781904624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_1_0" type="StaticBody3D" parent="environment/Island" unique_id=45482757]
+[node name="Chunk_1_0" type="StaticBody3D" parent="environment/Island" unique_id=1354098145]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_1_1" type="StaticBody3D" parent="environment/Island" unique_id=1837994425]
+[node name="Chunk_1_1" type="StaticBody3D" parent="environment/Island" unique_id=1768330316]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_1_2" type="StaticBody3D" parent="environment/Island" unique_id=848235589]
+[node name="Chunk_1_2" type="StaticBody3D" parent="environment/Island" unique_id=2054096288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_1_3" type="StaticBody3D" parent="environment/Island" unique_id=1972437650]
+[node name="Chunk_1_3" type="StaticBody3D" parent="environment/Island" unique_id=1569169660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 48)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_1_4" type="StaticBody3D" parent="environment/Island" unique_id=1870913489]
+[node name="Chunk_1_4" type="StaticBody3D" parent="environment/Island" unique_id=547694987]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 64)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_2_-4" type="StaticBody3D" parent="environment/Island" unique_id=1726880952]
+[node name="Chunk_1_-5" type="StaticBody3D" parent="environment/Island" unique_id=1642861887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -80)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_2_-4" type="StaticBody3D" parent="environment/Island" unique_id=799137192]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -64)
 script = ExtResource("37_wnkbs")
 
-[node name="@StaticBody3D@25351" type="StaticBody3D" parent="environment/Island" unique_id=199189891]
+[node name="Chunk_2_-3" type="StaticBody3D" parent="environment/Island" unique_id=1375865387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -48)
 script = ExtResource("37_wnkbs")
 
-[node name="@StaticBody3D@25353" type="StaticBody3D" parent="environment/Island" unique_id=220567540]
+[node name="Chunk_2_-2" type="StaticBody3D" parent="environment/Island" unique_id=1062555649]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_2_-1" type="StaticBody3D" parent="environment/Island" unique_id=130771321]
+[node name="Chunk_2_-1" type="StaticBody3D" parent="environment/Island" unique_id=510442999]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_2_0" type="StaticBody3D" parent="environment/Island" unique_id=1036052516]
+[node name="Chunk_2_0" type="StaticBody3D" parent="environment/Island" unique_id=822219454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_2_1" type="StaticBody3D" parent="environment/Island" unique_id=799314586]
+[node name="Chunk_2_1" type="StaticBody3D" parent="environment/Island" unique_id=383388319]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_2_2" type="StaticBody3D" parent="environment/Island" unique_id=1965588648]
+[node name="Chunk_2_2" type="StaticBody3D" parent="environment/Island" unique_id=490522807]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_2_3" type="StaticBody3D" parent="environment/Island" unique_id=1534806693]
+[node name="Chunk_2_3" type="StaticBody3D" parent="environment/Island" unique_id=1767337195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 48)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_3_-4" type="StaticBody3D" parent="environment/Island" unique_id=610401438]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -64)
+[node name="Chunk_2_4" type="StaticBody3D" parent="environment/Island" unique_id=711021385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 64)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_3_-3" type="StaticBody3D" parent="environment/Island" unique_id=1935627339]
+[node name="Chunk_3_-3" type="StaticBody3D" parent="environment/Island" unique_id=1130212310]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -48)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_3_-2" type="StaticBody3D" parent="environment/Island" unique_id=291642815]
+[node name="Chunk_3_-2" type="StaticBody3D" parent="environment/Island" unique_id=1515077354]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_3_-1" type="StaticBody3D" parent="environment/Island" unique_id=305889162]
+[node name="Chunk_3_-1" type="StaticBody3D" parent="environment/Island" unique_id=1991340960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_3_0" type="StaticBody3D" parent="environment/Island" unique_id=1785807313]
+[node name="Chunk_3_0" type="StaticBody3D" parent="environment/Island" unique_id=1075649195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_3_1" type="StaticBody3D" parent="environment/Island" unique_id=1663892266]
+[node name="Chunk_3_1" type="StaticBody3D" parent="environment/Island" unique_id=1266319118]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_3_2" type="StaticBody3D" parent="environment/Island" unique_id=1747308497]
+[node name="Chunk_3_2" type="StaticBody3D" parent="environment/Island" unique_id=352406998]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_3_3" type="StaticBody3D" parent="environment/Island" unique_id=1652289391]
+[node name="Chunk_3_3" type="StaticBody3D" parent="environment/Island" unique_id=398695617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 48)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_4_-2" type="StaticBody3D" parent="environment/Island" unique_id=944059915]
+[node name="Chunk_4_-3" type="StaticBody3D" parent="environment/Island" unique_id=1848515896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -48)
+script = ExtResource("37_wnkbs")
+
+[node name="Chunk_4_-2" type="StaticBody3D" parent="environment/Island" unique_id=1308261324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -32)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_4_-1" type="StaticBody3D" parent="environment/Island" unique_id=175158585]
+[node name="Chunk_4_-1" type="StaticBody3D" parent="environment/Island" unique_id=2068792898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -16)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_4_0" type="StaticBody3D" parent="environment/Island" unique_id=779505826]
+[node name="Chunk_4_0" type="StaticBody3D" parent="environment/Island" unique_id=241418302]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 0)
 script = ExtResource("37_wnkbs")
 
-[node name="Chunk_4_1" type="StaticBody3D" parent="environment/Island" unique_id=2048873385]
+[node name="Chunk_4_1" type="StaticBody3D" parent="environment/Island" unique_id=670634380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 16)
-script = ExtResource("37_wnkbs")
-
-[node name="Chunk_4_2" type="StaticBody3D" parent="environment/Island" unique_id=362994545]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 32)
 script = ExtResource("37_wnkbs")
 
 [node name="water" type="MeshInstance3D" parent="environment" unique_id=2004283312]

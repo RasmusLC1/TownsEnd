@@ -20,6 +20,7 @@ public partial class IslandChunkSpawner : RefCounted
     private readonly Node3D _parent;
     private readonly Dictionary<Vector2I, Chunk> _chunks = new();
     private readonly HashSet<Vector2I> _dirtyChunks = new();
+    public IslandChunkSpawner() { } // required by Godot for serialization
 
     public IslandChunkSpawner(Node3D parent)
     {
@@ -37,7 +38,6 @@ public partial class IslandChunkSpawner : RefCounted
     public void BuildAll(Dictionary<Vector3I, IslandTile> tileData)
     {
         ClearAll();
-
         var grouped = tileData.Keys.GroupBy(ChunkCoordOf);
         foreach (var group in grouped)
         {

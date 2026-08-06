@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://icw2vrwc5qj4"]
 
 [ext_resource type="ArrayMesh" uid="uid://dwaq1trigoj0t" path="res://terrain/Models/OBJ format/crate.obj" id="1_e58lr"]
+[ext_resource type="Script" uid="uid://bq4gb388duhac" path="res://src/island_generation/features/box/ItemBox.cs" id="2_oq5cr"]
 
 [node name="VisualBox" type="MeshInstance3D" unique_id=1196717425]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = ExtResource("1_e58lr")
+script = ExtResource("2_oq5cr")
