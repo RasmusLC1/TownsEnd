@@ -9,6 +9,7 @@ public partial class Plant : Node3D
     [Export] public int GrowthStep { get; set; } = 10;
     [Export] public Node3D Model { get; set; }
     [Export] public int MaxSize = 100;
+    public IslandTile OccupiedTile { get; set; }
 
     private int _size = 1;
 
@@ -28,7 +29,12 @@ public partial class Plant : Node3D
 
         if (Size >= MaxSize) return;
 
-        _growthTimer = new Timer
+       SetupGrowthTimer();
+    }
+
+    private void SetupGrowthTimer()
+    {
+         _growthTimer = new Timer
         {
             WaitTime = GrowthIntervalSeconds,
             Autostart = true,
@@ -38,7 +44,7 @@ public partial class Plant : Node3D
         _growthTimer.Timeout += OnGrowthTick;
     }
 
-    private void OnGrowthTick()
+    protected virtual void OnGrowthTick()
     {
         Size = Math.Min(Size + GrowthStep, MaxSize);
         AnimateToCurrentScale();

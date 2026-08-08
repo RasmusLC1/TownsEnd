@@ -61,23 +61,15 @@ public abstract partial class IslandFeatureSpawner : Node
         for (int i = 0; i < actualCount; i++)
         {
             IslandTile tile = candidates[i];
-            Vector3I targetGridPos = tile.GridPosition;
 
-            PackedScene chosenScene = GetRandomTemplate(rng);
-            if (chosenScene == null) continue;
+            Node3D featureInstance = GetFeatureScene(rng, tile);
 
-            Node3D featureInstance = chosenScene.Instantiate<Node3D>();
-            
-            OnFeatureInstantiated(featureInstance, targetGridPos, rng);
+            if (featureInstance == null) continue;
 
-            featureInstance.Position = CalculateSpawnPosition(targetGridPos, featureInstance, rng);
-
-            PostPositionFeature(featureInstance, rng);
+            PostPositionFeature(featureInstance, tile, rng);
 
             Generator.AddChild(featureInstance);
-            
-            // ADD THIS LINE FOR TOOL-MODE:
-            // This tells the Godot Editor to display and track this node inside the active viewport scene tab
+
             if (Engine.IsEditorHint())
             {
                 featureInstance.Owner = Generator.GetTree().EditedSceneRoot;
@@ -90,6 +82,23 @@ public abstract partial class IslandFeatureSpawner : Node
             tile.OccupyingObject = featureInstance;
         }
     }
+
+    private Node3D GetFeatureScene(RandomNumberGenerator rng, IslandTile tile)
+    {
+        Vector3I targetGridPos = tile.GridPosition;
+
+        PackedScene chosenScene = GetRandomTemplate(rng);
+        if (chosenScene == null) return null;
+
+        Node3D featureInstance = chosenScene.Instantiate<Node3D>();
+
+        OnFeatureInstantiated(featureInstance, tile, chosenScene, rng); // pass chosenScene through
+
+        featureInstance.Position = CalculateSpawnPosition(targetGridPos, featureInstance, rng);
+
+        return featureInstance;
+    }
+    
     protected virtual Vector3 CalculateSpawnPosition(Vector3I gridPos, Node3D instance, RandomNumberGenerator rng)
     {
         Vector3 position = Generator.CalculateLocalPos(gridPos, instance);
@@ -125,6 +134,6 @@ public abstract partial class IslandFeatureSpawner : Node
     protected abstract bool ValidateTemplates();
     protected abstract bool IsValidSpawnTile(IslandTile tile);
     protected abstract PackedScene GetRandomTemplate(RandomNumberGenerator rng);
-    protected virtual void OnFeatureInstantiated(Node3D instance, Vector3I gridPos, RandomNumberGenerator rng) {}
-    protected virtual void PostPositionFeature(Node3D instance, RandomNumberGenerator rng) {}
+    protected virtual void OnFeatureInstantiated(Node3D instance, IslandTile tile, PackedScene sourceScene, RandomNumberGenerator rng) {}
+    protected virtual void PostPositionFeature(Node3D instance, IslandTile tile, RandomNumberGenerator rng) {}
 }

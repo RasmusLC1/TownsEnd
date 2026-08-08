@@ -14,12 +14,17 @@ public partial class PlantSpawner : IslandFeatureSpawner
         return PlantTemplates[rng.RandiRange(0, PlantTemplates.Count - 1)];
     }
 
-    protected override void OnFeatureInstantiated(Node3D instance, Vector3I gridPos, RandomNumberGenerator rng)
+    protected override void OnFeatureInstantiated(Node3D instance, IslandTile tile, PackedScene sourceScene, RandomNumberGenerator rng)
     {
-        instance.Name = $"Plant_{gridPos.X}_{gridPos.Z}";
+        instance.Name = $"Plant_{tile.GridPosition.X}_{tile.GridPosition.Z}";
+        if (instance is Plant plant)
+        {
+            plant.Size = rng.RandiRange(1, plant.MaxSize);
+            plant.OccupiedTile = tile;
+        }
     }
 
-    protected override void PostPositionFeature(Node3D instance, RandomNumberGenerator rng)
+    protected override void PostPositionFeature(Node3D instance, IslandTile tile, RandomNumberGenerator rng)
     {
         instance.RotateY(rng.Randf() * Mathf.Pi * 2.0f);
     }

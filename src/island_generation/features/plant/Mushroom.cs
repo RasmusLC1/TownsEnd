@@ -1,3 +1,5 @@
+using Godot;
+
 [Tool]
 public partial class Mushroom : Plant
 {
@@ -5,7 +7,7 @@ public partial class Mushroom : Plant
     {
         Type = "mushroom";
         Size = 1;
-        Maxsize = 10;
+        MaxSize = 10;
         GrowthStep = 2;
         GrowthIntervalSeconds = 20.0;
     }

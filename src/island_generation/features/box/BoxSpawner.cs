@@ -14,9 +14,9 @@ public partial class BoxSpawner : IslandFeatureSpawner
 
     protected override PackedScene GetRandomTemplate(RandomNumberGenerator rng) => BoxTemplate;
 
-    protected override void OnFeatureInstantiated(Node3D instance, Vector3I gridPos, RandomNumberGenerator rng)
+    protected override void OnFeatureInstantiated(Node3D instance, IslandTile tile, PackedScene sourceScene, RandomNumberGenerator rng)
     {
-        instance.Name = $"Box_{gridPos.X}_{gridPos.Z}";
+        instance.Name = $"Box_{tile.GridPosition.X}_{tile.GridPosition.Z}";
 
         if (instance is ItemBox itemBox)
         {

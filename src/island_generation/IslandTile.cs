@@ -23,4 +23,13 @@ public class IslandTile
     public Dictionary<string, Variant> Metadata = new();
 
     public IslandTile[] NeighbouringTiles = new IslandTile[]{};
+
+    public IslandTile GetRandomNeighbouringTile()
+    {
+        if (NeighbouringTiles.Length == 0) return null;
+
+        int index = GD.RandRange(0, NeighbouringTiles.Length - 1);
+        return NeighbouringTiles[index];
+    }
 }
+
