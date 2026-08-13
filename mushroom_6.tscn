@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://jhchlypgxbvw"]
+
+[ext_resource type="ArrayMesh" uid="uid://ykpb7plqnero" path="res://terrain/terrain/mushroom_tanTall.obj" id="1_s3l4c"]
+[ext_resource type="Script" uid="uid://c6nukaa3t7v8b" path="res://src/island_generation/features/plant/Mushroom.cs" id="2_ofpq6"]
+
+[node name="mushroom_6" type="MeshInstance3D" unique_id=710780045]
+mesh = ExtResource("1_s3l4c")
+script = ExtResource("2_ofpq6")

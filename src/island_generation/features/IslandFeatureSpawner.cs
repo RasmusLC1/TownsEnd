@@ -106,7 +106,6 @@ public abstract partial class IslandFeatureSpawner : Node
         GD.Print(position);
         position.X += rng.Randf();
         position.Z += rng.Randf();
-        GD.Print("UDPATED POS", position);
 
         return position;
     }

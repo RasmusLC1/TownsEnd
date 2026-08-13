@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b5k412y83ihhk"]
+
+[ext_resource type="ArrayMesh" uid="uid://cny1sbah6m0hr" path="res://terrain/terrain/plant_bushLargeTriangle.obj" id="1_h6hqv"]
+[ext_resource type="Script" uid="uid://twssjjuksyby" path="res://src/island_generation/features/plant/Bush.cs" id="2_muum1"]
+
+[node name="bush_4" type="MeshInstance3D" unique_id=1577172768]
+mesh = ExtResource("1_h6hqv")
+script = ExtResource("2_muum1")

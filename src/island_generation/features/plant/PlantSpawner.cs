@@ -16,11 +16,14 @@ public partial class PlantSpawner : IslandFeatureSpawner
 
     protected override void OnFeatureInstantiated(Node3D instance, IslandTile tile, PackedScene sourceScene, RandomNumberGenerator rng)
     {
+        GD.Print("SPAWN PLANT");
         instance.Name = $"Plant_{tile.GridPosition.X}_{tile.GridPosition.Z}";
         if (instance is Plant plant)
         {
             plant.Size = rng.RandiRange(1, plant.MaxSize);
             plant.OccupiedTile = tile;
+            plant.Generator = Generator;
+            plant.Scene = sourceScene;
         }
     }
 

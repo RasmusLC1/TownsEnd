@@ -10,6 +10,10 @@ public partial class Plant : Node3D
     [Export] public Node3D Model { get; set; }
     [Export] public int MaxSize = 100;
     public IslandTile OccupiedTile { get; set; }
+    [Export] public PackedScene Scene { get; set; } // assign the Tree's own scene in the inspector
+    public IslandGenerator Generator; // set by TreeSpawner when this tree is spawned, like OccupiedTile
+
+
 
     private int _size = 1;
 

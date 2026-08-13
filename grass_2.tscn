@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://npwy5wvwbdy7"]
+
+[ext_resource type="ArrayMesh" uid="uid://v0qc4pljoqwk" path="res://terrain/terrain/plant_flatShort.obj" id="1_c1j7x"]
+[ext_resource type="Script" uid="uid://hb6ooulm2mbp" path="res://src/island_generation/features/plant/Grass.cs" id="2_5l2od"]
+
+[node name="grass_7" type="MeshInstance3D" unique_id=1477391787]
+mesh = ExtResource("1_c1j7x")
+script = ExtResource("2_5l2od")

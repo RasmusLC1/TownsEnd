@@ -23,7 +23,7 @@ public partial class TreeSpawner : IslandFeatureSpawner
             tree.Size = rng.RandiRange(10, tree.MaxSize);
             tree.OccupiedTile = tile;
             tree.Generator = Generator;
-            tree.TreeScene = sourceScene;
+            tree.Scene = sourceScene;
         }
     }
 
