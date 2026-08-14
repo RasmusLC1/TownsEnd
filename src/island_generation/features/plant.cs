@@ -43,14 +43,12 @@ public partial class Plant : Node3D
 
     private void SetupGrowthTimer()
     {
-         _growthTimer = new Timer
-        {
-            WaitTime = GrowthIntervalSeconds,
-            Autostart = true,
-            OneShot = false
-        };
-        AddChild(_growthTimer);
-        _growthTimer.Timeout += OnGrowthTick;
+        _growthTimer = CreateTicker(GrowthIntervalSeconds, OnGrowthTick);
+    }
+    private void TriggerFoodTimer()
+    {
+        if (0 == FoodValueMax) return;
+        _foodTimer = CreateTicker(GrowthIntervalSeconds, OnFoodTick);
     }
 
     protected virtual void OnGrowthTick()
@@ -62,20 +60,16 @@ public partial class Plant : Node3D
         {
             _growthTimer.Stop();
             OnMatured();
+            TriggerFoodTimer();
         }
     }
 
-    private void TriggerFoodTimer()
+    private Timer CreateTicker(double interval, Action onTick)
     {
-        if (0 == FoodValueMax) return;
-        _foodTimer = new Timer
-        {
-            WaitTime = GrowthIntervalSeconds,
-            Autostart = true,
-            OneShot = false
-        };
-        AddChild(_foodTimer);
-        _foodTimer.Timeout += OnFoodTick;
+        var t = new Timer { WaitTime = interval, Autostart = true, OneShot = false };
+        AddChild(t);
+        t.Timeout += onTick;
+        return t;
     }
 
     protected virtual void OnFoodTick()
@@ -126,6 +120,5 @@ public partial class Plant : Node3D
 
     protected virtual void OnMatured()
     {
-            TriggerFoodTimer();
     }
 }
