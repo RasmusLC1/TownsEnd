@@ -31,5 +31,13 @@ public class IslandTile
         int index = GD.RandRange(0, NeighbouringTiles.Length - 1);
         return NeighbouringTiles[index];
     }
+
+    public void ClearOccupyingObject()
+    {
+        if (OccupyingObject == null) return;
+
+        OccupyingObject = null;
+        IsOccupied = false;
+    }
 }
 
