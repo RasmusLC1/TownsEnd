@@ -7,19 +7,30 @@ using System;
 /// does -- that's entirely delegated to whichever IGridTool is assigned to
 /// each mouse button in the Inspector. Adding a new mouse-driven action
 /// means writing a new IGridTool, not touching this file.
+///
+/// Also treats a right-click (press+release with little/no movement, so it
+/// doesn't fight with TownCamera's right-drag orbit) as a generic "cancel"
+/// gesture: if the active tool implements ISelectableGridTool and has an
+/// active selection (e.g. FeaturePlacementTool with a feature armed), that
+/// selection is cleared.
 /// </summary>
 public partial class GridInputHandler : Node
 {
     [Export] private Camera3D _camera;
     [Export] private IslandGenerator _islandGenerator;
 
-    // Assign any Node that implements IGridTool (e.g. TileRemovalTool,
-    // FeaturePlacementTool). Leave empty to disable that action entirely.
+    // Assign any Node that implements IGridTool (e.g. FeaturePlacementTool).
+    // Leave empty to disable that action entirely.
     [Export] private Node _leftClickToolNode;    // Plain left click
     [Export] private Node _leftShiftClickToolNode;  // Shift + left click
 
     [Export] private float _fallbackPlaneHeight = 0.0f;
     [Export] private float _outlineHeightMargin = 0.05f;
+
+    // How far the mouse may move between right-button press and release for
+    // it to still count as a "click" (cancel gesture) rather than the start
+    // of a camera-orbit drag.
+    [Export] private float _rightClickMoveThreshold = 6.0f;
 
     private IGridTool _primaryTool;
     private IGridTool _secondaryTool;
@@ -27,6 +38,9 @@ public partial class GridInputHandler : Node
     private Vector2I? _dragStartColumn;
     private bool _isDragging = false;
     private IGridTool _activeDragTool;
+
+    private Vector2 _rightMouseDownPosition;
+    private bool _isRightMouseDown;
 
     private MeshInstance3D _outlineInstance;
     private ImmediateMesh _outlineMesh;
@@ -80,6 +94,35 @@ public partial class GridInputHandler : Node
             {
                 EndDrag(mouseBtn);
             }
+        }
+        else if (@event is InputEventMouseButton rightBtn && rightBtn.ButtonIndex == MouseButton.Right)
+        {
+            if (rightBtn.Pressed)
+            {
+                _rightMouseDownPosition = rightBtn.Position;
+                _isRightMouseDown = true;
+            }
+            else if (_isRightMouseDown)
+            {
+                _isRightMouseDown = false;
+
+                if (rightBtn.Position.DistanceTo(_rightMouseDownPosition) <= _rightClickMoveThreshold)
+                    TryCancelActiveSelection();
+            }
+        }
+    }
+
+    private void TryCancelActiveSelection()
+    {
+        if (_primaryTool is ISelectableGridTool selectablePrimary && selectablePrimary.HasActiveSelection)
+        {
+            selectablePrimary.ClearSelection();
+            return;
+        }
+
+        if (_secondaryTool is ISelectableGridTool selectableSecondary && selectableSecondary.HasActiveSelection)
+        {
+            selectableSecondary.ClearSelection();
         }
     }
 

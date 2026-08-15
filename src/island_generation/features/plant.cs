@@ -2,8 +2,14 @@ using Godot;
 using System;
 
 [Tool]
-public partial class Plant : Node3D
+public partial class Plant : Node3D, IFeatureInfo
 {
+    // IFeatureInfo -- these are properties (not fields) so the tooltip
+    // always reflects the plant's current state, not a snapshot from when
+    // it spawned.
+    public string DisplayName => Type;
+    public string Description => $"Food: {FoodValue}/{FoodValueMax}";
+
     [Export] public string Type { get; set; } = "generic";
     [Export] public double GrowthIntervalSeconds { get; set; } = 1.0;
     [Export] public int GrowthStep { get; set; } = 10;

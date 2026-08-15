@@ -32,7 +32,7 @@ public partial class PlacementMenu : Control
         if (_placementTool == null || scene == null) return;
         
         // 1. Update the scene the tool will drop
-        _placementTool.SetFeatureScene(scene);
+        _placementTool.SelectFeature(scene);
         
         // 2. Tell your GridInputHandler to make this tool active if it isn't already
         // (e.g., GridInputHandler.SetActiveTool(_placementTool);)
