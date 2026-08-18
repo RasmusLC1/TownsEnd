@@ -1,20 +1,20 @@
 using Godot;
 using System;
 
-
 [Tool]
-public partial class SpreadingPlant : Plant
+public partial class SpreadingPlant : Plant, ISpreadable
 {
-    [Export] public double SpreadIntervalSeconds { get; set; } = 10; // time to spread another tree
+    [Export] public double SpreadIntervalSeconds { get; set; } = 10.0;
+
+    // ISpreadable implementation: plant can only spread if it has reached max size
+    public bool CanSpread => Size >= MaxSize;
 
     private Timer _spreadTimer;
 
-
     public override void _Ready()
     {
-        base._Ready(); // runs Plant's model setup, scaling, and growth timer
+        base._Ready();
 
-        // your extra hook logic here
         _spreadTimer = new Timer
         {
             WaitTime = SpreadIntervalSeconds,
@@ -27,12 +27,20 @@ public partial class SpreadingPlant : Plant
 
     private void OnSpreadTick()
     {
+        if (CanSpread)
+        {
+            Spread();
+        }
+    }
+
+    // Explicit ISpreadable implementation
+    public void Spread()
+    {
         if (OccupiedTile == null || Scene == null || Generator == null) return;
 
         IslandTile newTile = OccupiedTile.GetRandomNeighbouringTile();
         if (newTile == null || newTile.IsOccupied || newTile.Type != TileType.Grass) return;
 
-        
         Node3D newInstance = SpawnNewPlant(newTile);
 
         newTile.IsOccupied = true;
@@ -45,7 +53,6 @@ public partial class SpreadingPlant : Plant
         Node3D newInstance = Scene.Instantiate<Node3D>();
         Generator.AddChild(newInstance);
 
-
         if (Engine.IsEditorHint())
         {
             newInstance.Owner = Generator.GetTree().EditedSceneRoot;
@@ -53,24 +60,23 @@ public partial class SpreadingPlant : Plant
 
         newInstance.Position = Generator.CalculateLocalPos(newTile.GridPosition, newInstance);
 
-        if (newInstance is Tree newPlant)
+        if (newInstance is Plant newPlant)
         {
             newPlant.OccupiedTile = newTile;
             newPlant.Generator = Generator;
             newPlant.Scene = Scene;
-            newPlant.Size = 80;
-
+            newPlant.Size = 1; // Spawns as a new baby plant
         }
+
         return newInstance;
     }
 
     protected override void OnGrowthTick()
     {
         base.OnGrowthTick();
-        if (Size >= MaxSize)
+        if (Size >= MaxSize && _spreadTimer.IsStopped())
         {
             _spreadTimer.Start();
         }
     }
-
 }
